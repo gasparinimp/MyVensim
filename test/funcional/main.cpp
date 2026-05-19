@@ -10,6 +10,7 @@ int main() {
     //Chamada os testes
     exponentialFuncionalTest();
     logisticalFuncionalTest();
+    complexFuncionalTest();
     return 0;
 }
 

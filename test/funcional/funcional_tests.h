@@ -40,6 +40,17 @@ public:
     }
 };
 
+class FlowComplex : public Flow {
+public:
+    using Flow::Flow;
+    double execute() const override {
+        if (getSource() != nullptr) {
+            return 0.01 * getSource()->getValue(); // Equação base do fluxo complexo
+        }
+        return 0.0;
+    }
+};
+
 //Assinatura das funcoes
 void exponentialFuncionalTest();
 void logisticalFuncionalTest();

@@ -79,3 +79,44 @@ void logisticalFuncionalTest() {
     delete p2;
     delete log;
 }
+
+void complexFuncionalTest() {
+    std::cout << "Executando Teste Complexo (Sistema Q)..." << std::endl;
+
+    //Criação dos 5 sistemas soltos na memória
+    System* q1 = new System("Q1", 100.0);
+    System* q2 = new System("Q2", 0.0);
+    System* q3 = new System("Q3", 100.0);
+    System* q4 = new System("Q4", 0.0);
+    System* q5 = new System("Q5", 0.0);
+
+    //Criação e vinculação das 6 engrenagens de fluxos complexos
+    FlowComplex* f = new FlowComplex("f"); f->setSource(q1); f->setTarget(q2);
+    FlowComplex* g = new FlowComplex("g"); g->setSource(q1); g->setTarget(q3);
+    FlowComplex* r = new FlowComplex("r"); r->setSource(q2); r->setTarget(q5);
+    FlowComplex* t = new FlowComplex("t"); t->setSource(q2); t->setTarget(q3);
+    FlowComplex* u = new FlowComplex("u"); u->setSource(q3); u->setTarget(q4);
+    FlowComplex* v = new FlowComplex("v"); v->setSource(q4); v->setTarget(q1);
+
+    //Adicionando todos ao modelo por Agregação
+    Model* m = new Model("Complex Model Q");
+    m->add(q1); m->add(q2); m->add(q3); m->add(q4); m->add(q5);
+    m->add(f); m->add(g); m->add(r); m->add(t); m->add(u); m->add(v);
+
+    //Executando a simulação por 100 iterações
+    m->run(0, 100);
+
+    //Validação com o delta de precisão usando std::fabs (padrão do seu código)
+    assert(std::fabs(q1->getValue() - 31.8513) < 0.0001);
+    assert(std::fabs(q2->getValue() - 18.4003) < 0.0001);
+    assert(std::fabs(q3->getValue() - 77.1143) < 0.0001);
+    assert(std::fabs(q4->getValue() - 56.1728) < 0.0001);
+    assert(std::fabs(q5->getValue() - 16.4612) < 0.0001);
+
+    std::cout << "Teste Complexo Passou!" << std::endl;
+
+    //Limpeza manual da memóriaHeap para evitar vazamentos (Memory Leak)
+    delete m;
+    delete q1; delete q2; delete q3; delete q4; delete q5;
+    delete f; delete g; delete r; delete t; delete u; delete v;
+}
