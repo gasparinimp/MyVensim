@@ -5,16 +5,22 @@
 
 class System {
 private:
-    std::string nome;
-    double valor;
+    std::string name;
+    double value;
 
 public:
-    System(const std::string& nome, double valorInicial);
-    virtual ~System();
+    // --- FORMA CANÔNICA ORTODOXA ---
+    System();                                       // Construtor Padrão
+    System(const std::string& name, double value);  // Construtor com Parâmetros
+    virtual ~System();                              // Destrutor
+    System(const System& other);                    // Construtor de Cópia
+    System& operator=(const System& other);         // Operador de Atribuição
 
-    std::string getNome() const;
-    double getValor() const;
-    void setValor(double v);
+    // Getters e Setters (Alinhados em Inglês)
+    std::string getName() const;
+    double getValue() const;
+    void setValue(double value);
+    void setName(std::string name);
 };
 
 #endif

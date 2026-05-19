@@ -1,34 +1,37 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include <vector>
 #include <string>
+#include <vector>
 #include "system.h"
 #include "flow.h"
 
 class Model {
 private:
-    int tempo;
-    std::vector<System*> sistemas;
-    std::vector<Flow*> fluxos;
+    std::string name;
+    std::vector<System*> systems;
+    std::vector<Flow*> flows;
 
 public:
-    Model();
-    virtual ~Model();
+    // --- FORMA CANÔNICA ORTODOXA ---
+    Model();                          
+    Model(const Model& mod);         
+    virtual ~Model();                 
+    Model& operator=(const Model& mod); 
 
-    System* criaSistema(const std::string& nome, double valorInicial);
-    
-    // Factory usando templates para instanciar qualquer subclasse de Flow
-    template <typename T>
-    Flow* criaFluxo(System* source, System* target) {
-        Flow* f = new T();
-        f->setSource(source);
-        f->setTarget(target);
-        fluxos.push_back(f);
-        return f;
-    }
+    // Construtor com nome
+    Model(std::string name);
 
-    void run(int t_inicial, int t_final);
+    // Métodos de Gerenciamento (Agregação)
+    void add(System* s);
+    void add(Flow* f);
+
+    // Motor de Simulação
+    void run(int t_initial, int t_end);
+
+    // Getters e Setters
+    std::string getName() const;
+    void setName(std::string name);
 };
 
 #endif

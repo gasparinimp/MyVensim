@@ -1,50 +1,71 @@
 #include "model.h"
 
-Model::Model() {
-    tempo = 0;
+// Construtor Padrão
+Model::Model() : name("") {}
+
+// Construtor com Nome
+Model::Model(std::string name) : name(name) {}
+
+// Construtor de Cópia (Cópia Rasa das estruturas dos seus colegas)
+Model::Model(const Model& mod) {
+    this->name = mod.name;
+    this->systems = mod.systems;
+    this->flows = mod.flows;
 }
 
-Model::~Model() {
-    // Desaloca todos os sistemas criados pela fábrica
-    for (size_t i = 0; i < sistemas.size(); ++i) {
-        delete sistemas[i];
+// Destrutor
+// Como o modelo atual de vocês usa agregação (.add), os objetos são criados fora.
+// Se o professor exigir que o Model limpe a memória, você adicionaria os 'delete' aqui.
+Model::~Model() {}
+
+// Operador de Atribuição
+Model& Model::operator=(const Model& mod) {
+    if (this == &mod) {
+        return *this;
     }
-    sistemas.clear();
-
-    // Desaloca todos os fluxos criados pela fábrica
-    for (size_t i = 0; i < fluxos.size(); ++i) {
-        delete fluxos[i];
-    }
-    fluxos.clear();
+    this->name = mod.name;
+    this->systems = mod.systems;
+    this->flows = mod.flows;
+    return *this;
 }
 
-// Método Factory (Fábrica) para encapsular a criação de Sistemas
-System* Model::criaSistema(const std::string& nome, double valorInicial) {
-    System* s = new System(nome, valorInicial);
-    sistemas.push_back(s); // Guarda o ponteiro na coleção interna do modelo
-    return s;
+// Getters e Setters
+std::string Model::getName() const { 
+    return name; 
 }
 
-// O MOTOR DO SIMULADOR: O algoritmo do loop síncrono em dois passos
-void Model::run(int t_inicial, int t_final) {
-    for (tempo = t_inicial; tempo < t_final; ++tempo) {
+void Model::setName(std::string n) { 
+    name = n; 
+}
+
+// Métodos para adicionar elementos ao modelo
+void Model::add(System* s) {
+    systems.push_back(s);
+}
+
+void Model::add(Flow* f) {
+    flows.push_back(f);
+}
+
+// Função Run integrada com os métodos em inglês (getValue, setValue, execute)
+void Model::run(int t_initial, int t_end) {
+    for (int tempo = t_initial; tempo < t_end; ++tempo) {
+        std::vector<double> results;
         
-        // PASSO 1: Fase de Cálculo (Leitura síncrona de todos os fluxos)
-        std::vector<double> resultados_temporarios;
-        for (size_t i = 0; i < fluxos.size(); ++i) {
-            resultados_temporarios.push_back(fluxos[i]->executa());
+        // CORREÇÃO AQUI: Trocamos o iterador por um loop indexado comum
+        for (size_t i = 0; i < flows.size(); ++i) {
+            results.push_back(flows[i]->execute());
         }
         
-        // PASSO 2: Fase de Atualização (Escrita nos estoques de origem e destino)
-        for (size_t i = 0; i < fluxos.size(); ++i) {
-            System* src = fluxos[i]->getSource();
-            System* tgt = fluxos[i]->getTarget();
-            
-            if (src != nullptr) {
-                src->setValor(src->getValor() - resultados_temporarios[i]);
+        // O resto do seu código continua exatamente igual:
+        for (size_t i = 0; i < flows.size(); ++i) {
+            System* origem = flows[i]->getSource();
+            System* destino = flows[i]->getTarget();
+            if (origem != nullptr) {
+                origem->setValue(origem->getValue() - results[i]);
             }
-            if (tgt != nullptr) {
-                tgt->setValor(tgt->getValor() + resultados_temporarios[i]);
+            if (destino != nullptr) {
+                destino->setValue(destino->getValue() + results[i]);
             }
         }
     }

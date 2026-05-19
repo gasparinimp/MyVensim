@@ -5,22 +5,32 @@
 #include "system.h"
 
 class Flow {
-private:
-    std::string nome;
-    System* source;
-    System* target;
+protected:
+    std::string name;
+    System *source;
+    System *target;
 
 public:
-    Flow(const std::string& nome = "");
-    virtual ~Flow();
+    // --- FORMA CANÔNICA EM CLASSE ABSTRATA ---
+    Flow();
+    Flow(const Flow &fl);                 // Construtor de Cópia
+    virtual ~Flow();                      // Destrutor Virtual (obrigatório para polimorfismo)
+    Flow &operator=(const Flow &fl);      // Operador de Atribuição
 
-    System* getSource() const;
-    System* getTarget() const;
-    void setSource(System* s);
-    void setTarget(System* t);
+    // Construtor com nome
+    Flow(std::string name);
+
+    // Getters e Setters dos Relacionamentos
+    void setSource(System *s);
+    void setTarget(System *t);
+    System *getSource() const;
+    System *getTarget() const;
     
-    // Método virtual puro - Espaço em branco para o usuário preencher
-    virtual double executa() = 0; 
+    std::string getName() const;
+    void setName(std::string name);
+
+    // Método Virtual Puro (Contrato para as subclasses)
+    virtual double execute() const = 0;
 };
 
 #endif
