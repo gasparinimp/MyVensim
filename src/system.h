@@ -5,18 +5,23 @@
 
 class System {
 private:
+    //Atributos
     std::string name;
     double value;
 
 public:
-    // --- FORMA CANÔNICA ORTODOXA ---
-    System();                                       // Construtor Padrão
-    System(const std::string& name, double value);  // Construtor com Parâmetros
-    virtual ~System();                              // Destrutor
-    System(const System& other);                    // Construtor de Cópia
-    System& operator=(const System& other);         // Operador de Atribuição
+    //Construtor vazio
+    System();      
+    //Construtor normal                                 
+    System(const std::string& name, double value); 
+    //Destrutor
+    virtual ~System();      
+    //Construtor de copiar                        
+    System(const System& other);  
+    //Sobrecarga                  
+    System& operator=(const System& other);         
 
-    // Getters e Setters (Alinhados em Inglês)
+    //Get e set dos atributos
     std::string getName() const;
     double getValue() const;
     void setValue(double value);

@@ -8,28 +8,31 @@
 
 class Model {
 private:
+    //Atributos
     std::string name;
     std::vector<System*> systems;
     std::vector<Flow*> flows;
 
 public:
-    // --- FORMA CANÔNICA ORTODOXA ---
-    Model();                          
-    Model(const Model& mod);         
-    virtual ~Model();                 
+    //Construtor vazio
+    Model();                 
+    //Construtor de copia         
+    Model(const Model& mod); 
+    // Construtor com nome
+    Model(std::string name); 
+    //Destrutor       
+    virtual ~Model();       
+    //Sobrecarga           
     Model& operator=(const Model& mod); 
 
-    // Construtor com nome
-    Model(std::string name);
-
-    // Métodos de Gerenciamento (Agregação)
+    // Métodos de adicionar sistemas e flow no modelo
     void add(System* s);
     void add(Flow* f);
 
-    // Motor de Simulação
+    //Metodo para simulação
     void run(int t_initial, int t_end);
 
-    // Getters e Setters
+    //Get e set de nome
     std::string getName() const;
     void setName(std::string name);
 };

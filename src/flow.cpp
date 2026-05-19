@@ -1,35 +1,36 @@
 #include "flow.h"
 
-// Construtor Padrão
+// Construtor padrão em que inicializa tudo "vazio"
 Flow::Flow() : name(""), source(nullptr), target(nullptr) {}
 
-// Construtor com Nome
+// Construtor apenas com o nome
 Flow::Flow(std::string name) : name(name), source(nullptr), target(nullptr) {}
 
-// Construtor de Cópia
+// Construtor de quando um fluxo vai copiar o outro
 Flow::Flow(const Flow &fl) {
     this->name = fl.name;
-    this->source = fl.source; // Copia o ponteiro de origem
-    this->target = fl.target; // Copia o ponteiro de destino
+    this->source = fl.source; 
+    this->target = fl.target;
 }
 
 // Destrutor
-// Como o Flow não é dono dos sistemas (ele apenas aponta para eles), 
-// o destrutor NÃO deve dar delete em source ou target. Deixe vazio.
+//Como nada é criado nele, fica vazio
 Flow::~Flow() {}
 
-// Operador de Atribuição
+// Sobrecarga do operador igual, para permitir recebimento direto
 Flow &Flow::operator=(const Flow &fl) {
+    //Se o objeto for o mesmo que o atual, so retorna ele mesmo
     if (this == &fl) {
         return *this;
     }
+    //Se for diferente, faço a atribuição
     this->name = fl.name;
     this->source = fl.source;
     this->target = fl.target;
     return *this;
 }
 
-// ---- GETTERS E SETTERS ----
+//Get e set de origem, destino e nome
 void Flow::setSource(System *s) {
     source = s;
 }

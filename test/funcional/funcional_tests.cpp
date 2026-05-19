@@ -5,70 +5,77 @@
 #include "../../src/model.h"
 #include "../../src/system.h"
 
+//Metodo do teste funcional do exponencial
 void exponentialFuncionalTest() {
     std::cout << "Executando Teste Exponencial..." << std::endl;
 
-    // 1. Criamos os elementos soltos na memória
+    //Crio o modelo
     Model* mod = new Model("Modelo Exponencial");
+    //Crio os sistemas
     System* pop1 = new System("pop1", 100.0);
     System* pop2 = new System("pop2", 0.0);
+    //Crio o fluxo
     ExponencialFlow* exp = new ExponencialFlow("Fluxo Exponencial");
 
-    // 2. Vinculamos o fluxo aos sistemas de origem e destino
+    //Defino o destino e origem
     exp->setSource(pop1);
     exp->setTarget(pop2);
 
-    // 3. Adicionamos todos ao modelo via agregação (.add)
+    //Adiciono os sistemas e fluxo no modelo
     mod->add(pop1);
     mod->add(pop2);
     mod->add(exp);
 
-    // 4. Executamos a simulação
+    //Executo a simulação
     mod->run(0, 100);
 
-    // 5. Verificação matemática exata com assert (Delta de tolerância: 0.0001)
+    //Validação com assert
+    //Faço com que a diferença seja menor que 0.0001 para dar certo
     assert(std::fabs(pop1->getValue() - 36.6032) < 0.0001); 
     assert(std::fabs(pop2->getValue() - 63.3968) < 0.0001); 
 
     std::cout << "Teste Exponencial Passou!" << std::endl;
 
-    // 6. Limpeza manual e segura da memória para evitar Memory Leak
+    //Limpo os ponteiros
     delete mod;
     delete pop1;
     delete pop2;
     delete exp;
 }
 
+//Metodo do teste funcional do logistico
 void logisticalFuncionalTest() {
     std::cout << "Executando Teste Logistico..." << std::endl;
 
+    //Crio o modelo e os sistemas
     Model* mod = new Model("Modelo Logistico");
     System* p1 = new System("p1", 100.0);
     System* p2 = new System("p2", 10.0);
+    //Crio o fluxo
     LogisticaFlow* log = new LogisticaFlow("Fluxo Logistico");
 
+    //Defino o destino e origem
     log->setSource(p1);
     log->setTarget(p2);
 
+    //Adiciono sistemas e fluxo no modelo
     mod->add(p1);
     mod->add(p2);
     mod->add(log);
 
+    //Executo a simulacao
     mod->run(0, 100);
 
-    // Verificação matemática para o modelo logístico
+    //Validação com assert
+    //Faço com que a diferença seja menor que 0.0001 para dar certo
     assert(std::fabs(p1->getValue() - 88.2167) < 0.0001);
     assert(std::fabs(p2->getValue() - 21.7833) < 0.0001);
 
     std::cout << "Teste Logistico Passou!" << std::endl;
 
+    //Deleto os ponteiros
     delete mod;
     delete p1;
     delete p2;
     delete log;
-}
-
-void complexFuncionalTest() {
-    // Mantendo seu aviso limpo para a Sprint 1, deixando o gancho para a Sprint 2
-    std::cout << "Teste Complexo Pronto para ser Implementado na Sprint 2!" << std::endl;
 }

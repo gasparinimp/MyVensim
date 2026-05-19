@@ -1,9 +1,9 @@
 #include "system.h"
 
-// Construtor Padrão
+//Construtor vazio
 System::System() : name(""), value(0.0) {}
 
-// Construtor com Parâmetros
+// Construtor normal
 System::System(const std::string& name, double value) {
     this->name = name;
     this->value = value;
@@ -12,13 +12,13 @@ System::System(const std::string& name, double value) {
 // Destrutor
 System::~System() {}
 
-// Construtor de Cópia
+// Construtor de copia
 System::System(const System& other) {
     this->name = other.name;
     this->value = other.value;
 }
 
-// Operador de Atribuição
+//Sobrecarga do operador
 System& System::operator=(const System& other) {
     if (this == &other) { 
         return *this;
@@ -28,7 +28,7 @@ System& System::operator=(const System& other) {
     return *this;
 }
 
-// Getters e Setters (Implementação correspondente em Inglês)
+// Get e set dos atributos
 std::string System::getName() const {
     return name;
 }

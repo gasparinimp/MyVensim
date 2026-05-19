@@ -1,24 +1,22 @@
 #include "model.h"
 
-// Construtor Padrão
+//Construtor vazio
 Model::Model() : name("") {}
 
-// Construtor com Nome
+//Construtor com nome
 Model::Model(std::string name) : name(name) {}
 
-// Construtor de Cópia (Cópia Rasa das estruturas dos seus colegas)
+// Construtor de quando um modelo vai copiar o outro
 Model::Model(const Model& mod) {
     this->name = mod.name;
     this->systems = mod.systems;
     this->flows = mod.flows;
 }
 
-// Destrutor
-// Como o modelo atual de vocês usa agregação (.add), os objetos são criados fora.
-// Se o professor exigir que o Model limpe a memória, você adicionaria os 'delete' aqui.
+// Destrutor vazio
 Model::~Model() {}
 
-// Operador de Atribuição
+//Sobre carga do operador
 Model& Model::operator=(const Model& mod) {
     if (this == &mod) {
         return *this;
@@ -29,7 +27,7 @@ Model& Model::operator=(const Model& mod) {
     return *this;
 }
 
-// Getters e Setters
+// Get e set de nome
 std::string Model::getName() const { 
     return name; 
 }
@@ -38,29 +36,33 @@ void Model::setName(std::string n) {
     name = n; 
 }
 
-// Métodos para adicionar elementos ao modelo
+//Metodo para adicionar sistema ao vetor de sistemas
 void Model::add(System* s) {
     systems.push_back(s);
 }
 
+//Metodo para adicionar fluxos do vetor de fluxos
 void Model::add(Flow* f) {
     flows.push_back(f);
 }
 
-// Função Run integrada com os métodos em inglês (getValue, setValue, execute)
+//Função run assincrona
 void Model::run(int t_initial, int t_end) {
+    //Enquanto o tempo nao acabar
     for (int tempo = t_initial; tempo < t_end; ++tempo) {
+        //Crio um vetor de resultados
         std::vector<double> results;
         
-        // CORREÇÃO AQUI: Trocamos o iterador por um loop indexado comum
+        //Executo os fluxos e coloco o resultado no vetor de resultados
         for (size_t i = 0; i < flows.size(); ++i) {
             results.push_back(flows[i]->execute());
         }
         
-        // O resto do seu código continua exatamente igual:
+        //Pego os sistemas de origem e destino dos fluxos
         for (size_t i = 0; i < flows.size(); ++i) {
             System* origem = flows[i]->getSource();
             System* destino = flows[i]->getTarget();
+            //Se não forem nulos, atualizo os valores ao mesmo tempo para não ter inconsistência
             if (origem != nullptr) {
                 origem->setValue(origem->getValue() - results[i]);
             }
