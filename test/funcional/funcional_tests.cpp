@@ -106,12 +106,26 @@ void complexFuncionalTest() {
     //Executando a simulação por 100 iterações
     m->run(0, 100);
 
-    //Validação com o delta de precisão usando std::fabs (padrão do seu código)
-    assert(std::fabs(q1->getValue() - 31.8513) < 0.0001);
-    assert(std::fabs(q2->getValue() - 18.4003) < 0.0001);
-    assert(std::fabs(q3->getValue() - 77.1143) < 0.0001);
-    assert(std::fabs(q4->getValue() - 56.1728) < 0.0001);
-    assert(std::fabs(q5->getValue() - 16.4612) < 0.0001);
+    /// teste (imprime qual a precisao do 77.1143 em 10 casas)
+    // std::cout << std::fixed << std::setprecision(10)
+    //     << q3->getValue() << " diff "
+    //     << std::fabs(q3->getValue() - 77.1143) << std::endl;
+
+          
+    //Validação de alta precisao (tive que colocar a funcao round4 para que o codigo pare de falhar quando muda a ultima casa decimal) 
+    auto round4 = [](double v) {
+        return std::round(v * 10000.0) / 10000.0;
+    };
+
+    //verificacao do novo valor
+    // std::cout << std::fixed << std::setprecision(10)
+    //     << round4(q3->getValue());
+
+    assert(round4(q1->getValue()) == 31.8513);
+    assert(round4(q2->getValue()) == 18.4003);
+    assert(round4(q3->getValue()) == 77.1143);
+    assert(round4(q4->getValue()) == 56.1728);
+    assert(round4(q5->getValue()) == 16.4612);
 
     std::cout << "Teste Complexo Passou!" << std::endl;
 
