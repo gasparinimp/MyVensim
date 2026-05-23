@@ -1,12 +1,13 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 #include <cassert>
 #include "funcional_tests.h"
 #include "../../src/model.h"
 #include "../../src/system.h"
 
 //Metodo do teste funcional do exponencial
-void exponentialFuncionalTest() {
+void exponentialFuncionalTest() { //Funcao para realizar os testes exponenciais
     std::cout << "Executando Teste Exponencial..." << std::endl;
 
     //Crio o modelo
@@ -18,8 +19,8 @@ void exponentialFuncionalTest() {
     ExponencialFlow* exp = new ExponencialFlow("Fluxo Exponencial");
 
     //Defino o destino e origem
-    exp->setSource(pop1);
-    exp->setTarget(pop2);
+    exp->setSource(pop1); //origem 
+    exp->setTarget(pop2); //destino
 
     //Adiciono os sistemas e fluxo no modelo
     mod->add(pop1);
@@ -44,7 +45,7 @@ void exponentialFuncionalTest() {
 }
 
 //Metodo do teste funcional do logistico
-void logisticalFuncionalTest() {
+void logisticalFuncionalTest() { //Funcao para realizar os testes logisticos
     std::cout << "Executando Teste Logistico..." << std::endl;
 
     //Crio o modelo e os sistemas
@@ -55,8 +56,8 @@ void logisticalFuncionalTest() {
     LogisticaFlow* log = new LogisticaFlow("Fluxo Logistico");
 
     //Defino o destino e origem
-    log->setSource(p1);
-    log->setTarget(p2);
+    log->setSource(p1); //origem
+    log->setTarget(p2); //destino
 
     //Adiciono sistemas e fluxo no modelo
     mod->add(p1);
@@ -80,7 +81,7 @@ void logisticalFuncionalTest() {
     delete log;
 }
 
-void complexFuncionalTest() {
+void complexFuncionalTest() { //Funcao para realizar testes complexos
     std::cout << "Executando Teste Complexo (Sistema Q)..." << std::endl;
 
     //Criação dos 5 sistemas soltos na memória
@@ -103,10 +104,12 @@ void complexFuncionalTest() {
     m->add(q1); m->add(q2); m->add(q3); m->add(q4); m->add(q5);
     m->add(f); m->add(g); m->add(r); m->add(t); m->add(u); m->add(v);
 
+    // m1 = m; (melhorar copia)
+
     //Executando a simulação por 100 iterações
     m->run(0, 100);
 
-    /// teste (imprime qual a precisao do 77.1143 em 10 casas)
+    // teste (imprime qual a precisao do 77.1143 em 10 casas)
     // std::cout << std::fixed << std::setprecision(10)
     //     << q3->getValue() << " diff "
     //     << std::fabs(q3->getValue() - 77.1143) << std::endl;
@@ -127,6 +130,9 @@ void complexFuncionalTest() {
     assert(round4(q4->getValue()) == 56.1728);
     assert(round4(q5->getValue()) == 16.4612);
 
+
+
+    
     std::cout << "Teste Complexo Passou!" << std::endl;
 
     //Limpeza manual da memóriaHeap para evitar vazamentos (Memory Leak)
