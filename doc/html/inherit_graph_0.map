@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_flow.html" title="Classe abstrata que representa um fluxo entre dois Systems." alt="" coords="5,55,55,80"/>
+<area shape="rect" id="Node000001" href="$class_exponencial_flow.html" title="Fluxo exponencial: transfere 1% do valor de source por passo." alt="" coords="103,5,223,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="68,51,128,30,124,34,71,55"/>
+<area shape="rect" id="Node000002" href="$class_flow_complex.html" title="Fluxo exponencial usado no modelo complexo do Sistema Q." alt="" coords="112,55,214,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="70,65,114,66,110,69,71,70"/>
+<area shape="rect" id="Node000003" href="$class_logistica_flow.html" title="Fluxo logístico com capacidade de suporte K=70 (equação de Verhulst)." alt="" coords="112,104,214,130"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="70,79,128,102,124,105,69,85"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="src/model.h" name="src/model.h">
+<area shape="rect" id="Node000001" title="Declaração da classe Model, coordenadora do modelo de simulação." alt="" coords="39,5,128,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="85,226,138,252"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,34,33,53,11,80,8,92,11,104,26,136,45,166,89,214,84,216,41,169,21,139,6,106,3,92,6,78,29,49,60,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="21,79,79,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,34,65,66,60,64,79,29"/>
+<area shape="rect" id="Node000004" href="$system_8h.html" title="Declaração da classe System (estoque/compartimento do simulador)." alt="" coords="74,153,149,178"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="87,29,109,137,103,137,84,33"/>
+<area shape="rect" id="Node000005" href="$flow_8h.html" title="Declaração da classe abstrata Flow (taxa de transferência entre Systems)." alt="" coords="154,79,208,105"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="100,29,155,69,150,71,100,34"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="113,177,114,212,109,209,110,181"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="181,103,177,140,163,180,136,217,133,213,158,177,171,139,178,107"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="171,103,135,143,132,140,167,107"/>
+</map>

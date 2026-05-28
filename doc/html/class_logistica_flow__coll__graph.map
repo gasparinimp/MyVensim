@@ -1,0 +1,7 @@
+<map id="LogisticaFlow" name="LogisticaFlow">
+<area shape="rect" id="Node000001" title="Fluxo logístico com capacidade de suporte K=70 (equação de Verhulst)." alt="" coords="5,197,107,223"/>
+<area shape="rect" id="Node000002" href="$class_flow.html" title="Classe abstrata que representa um fluxo entre dois Systems." alt="" coords="31,122,81,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,162,59,198,53,196,54,165"/>
+<area shape="rect" id="Node000003" href="$class_system.html" title="Representa um compartimento (stock) no modelo de simulação dinâmica." alt="" coords="23,5,89,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="57,44,59,122,53,122,55,49"/>
+</map>

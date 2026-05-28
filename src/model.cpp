@@ -11,7 +11,8 @@ Model::Model(const Model& mod) {
     this->name = mod.name;
     this->systems = mod.systems;
     this->flows = mod.flows;
-}
+} //melhorar contrutor de copia
+
 
 // Destrutor vazio
 Model::~Model() {}

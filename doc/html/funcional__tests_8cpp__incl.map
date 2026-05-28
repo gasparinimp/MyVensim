@@ -1,0 +1,29 @@
+<map id="test/funcional/funcional_tests.cpp" name="test/funcional/funcional_tests.cpp">
+<area shape="rect" id="Node000001" title="Implementação dos testes funcionais do simulador MyVensim." alt="" coords="226,5,381,46"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,94,77,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,49,93,93,90,88,239,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,94,158,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="258,49,171,90,168,85,262,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,94,248,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="280,48,241,85,237,82,283,45"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="272,94,336,120"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="305,44,306,79,301,77,302,49"/>
+<area shape="rect" id="Node000006" href="$funcional__tests_8h.html" title="Subclasses concretas de Flow e assinaturas dos testes funcionais." alt="" coords="360,94,480,120"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="333,44,392,85,387,85,332,49"/>
+<area shape="rect" id="Node000009" href="$system_8h.html" title="Declaração da classe System (estoque/compartimento do simulador)." alt="" coords="473,241,548,267"/>
+<area shape="poly" id="edge16_Node000001_Node000009" title=" " alt="" coords="381,33,412,41,443,53,470,70,494,92,511,125,519,161,520,196,517,227,513,224,515,196,514,161,506,127,490,96,467,74,440,58,411,46,382,38"/>
+<area shape="rect" id="Node000010" href="$model_8h.html" title="Declaração da classe Model, coordenadora do modelo de simulação." alt="" coords="555,94,668,120"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="381,44,552,89,547,91,381,49"/>
+<area shape="rect" id="Node000007" href="$flow_8h.html" title="Declaração da classe abstrata Flow (taxa de transferência entre Systems)." alt="" coords="379,168,479,193"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="423,118,428,153,423,151,420,122"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="405,119,387,137,372,155,364,174,365,183,369,192,386,211,409,226,460,246,455,246,406,231,383,215,364,195,359,184,359,173,368,152,384,133,400,122"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="484,315,537,341"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="434,192,446,227,463,266,491,304,486,303,459,268,441,229,431,196"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="444,191,488,231,483,231,442,196"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="512,265,512,301,508,297,508,269"/>
+<area shape="poly" id="edge15_Node000010_Node000007" title=" " alt="" coords="583,119,475,164,473,159,578,121"/>
+<area shape="poly" id="edge12_Node000010_Node000008" title=" " alt="" coords="611,118,596,185,581,227,562,268,534,306,531,301,557,266,576,225,590,184,607,122"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="606,119,529,231,526,226,601,121"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="656,168,714,193"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="625,117,665,157,659,156,623,122"/>
+</map>

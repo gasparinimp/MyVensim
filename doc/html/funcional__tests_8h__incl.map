@@ -1,0 +1,11 @@
+<map id="test/funcional/funcional_tests.h" name="test/funcional/funcional_tests.h">
+<area shape="rect" id="Node000001" title="Subclasses concretas de Flow e assinaturas dos testes funcionais." alt="" coords="22,5,177,46"/>
+<area shape="rect" id="Node000002" href="$flow_8h.html" title="Declaração da classe abstrata Flow (taxa de transferência entre Systems)." alt="" coords="5,94,106,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,49,72,81,67,79,90,44"/>
+<area shape="rect" id="Node000004" href="$system_8h.html" title="Declaração da classe System (estoque/compartimento do simulador)." alt="" coords="92,168,168,193"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="106,44,121,93,130,153,125,152,116,95,105,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="66,241,120,267"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,118,89,226,83,227,56,122"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="69,118,109,156,104,158,68,123"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="126,192,108,229,104,226,122,195"/>
+</map>
