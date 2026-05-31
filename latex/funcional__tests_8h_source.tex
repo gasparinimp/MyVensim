@@ -1,0 +1,65 @@
+\doxysection{funcional\+\_\+tests.\+h}
+\hypertarget{funcional__tests_8h_source}{}\label{funcional__tests_8h_source}\index{test/funcional/funcional\_tests.h@{test/funcional/funcional\_tests.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FUNCIONAL\_TESTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FUNCIONAL\_TESTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../../src/flow.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../src/system.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//Herança,\ exponencial\ herdando\ de\ flow}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classExponencialFlow}{ExponencialFlow}}\ :\ \textcolor{keyword}{public}\ Flow\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//Herdando\ os\ construtores\ de\ forma\ canonica\ do\ flow}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{using\ }Flow::Flow;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//Sobreescrita\ do\ metodo\ executa}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ execute()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pego\ a\ origem\ se\ for\ diferente\ de\ nulo}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getSource()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pego\ o\ valor\ atual\ e\ multiplico\ do\ 0.01}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.01\ *\ getSource()-\/>getValue();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//Herança,\ logistica\ herdando\ de\ flow}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classLogisticaFlow}{LogisticaFlow}}\ :\ \textcolor{keyword}{public}\ Flow\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//Herdando\ os\ construtores\ de\ forma\ canonica\ do\ flow}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{using\ }Flow::Flow;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//Sobreescrita\ do\ metodo\ executa}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ execute()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pego\ a\ origem\ se\ ela\ nao\ for\ nula}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getTarget()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Pego\ o\ valor\ atual}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ p2\ =\ getTarget()-\/>getValue();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Faço\ as\ contas\ pedidas\ pelo\ cliente}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.01\ *\ p2\ *\ (1.0\ -\/\ (p2\ /\ 70.0));}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classFlowComplex}{FlowComplex}}\ :\ \textcolor{keyword}{public}\ Flow\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{using\ }Flow::Flow;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{double}\ execute()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getSource()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.01\ *\ getSource()-\/>getValue();\ \textcolor{comment}{//\ Equação\ base\ do\ fluxo\ complexo}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//Assinatura\ das\ funcoes}}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ exponentialFuncionalTest();}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ logisticalFuncionalTest();}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ complexFuncionalTest();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

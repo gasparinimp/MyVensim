@@ -1,0 +1,44 @@
+\doxysection{flow.\+h}
+\hypertarget{flow_8h_source}{}\label{flow_8h_source}\index{src/flow.h@{src/flow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}system.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Flow\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//Atributos}}
+\DoxyCodeLine{00010\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00011\ \ \ \ \ \doxymbox{\hyperlink{classSystem}{System}}\ *source;}
+\DoxyCodeLine{00012\ \ \ \ \ \doxymbox{\hyperlink{classSystem}{System}}\ *target;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//Construtor\ vazio}}
+\DoxyCodeLine{00016\ \ \ \ \ Flow();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//Construtor\ de\ cópia}}
+\DoxyCodeLine{00018\ \ \ \ \ Flow(\textcolor{keyword}{const}\ Flow\ \&fl);\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Construtor\ com\ nome}}
+\DoxyCodeLine{00020\ \ \ \ \ Flow(std::string\ name);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//Destrutor\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Flow();\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//Sobrecarga\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00024\ \ \ \ \ Flow\ \&operator=(\textcolor{keyword}{const}\ Flow\ \&fl);\ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//Get\ e\ set\ de\ origem,\ destino\ e\ nome}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setSource(\doxymbox{\hyperlink{classSystem}{System}}\ *s);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setTarget(\doxymbox{\hyperlink{classSystem}{System}}\ *t);}
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{classSystem}{System}}\ *getSource()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \doxymbox{\hyperlink{classSystem}{System}}\ *getTarget()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setName(std::string\ name);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//Metodo\ virtual\ puro\ para\ que\ as\ subclasses\ façam}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ execute()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

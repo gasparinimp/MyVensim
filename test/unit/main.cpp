@@ -1,0 +1,28 @@
+#ifndef MAIN_UNIT_TESTS
+#define MAIN_UNIT_TESTS
+
+#include "unit_tests.h"
+#include "unit_System.h"
+#include "unit_Flow.h"
+#include "unit_Model.h"
+#include <iostream>
+
+int main() {
+    std::cout << " INICIANDO SUÍTE DE TESTES UNITÁRIOS   " << std::endl;
+
+    run_unit_tests_globals();
+    // Invoca a verificação da classe System
+    run_unit_tests_System();
+
+    // Invoca a verificação da classe Flow
+    run_unit_tests_Flow();
+
+    // Invoca a verificação da classe Model
+    run_unit_tests_Model();
+
+    std::cout << " TODOS OS TESTES PASSARAM COM SUCESSO! " << std::endl;
+
+    return 0;
+}
+
+#endif
