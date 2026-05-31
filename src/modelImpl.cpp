@@ -1,24 +1,28 @@
-#include "model.h"
+#include "modelImpl.h"
+#include "systemImpl.h"
 
 //Construtor vazio
-Model::Model() : name("") {}
+ModelImpl::ModelImpl() : name("") {}
 
 //Construtor com nome
-Model::Model(std::string name) : name(name) {}
+ModelImpl::ModelImpl(std::string name) : name(name) {}
 
 // Construtor de quando um modelo vai copiar o outro
-Model::Model(const Model& mod) {
+ModelImpl::ModelImpl(const ModelImpl& mod) {
     this->name = mod.name;
     this->systems = mod.systems;
     this->flows = mod.flows;
 } //melhorar contrutor de copia
 
 
-// Destrutor vazio
-Model::~Model() {}
+// Destrutor
+ModelImpl::~ModelImpl() {
+    systems.clear();
+    flows.clear();
+}
 
 //Sobre carga do operador
-Model& Model::operator=(const Model& mod) {
+ModelImpl& ModelImpl::operator=(const ModelImpl& mod) {
     if (this == &mod) {
         return *this;
     }
@@ -29,26 +33,28 @@ Model& Model::operator=(const Model& mod) {
 }
 
 // Get e set de nome
-std::string Model::getName() const { 
+std::string ModelImpl::getName() const { 
     return name; 
 }
 
-void Model::setName(std::string n) { 
+void ModelImpl::setName(std::string n) { 
     name = n; 
 }
 
 //Metodo para adicionar sistema ao vetor de sistemas
-void Model::add(System* s) {
+System* ModelImpl::criaSistema(std::string nome, double valorInicial) {
+    System* s = new SystemImpl(nome, valorInicial);
     systems.push_back(s);
+    return s;
 }
 
 //Metodo para adicionar fluxos do vetor de fluxos
-void Model::add(Flow* f) {
+void ModelImpl::add(Flow* f) {
     flows.push_back(f);
 }
 
 //Função run assincrona
-void Model::run(int t_initial, int t_end) {
+void ModelImpl::run(int t_initial, int t_end) {
     //Enquanto o tempo nao acabar
     for (int tempo = t_initial; tempo < t_end; ++tempo) {
         //Crio um vetor de resultados

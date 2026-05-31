@@ -1,0 +1,52 @@
+\doxysection{unit\+\_\+tests.\+h}
+\hypertarget{unit__tests_8h_source}{}\label{unit__tests_8h_source}\index{test/unit/unit\_tests.h@{test/unit/unit\_tests.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UNIT\_TESTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UNIT\_TESTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../../src/flow.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../src/system.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Subclasses\ locais\ para\ simular\ e\ testar\ os\ comportamentos\ de\ execute\ nos\ testes\ unitários}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classUnitExponentialFlow}{UnitExponentialFlow}}\ :\ \textcolor{keyword}{public}\ Flow\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{using\ }Flow::Flow;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{double}\ execute()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getSource()\ !=\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ 0.01\ *\ getSource()-\/>getValue();}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classUnitLogisticFlow}{UnitLogisticFlow}}\ :\ \textcolor{keyword}{public}\ Flow\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{using\ }Flow::Flow;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ execute()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getTarget()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ p2\ =\ getTarget()-\/>getValue();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.01\ *\ p2\ *\ (1.0\ -\/\ (p2\ /\ 70.0));}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ -\/-\/-\/\ Assinaturas\ dos\ Testes\ Unitários\ -\/-\/-\/}}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ testSystemDefaultConstructor();}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ testSystemParametrizedConstructor();}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ testSystemGetters();}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ testSystemSetters();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ testFlowGetters();}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ testFlowSetters();}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ testFlowExponentialExecute();}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ testFlowLogisticExecute();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ testModelGetters();}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ testModelSetters();}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ testModelAddSystem();}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ testModelAddFlow();}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ testModelRun();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

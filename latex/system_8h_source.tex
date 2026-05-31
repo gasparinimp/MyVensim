@@ -1,0 +1,37 @@
+\doxysection{system.\+h}
+\hypertarget{system_8h_source}{}\label{system_8h_source}\index{src/system.h@{src/system.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SYSTEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SYSTEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }System\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//Atributos}}
+\DoxyCodeLine{00009\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ value;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//Construtor\ vazio}}
+\DoxyCodeLine{00014\ \ \ \ \ System();\ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//Construtor\ normal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00016\ \ \ \ \ System(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{double}\ value);\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//Destrutor}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~System();\ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//Construtor\ de\ copiar\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00020\ \ \ \ \ System(\textcolor{keyword}{const}\ System\&\ other);\ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//Sobrecarga\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00022\ \ \ \ \ System\&\ operator=(\textcolor{keyword}{const}\ System\&\ other);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//Get\ e\ set\ dos\ atributos}}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ getName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ getValue()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setName(std::string\ name);}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

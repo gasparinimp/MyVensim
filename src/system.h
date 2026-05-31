@@ -3,29 +3,17 @@
 
 #include <string>
 
+//Em interfaces, a classe não tem atributos, apenas metodos virtuais puro e o destrutor
 class System {
-private:
-    //Atributos
-    std::string name;
-    double value;
-
 public:
-    //Construtor vazio
-    System();      
-    //Construtor normal                                 
-    System(const std::string& name, double value); 
     //Destrutor
-    virtual ~System();      
-    //Construtor de copiar                        
-    System(const System& other);  
-    //Sobrecarga                  
-    System& operator=(const System& other);         
+    virtual ~System() {};              
 
     //Get e set dos atributos
-    std::string getName() const;
-    double getValue() const;
-    void setValue(double value);
-    void setName(std::string name);
+    virtual std::string getName() const = 0;
+    virtual double getValue() const = 0;
+    virtual void setValue(double value) = 0;
+    virtual void setName(std::string name) = 0;
 };
 
 #endif

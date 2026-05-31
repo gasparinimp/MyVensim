@@ -1,13 +1,13 @@
-#include "flow.h"
+#include "flowImpl.h"
 
 // Construtor padrão em que inicializa tudo "vazio"
-Flow::Flow() : name(""), source(nullptr), target(nullptr) {}
+FlowImpl::FlowImpl() : name(""), source(nullptr), target(nullptr) {}
 
 // Construtor apenas com o nome
-Flow::Flow(std::string name) : name(name), source(nullptr), target(nullptr) {}
+FlowImpl::FlowImpl(std::string name) : name(name), source(nullptr), target(nullptr) {}
 
 // Construtor de quando um fluxo vai copiar o outro
-Flow::Flow(const Flow &fl) {
+FlowImpl::FlowImpl(const FlowImpl &fl) {
     this->name = fl.name;
     this->source = fl.source; 
     this->target = fl.target;
@@ -15,10 +15,10 @@ Flow::Flow(const Flow &fl) {
 
 // Destrutor
 //Como nada é criado nele, fica vazio
-Flow::~Flow() {}
+FlowImpl::~FlowImpl() {}
 
 // Sobrecarga do operador igual, para permitir recebimento direto
-Flow &Flow::operator=(const Flow &fl) {
+FlowImpl &FlowImpl::operator=(const FlowImpl &fl) {
     //Se o objeto for o mesmo que o atual, so retorna ele mesmo
     if (this == &fl) {
         return *this;
@@ -31,26 +31,26 @@ Flow &Flow::operator=(const Flow &fl) {
 }
 
 //Get e set de origem, destino e nome
-void Flow::setSource(System *s) {
+void FlowImpl::setSource(System *s) {
     source = s;
 }
 
-void Flow::setTarget(System *t) {
+void FlowImpl::setTarget(System *t) {
     target = t;
 }
 
-void Flow::setName(std::string n) {
+void FlowImpl::setName(std::string n) {
     name = n;
 }
 
-System *Flow::getSource() const {
+System *FlowImpl::getSource() const {
     return source;
 }
 
-System *Flow::getTarget() const {
+System *FlowImpl::getTarget() const {
     return target;
 }
 
-std::string Flow::getName() const {
+std::string FlowImpl::getName() const {
     return name;
 }

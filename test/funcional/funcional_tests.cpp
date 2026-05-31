@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <cassert>
 #include "funcional_tests.h"
-#include "../../src/model.h"
+#include "../../src/modelImpl.h"
 #include "../../src/system.h"
 
 //Metodo do teste funcional do exponencial
@@ -11,21 +11,13 @@ void exponentialFuncionalTest() { //Funcao para realizar os testes exponenciais
     std::cout << "Executando Teste Exponencial..." << std::endl;
 
     //Crio o modelo
-    Model* mod = new Model("Modelo Exponencial");
+    Model* mod = new ModelImpl("Modelo Exponencial");
     //Crio os sistemas
-    System* pop1 = new System("pop1", 100.0);
-    System* pop2 = new System("pop2", 0.0);
+    System* pop1 = mod->criaSistema("pop1", 100.0);
+    System* pop2 = mod->criaSistema("pop2", 0.0);
+
     //Crio o fluxo
-    ExponencialFlow* exp = new ExponencialFlow("Fluxo Exponencial");
-
-    //Defino o destino e origem
-    exp->setSource(pop1); //origem 
-    exp->setTarget(pop2); //destino
-
-    //Adiciono os sistemas e fluxo no modelo
-    mod->add(pop1);
-    mod->add(pop2);
-    mod->add(exp);
+    Flow* exp = mod->criaFluxo<ExponentialFlow>("Fluxo Exponencial", pop1, pop2);
 
     //Executo a simulação
     mod->run(0, 100);
@@ -49,20 +41,11 @@ void logisticalFuncionalTest() { //Funcao para realizar os testes logisticos
     std::cout << "Executando Teste Logistico..." << std::endl;
 
     //Crio o modelo e os sistemas
-    Model* mod = new Model("Modelo Logistico");
-    System* p1 = new System("p1", 100.0);
-    System* p2 = new System("p2", 10.0);
+    Model* mod = new ModelImpl("Modelo Logistico");
+    System* p1 = mod->criaSistema("p1", 100.0);
+    System* p2 = mod->criaSistema("p2", 10.0);
     //Crio o fluxo
-    LogisticaFlow* log = new LogisticaFlow("Fluxo Logistico");
-
-    //Defino o destino e origem
-    log->setSource(p1); //origem
-    log->setTarget(p2); //destino
-
-    //Adiciono sistemas e fluxo no modelo
-    mod->add(p1);
-    mod->add(p2);
-    mod->add(log);
+    Flow* log = mod->criaFluxo<LogisticalFlow>("Fluxo Logistico", p1, p2);
 
     //Executo a simulacao
     mod->run(0, 100);
@@ -84,54 +67,36 @@ void logisticalFuncionalTest() { //Funcao para realizar os testes logisticos
 void complexFuncionalTest() { //Funcao para realizar testes complexos
     std::cout << "Executando Teste Complexo (Sistema Q)..." << std::endl;
 
+    Model* m = new ModelImpl("Complex Model Q");
+
     //Criação dos 5 sistemas soltos na memória
-    System* q1 = new System("Q1", 100.0);
-    System* q2 = new System("Q2", 0.0);
-    System* q3 = new System("Q3", 100.0);
-    System* q4 = new System("Q4", 0.0);
-    System* q5 = new System("Q5", 0.0);
+    System* q1 = m->criaSistema("Q1", 100.0);
+    System* q2 = m->criaSistema("Q2", 0.0);
+    System* q3 = m->criaSistema("Q3", 100.0);
+    System* q4 = m->criaSistema("Q4", 0.0);
+    System* q5 = m->criaSistema("Q5", 0.0);
 
     //Criação e vinculação das 6 engrenagens de fluxos complexos
-    FlowComplex* f = new FlowComplex("f"); f->setSource(q1); f->setTarget(q2);
-    FlowComplex* g = new FlowComplex("g"); g->setSource(q1); g->setTarget(q3);
-    FlowComplex* r = new FlowComplex("r"); r->setSource(q2); r->setTarget(q5);
-    FlowComplex* t = new FlowComplex("t"); t->setSource(q2); t->setTarget(q3);
-    FlowComplex* u = new FlowComplex("u"); u->setSource(q3); u->setTarget(q4);
-    FlowComplex* v = new FlowComplex("v"); v->setSource(q4); v->setTarget(q1);
-
-    //Adicionando todos ao modelo por Agregação
-    Model* m = new Model("Complex Model Q");
-    m->add(q1); m->add(q2); m->add(q3); m->add(q4); m->add(q5);
-    m->add(f); m->add(g); m->add(r); m->add(t); m->add(u); m->add(v);
-
-    // m1 = m; (melhorar copia)
+    Flow* f = m->criaFluxo<ComplexFlow>("f", q1, q2);
+    Flow* g = m->criaFluxo<ComplexFlow>("g", q1, q3);
+    Flow* r = m->criaFluxo<ComplexFlow>("r", q2, q5);
+    Flow* t = m->criaFluxo<ComplexFlow>("t", q2, q3);
+    Flow* u = m->criaFluxo<ComplexFlow>("u", q3, q4);
+    Flow* v = m->criaFluxo<ComplexFlow>("v", q4, q1);
 
     //Executando a simulação por 100 iterações
     m->run(0, 100);
-
-    // teste (imprime qual a precisao do 77.1143 em 10 casas)
-    // std::cout << std::fixed << std::setprecision(10)
-    //     << q3->getValue() << " diff "
-    //     << std::fabs(q3->getValue() - 77.1143) << std::endl;
-
           
     //Validação de alta precisao (tive que colocar a funcao round4 para que o codigo pare de falhar quando muda a ultima casa decimal) 
     auto round4 = [](double v) {
         return std::round(v * 10000.0) / 10000.0;
     };
 
-    //verificacao do novo valor
-    // std::cout << std::fixed << std::setprecision(10)
-    //     << round4(q3->getValue());
-
     assert(round4(q1->getValue()) == 31.8513);
     assert(round4(q2->getValue()) == 18.4003);
     assert(round4(q3->getValue()) == 77.1143);
     assert(round4(q4->getValue()) == 56.1728);
     assert(round4(q5->getValue()) == 16.4612);
-
-
-
     
     std::cout << "Teste Complexo Passou!" << std::endl;
 

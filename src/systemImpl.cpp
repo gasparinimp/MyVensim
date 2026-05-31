@@ -1,25 +1,25 @@
-#include "system.h"
+#include "systemImpl.h"
 
 //Construtor vazio
-System::System() : name(""), value(0.0) {}
+SystemImpl::SystemImpl() : name(""), value(0.0) {}
 
 // Construtor normal
-System::System(const std::string& name, double value) {
+SystemImpl::SystemImpl(const std::string& name, double value) {
     this->name = name;
     this->value = value;
 }
 
 // Destrutor
-System::~System() {}
+SystemImpl::~SystemImpl() {}
 
 // Construtor de copia
-System::System(const System& other) {
+SystemImpl::SystemImpl(const SystemImpl& other) {
     this->name = other.name;
     this->value = other.value;
 }
 
 //Sobrecarga do operador
-System& System::operator=(const System& other) {
+SystemImpl& SystemImpl::operator=(const SystemImpl& other) {
     if (this == &other) { 
         return *this;
     }
@@ -29,18 +29,18 @@ System& System::operator=(const System& other) {
 }
 
 // Get e set dos atributos
-std::string System::getName() const {
+std::string SystemImpl::getName() const {
     return name;
 }
 
-double System::getValue() const {
+double SystemImpl::getValue() const {
     return value;
 }
 
-void System::setValue(double v) {
+void SystemImpl::setValue(double v) {
     this->value = v;
 }
 
-void System::setName(std::string n) {
+void SystemImpl::setName(std::string n) {
     this->name = n;
 }
