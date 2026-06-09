@@ -1,0 +1,203 @@
+\doxysection{Flow Class Reference}
+\hypertarget{classFlow}{}\label{classFlow}\index{Flow@{Flow}}
+
+
+Interface que representa um Fluxo de transferência no simulador.  
+
+
+
+
+{\ttfamily \+\#include $<$flow.\+h$>$}
+
+
+
+Inheritance diagram for Flow:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classFlow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classFlow_a325d284a50ca3274b126b21f5c39b9af}{\texorpdfstring{$\sim$}{\string~}\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da interface \doxylink{classFlow}{Flow}. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{classFlow_a4d756236982858350e7bf80a465926a7}{set\+Source}} (\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}s)=0
+\begin{DoxyCompactList}\small\item\em Define o sistema de origem do fluxo. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{classFlow_abacc363985e28905dcc10c9fab7c4328}{set\+Target}} (\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}t)=0
+\begin{DoxyCompactList}\small\item\em Define o sistema de destino do fluxo. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classFlow_abf0f3dbb285fe82e5ba6449de06b97c8}{get\+Source}} () const =0
+\begin{DoxyCompactList}\small\item\em Obtém o sistema de origem atual. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classFlow_afb9b8d93ea0fc81868b8e02dd382a787}{get\+Target}} () const =0
+\begin{DoxyCompactList}\small\item\em Obtém o sistema de destino atual. \end{DoxyCompactList}\item 
+virtual std::\+string \doxymbox{\hyperlink{classFlow_a2d0340d844ab2d275222938234e44169}{get\+Name}} () const =0
+\begin{DoxyCompactList}\small\item\em Obtém o nome do fluxo. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{classFlow_af83353015d9841e35c972625f450efe5}{set\+Name}} (std::\+string name)=0
+\begin{DoxyCompactList}\small\item\em Define um novo nome para o fluxo. \end{DoxyCompactList}\item 
+virtual double \doxymbox{\hyperlink{classFlow_a59a51b935f1e72373f6a94aa3ccaf981}{execute}} () const =0
+\begin{DoxyCompactList}\small\item\em Método virtual puro que executa a equação matemática do fluxo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface que representa um Fluxo de transferência no simulador. 
+
+\label{classFlow_doc-constructors}
+\Hypertarget{classFlow_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFlow_a325d284a50ca3274b126b21f5c39b9af}\index{Flow@{Flow}!````~Flow@{\texorpdfstring{$\sim$}{\string~}Flow}}
+\index{````~Flow@{\texorpdfstring{$\sim$}{\string~}Flow}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Flow()}{\string~Flow()}}
+{\footnotesize\ttfamily \label{classFlow_a325d284a50ca3274b126b21f5c39b9af} 
+virtual Flow::\+\texorpdfstring{$\sim$}{\string~}\+Flow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destrutor virtual da interface \doxylink{classFlow}{Flow}. 
+
+
+
+\label{classFlow_doc-func-members}
+\Hypertarget{classFlow_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFlow_a59a51b935f1e72373f6a94aa3ccaf981}\index{Flow@{Flow}!execute@{execute}}
+\index{execute@{execute}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classFlow_a59a51b935f1e72373f6a94aa3ccaf981} 
+virtual double Flow::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Método virtual puro que executa a equação matemática do fluxo. 
+
+\begin{DoxyReturn}{Returns}
+double correspondente ao valor calculado a ser transferido. 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classComplexFlow_ab7b3ebfbd410a0f20a9b7bac37fb7a32}{Complex\+Flow}}, \doxymbox{\hyperlink{classExponentialFlow_ae451be9e0da09332dc509ca9919e9062}{Exponential\+Flow}}, \doxymbox{\hyperlink{classFlowImpl_a534e8dac303d208568065ef9cbba5e40}{Flow\+Impl}}, \doxymbox{\hyperlink{classFlowMock_a39c78d6f4117de82330961abb71fb40e}{Flow\+Mock}}, \doxymbox{\hyperlink{classFlowMockModel_afeeed1f0190fa283cb01cd878ee95a62}{Flow\+Mock\+Model}}, and \doxymbox{\hyperlink{classLogisticalFlow_a64656e918fc50a68c762362be4dcd469}{Logistical\+Flow}}.
+
+\Hypertarget{classFlow_a2d0340d844ab2d275222938234e44169}\index{Flow@{Flow}!getName@{getName}}
+\index{getName@{getName}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{classFlow_a2d0340d844ab2d275222938234e44169} 
+virtual std::\+string Flow::\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Obtém o nome do fluxo. 
+
+\begin{DoxyReturn}{Returns}
+std::\+string contendo o nome do fluxo. 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classFlowImpl_aa6e5ff35bd2f7cc2b8eb8a6fa20ce464}{Flow\+Impl}}.
+
+\Hypertarget{classFlow_abf0f3dbb285fe82e5ba6449de06b97c8}\index{Flow@{Flow}!getSource@{getSource}}
+\index{getSource@{getSource}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily \label{classFlow_abf0f3dbb285fe82e5ba6449de06b97c8} 
+virtual \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*} Flow::\+get\+Source (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Obtém o sistema de origem atual. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para o sistema de origem (System\texorpdfstring{$\ast$}{*}). 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classFlowImpl_a06c8ffdcfd36b04ddad091d2c043f5d0}{Flow\+Impl}}.
+
+\Hypertarget{classFlow_afb9b8d93ea0fc81868b8e02dd382a787}\index{Flow@{Flow}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}}
+{\footnotesize\ttfamily \label{classFlow_afb9b8d93ea0fc81868b8e02dd382a787} 
+virtual \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*} Flow::\+get\+Target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Obtém o sistema de destino atual. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para o sistema de destino (System\texorpdfstring{$\ast$}{*}). 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classFlowImpl_adb35e3574470e91207c631fda3cdc9bd}{Flow\+Impl}}.
+
+\Hypertarget{classFlow_af83353015d9841e35c972625f450efe5}\index{Flow@{Flow}!setName@{setName}}
+\index{setName@{setName}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{classFlow_af83353015d9841e35c972625f450efe5} 
+virtual void Flow::\+set\+Name (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Define um novo nome para o fluxo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Novo nome (std::\+string) do fluxo. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \doxymbox{\hyperlink{classFlowImpl_a2d9d3b7f69c3ba97650a71b8c98baf68}{Flow\+Impl}}.
+
+\Hypertarget{classFlow_a4d756236982858350e7bf80a465926a7}\index{Flow@{Flow}!setSource@{setSource}}
+\index{setSource@{setSource}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{setSource()}{setSource()}}
+{\footnotesize\ttfamily \label{classFlow_a4d756236982858350e7bf80a465926a7} 
+virtual void Flow::\+set\+Source (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Define o sistema de origem do fluxo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Ponteiro para o sistema de origem (System\texorpdfstring{$\ast$}{*}). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \doxymbox{\hyperlink{classFlowImpl_a47bbb64941fde986da1198b4af443c16}{Flow\+Impl}}.
+
+\Hypertarget{classFlow_abacc363985e28905dcc10c9fab7c4328}\index{Flow@{Flow}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!Flow@{Flow}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily \label{classFlow_abacc363985e28905dcc10c9fab7c4328} 
+virtual void Flow::\+set\+Target (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Define o sistema de destino do fluxo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Ponteiro para o sistema de destino (System\texorpdfstring{$\ast$}{*}). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \doxymbox{\hyperlink{classFlowImpl_a48a3c5a8425ce7deb3ae041f46f07368}{Flow\+Impl}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+\doxymbox{\hyperlink{flow_8h}{flow.\+h}}\end{DoxyCompactItemize}

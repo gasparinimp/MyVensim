@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['setname_0',['setName',['../class_flow.html#aafb4bf7f22f0df6237aadb2deefdb34c',1,'Flow::setName()'],['../class_model.html#a833b855481cf748352c92db5e0192337',1,'Model::setName()'],['../class_system.html#a29dd9ba3320e94630a999f1334519692',1,'System::setName()']]],
-  ['setsource_1',['setSource',['../class_flow.html#a4da8089ed4e652c414180252d22c8516',1,'Flow']]],
-  ['settarget_2',['setTarget',['../class_flow.html#a6187a9f827d2c699fa2176b5bf0d05dd',1,'Flow']]],
-  ['setvalue_3',['setValue',['../class_system.html#a5343de0a45485edd88bc87f338fe9a19',1,'System']]],
-  ['system_4',['System',['../class_system.html#ae317936c9bcf1374d61745572e0f2f8a',1,'System::System()'],['../class_system.html#a31bb4e4a9207c45bdb8e8bc3d333cf42',1,'System::System(const std::string &amp;name, double value)'],['../class_system.html#ae95d7374f80fdfaee096e95c1abc438c',1,'System::System(const System &amp;other)']]]
+  ['setname_0',['setName',['../classFlow.html#af83353015d9841e35c972625f450efe5',1,'Flow::setName()'],['../classFlowImpl.html#a2d9d3b7f69c3ba97650a71b8c98baf68',1,'FlowImpl::setName()'],['../classModel.html#ab01f68499cf9c680d64d07c7160b4cf7',1,'Model::setName()'],['../classModelImpl.html#a4c11009a6eed8fabce6c6c3a584a53b8',1,'ModelImpl::setName()'],['../classSystem.html#a9da89282a416daa3ab0950a6f5760bdc',1,'System::setName()'],['../classSystemImpl.html#a2acbc548ef25167adaa25effec099432',1,'SystemImpl::setName()']]],
+  ['setsource_1',['setSource',['../classFlow.html#a4d756236982858350e7bf80a465926a7',1,'Flow::setSource()'],['../classFlowImpl.html#a47bbb64941fde986da1198b4af443c16',1,'FlowImpl::setSource()']]],
+  ['settarget_2',['setTarget',['../classFlow.html#abacc363985e28905dcc10c9fab7c4328',1,'Flow::setTarget()'],['../classFlowImpl.html#a48a3c5a8425ce7deb3ae041f46f07368',1,'FlowImpl::setTarget()']]],
+  ['setvalue_3',['setValue',['../classSystem.html#a7421d2e6970a0c4169a2febe254f2060',1,'System::setValue()'],['../classSystemImpl.html#a3ebff8dd869e1fab281375d5c2ef8362',1,'SystemImpl::setValue(double value) override']]],
+  ['systemimpl_4',['SystemImpl',['../classSystemImpl.html#a6e8460199ac54949b08ecb315fce168b',1,'SystemImpl::SystemImpl()'],['../classSystemImpl.html#aa3379656eb7ae9d6e2d47144bb173da7',1,'SystemImpl::SystemImpl(const std::string &amp;name, double value)'],['../classSystemImpl.html#a096bb204d8011d9cce315346050ec038',1,'SystemImpl::SystemImpl(const SystemImpl &amp;other)']]]
 ];

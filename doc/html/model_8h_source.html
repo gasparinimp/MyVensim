@@ -5,10 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MyVensim: src/model.h Source File</title>
+<title>Myvensim: src/model.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -27,9 +30,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MyVensim
+   <div id="projectname">Myvensim
    </div>
-   <div id="projectbrief">Sprint 3 - Bernardo F. e Maria P.</div>
   </td>
  </tr>
  </tbody>
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',false);
+  initMenu('',true);
   init_search();
 });
 </script>
@@ -75,6 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('model_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -96,77 +114,57 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">model.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MODEL_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MODEL_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="flow_8h.html">flow.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_model.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_model.html#a90fe59cc0709dd732cf5f180064db6fe">   28</a></span>    std::string <a class="code hl_variable" href="class_model.html#a90fe59cc0709dd732cf5f180064db6fe">name</a>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_model.html#a706374e5cb9ad9949996cfbd9538cead">   31</a></span>    std::vector&lt;System*&gt; <a class="code hl_variable" href="class_model.html#a706374e5cb9ad9949996cfbd9538cead">systems</a>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_model.html#a508721af4b8ed362217dff0c6732d8dc">   34</a></span>    std::vector&lt;Flow*&gt; <a class="code hl_variable" href="class_model.html#a508721af4b8ed362217dff0c6732d8dc">flows</a>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; mod);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>(std::string <a class="code hl_variable" href="class_model.html#a90fe59cc0709dd732cf5f180064db6fe">name</a>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_model.html#ad6ebd2062a0b823db841a0b88baac4c0">~Model</a>();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; <a class="code hl_function" href="class_model.html#a5cb799b0ae3e2d490d0c4e71c77a82da">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; mod);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#a054350312f72e04ef46fe5b14f987735">add</a>(<a class="code hl_class" href="class_system.html">System</a>* s);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#a054350312f72e04ef46fe5b14f987735">add</a>(<a class="code hl_class" href="class_flow.html">Flow</a>* f);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#aca6100aaf372b1b7ed4f3d77efe22a1d">run</a>(<span class="keywordtype">int</span> t_initial, <span class="keywordtype">int</span> t_end);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    std::string <a class="code hl_function" href="class_model.html#ad98a14258e1e21e529b8df8ac930dc3e">getName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#a833b855481cf748352c92db5e0192337">setName</a>(std::string <a class="code hl_variable" href="class_model.html#a90fe59cc0709dd732cf5f180064db6fe">name</a>);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+<a href="model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef MODEL_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define MODEL_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="flow_8h.html">flow.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classModel.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classModel.html">Model</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classModel.html#af032d8433c87a0a3a431faf6563a1f03">   24</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classModel.html#af032d8433c87a0a3a431faf6563a1f03">~Model</a>() {};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classModel.html#a1c57f13b17e1fd598fa7ebe1fa55a7df">   30</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classModel.html#a1c57f13b17e1fd598fa7ebe1fa55a7df">add</a>(<a class="code hl_class" href="classSystem.html">System</a> *s) = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classModel.html#ad248b54040ab38124af621cbc4c7c2e6">   36</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classModel.html#ad248b54040ab38124af621cbc4c7c2e6">add</a>(<a class="code hl_class" href="classFlow.html">Flow</a> *f) = 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classModel.html#a8fced9263616fdd102fa0cf54a51462e">   43</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classModel.html#a8fced9263616fdd102fa0cf54a51462e">run</a>(<span class="keywordtype">int</span> t_initial, <span class="keywordtype">int</span> t_end) = 0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classModel.html#a17e89ca8d15af46d074423a47d3c6802">   49</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="classModel.html#a17e89ca8d15af46d074423a47d3c6802">getName</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classModel.html#ab01f68499cf9c680d64d07c7160b4cf7">   55</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classModel.html#ab01f68499cf9c680d64d07c7160b4cf7">setName</a>(std::string name) = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_flow_html"><div class="ttname"><a href="class_flow.html">Flow</a></div><div class="ttdoc">Classe abstrata que representa um fluxo entre dois Systems.</div><div class="ttdef"><b>Definition</b> <a href="flow_8h_source.html#l00025">flow.h:25</a></div></div>
-<div class="ttc" id="aclass_model_html_a054350312f72e04ef46fe5b14f987735"><div class="ttname"><a href="class_model.html#a054350312f72e04ef46fe5b14f987735">Model::add</a></div><div class="ttdeci">void add(System *s)</div><div class="ttdoc">Registra um System no modelo.</div><div class="ttdef"><b>Definition</b> <a href="model_8cpp_source.html#l00092">model.cpp:92</a></div></div>
-<div class="ttc" id="aclass_model_html_a508721af4b8ed362217dff0c6732d8dc"><div class="ttname"><a href="class_model.html#a508721af4b8ed362217dff0c6732d8dc">Model::flows</a></div><div class="ttdeci">std::vector&lt; Flow * &gt; flows</div><div class="ttdoc">Conjunto de Flows registrados no modelo.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">model.h:34</a></div></div>
-<div class="ttc" id="aclass_model_html_a5cb799b0ae3e2d490d0c4e71c77a82da"><div class="ttname"><a href="class_model.html#a5cb799b0ae3e2d490d0c4e71c77a82da">Model::operator=</a></div><div class="ttdeci">Model &amp; operator=(const Model &amp;mod)</div><div class="ttdoc">Operador de atribuição.</div><div class="ttdef"><b>Definition</b> <a href="model_8cpp_source.html#l00057">model.cpp:57</a></div></div>
-<div class="ttc" id="aclass_model_html_a706374e5cb9ad9949996cfbd9538cead"><div class="ttname"><a href="class_model.html#a706374e5cb9ad9949996cfbd9538cead">Model::systems</a></div><div class="ttdeci">std::vector&lt; System * &gt; systems</div><div class="ttdoc">Conjunto de Systems registrados no modelo.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">model.h:31</a></div></div>
-<div class="ttc" id="aclass_model_html_a833b855481cf748352c92db5e0192337"><div class="ttname"><a href="class_model.html#a833b855481cf748352c92db5e0192337">Model::setName</a></div><div class="ttdeci">void setName(std::string name)</div><div class="ttdoc">Define o nome do modelo.</div><div class="ttdef"><b>Definition</b> <a href="model_8cpp_source.html#l00079">model.cpp:79</a></div></div>
-<div class="ttc" id="aclass_model_html_a90fe59cc0709dd732cf5f180064db6fe"><div class="ttname"><a href="class_model.html#a90fe59cc0709dd732cf5f180064db6fe">Model::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Nome identificador do modelo.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">model.h:28</a></div></div>
-<div class="ttc" id="aclass_model_html_aca6100aaf372b1b7ed4f3d77efe22a1d"><div class="ttname"><a href="class_model.html#aca6100aaf372b1b7ed4f3d77efe22a1d">Model::run</a></div><div class="ttdeci">void run(int t_initial, int t_end)</div><div class="ttdoc">Executa a simulação no intervalo [t_initial, t_end).</div><div class="ttdef"><b>Definition</b> <a href="model_8cpp_source.html#l00122">model.cpp:122</a></div></div>
-<div class="ttc" id="aclass_model_html_ad6ebd2062a0b823db841a0b88baac4c0"><div class="ttname"><a href="class_model.html#ad6ebd2062a0b823db841a0b88baac4c0">Model::~Model</a></div><div class="ttdeci">virtual ~Model()</div><div class="ttdoc">Destrutor virtual. Não libera os Systems e Flows registrados.</div><div class="ttdef"><b>Definition</b> <a href="model_8cpp_source.html#l00046">model.cpp:46</a></div></div>
-<div class="ttc" id="aclass_model_html_ad98a14258e1e21e529b8df8ac930dc3e"><div class="ttname"><a href="class_model.html#ad98a14258e1e21e529b8df8ac930dc3e">Model::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdoc">Retorna o nome do modelo.</div><div class="ttdef"><b>Definition</b> <a href="model_8cpp_source.html#l00071">model.cpp:71</a></div></div>
-<div class="ttc" id="aclass_model_html_ae3b375de5f6df4faf74a95d64748e048"><div class="ttname"><a href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model::Model</a></div><div class="ttdeci">Model()</div><div class="ttdoc">Construtor padrão. Inicializa o modelo com nome vazio.</div><div class="ttdef"><b>Definition</b> <a href="model_8cpp_source.html#l00014">model.cpp:14</a></div></div>
-<div class="ttc" id="aclass_system_html"><div class="ttname"><a href="class_system.html">System</a></div><div class="ttdoc">Representa um compartimento (stock) no modelo de simulação dinâmica.</div><div class="ttdef"><b>Definition</b> <a href="system_8h_source.html#l00022">system.h:22</a></div></div>
-<div class="ttc" id="aflow_8h_html"><div class="ttname"><a href="flow_8h.html">flow.h</a></div><div class="ttdoc">Declaração da classe abstrata Flow (taxa de transferência entre Systems).</div></div>
-<div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div><div class="ttdoc">Declaração da classe System (estoque/compartimento do simulador).</div></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassFlow_html"><div class="ttname"><a href="classFlow.html">Flow</a></div><div class="ttdoc">Interface que representa um Fluxo de transferência no simulador.</div><div class="ttdef"><b>Definition</b> flow.h:18</div></div>
+<div class="ttc" id="aclassModel_html"><div class="ttname"><a href="classModel.html">Model</a></div><div class="ttdoc">Interface que representa o Modelo de simulação.</div><div class="ttdef"><b>Definition</b> model.h:19</div></div>
+<div class="ttc" id="aclassModel_html_a17e89ca8d15af46d074423a47d3c6802"><div class="ttname"><a href="classModel.html#a17e89ca8d15af46d074423a47d3c6802">Model::getName</a></div><div class="ttdeci">virtual std::string getName() const =0</div><div class="ttdoc">Obtém o nome do modelo.</div></div>
+<div class="ttc" id="aclassModel_html_a1c57f13b17e1fd598fa7ebe1fa55a7df"><div class="ttname"><a href="classModel.html#a1c57f13b17e1fd598fa7ebe1fa55a7df">Model::add</a></div><div class="ttdeci">virtual void add(System *s)=0</div><div class="ttdoc">Adiciona um Sistema ao modelo.</div></div>
+<div class="ttc" id="aclassModel_html_a8fced9263616fdd102fa0cf54a51462e"><div class="ttname"><a href="classModel.html#a8fced9263616fdd102fa0cf54a51462e">Model::run</a></div><div class="ttdeci">virtual void run(int t_initial, int t_end)=0</div><div class="ttdoc">Executa a simulação do modelo dentro de um intervalo de tempo.</div></div>
+<div class="ttc" id="aclassModel_html_ab01f68499cf9c680d64d07c7160b4cf7"><div class="ttname"><a href="classModel.html#ab01f68499cf9c680d64d07c7160b4cf7">Model::setName</a></div><div class="ttdeci">virtual void setName(std::string name)=0</div><div class="ttdoc">Define um novo nome para o modelo.</div></div>
+<div class="ttc" id="aclassModel_html_ad248b54040ab38124af621cbc4c7c2e6"><div class="ttname"><a href="classModel.html#ad248b54040ab38124af621cbc4c7c2e6">Model::add</a></div><div class="ttdeci">virtual void add(Flow *f)=0</div><div class="ttdoc">Adiciona um Fluxo ao modelo.</div></div>
+<div class="ttc" id="aclassModel_html_af032d8433c87a0a3a431faf6563a1f03"><div class="ttname"><a href="classModel.html#af032d8433c87a0a3a431faf6563a1f03">Model::~Model</a></div><div class="ttdeci">virtual ~Model()</div><div class="ttdoc">Destrutor virtual da interface Model.</div><div class="ttdef"><b>Definition</b> model.h:24</div></div>
+<div class="ttc" id="aclassSystem_html"><div class="ttname"><a href="classSystem.html">System</a></div><div class="ttdoc">Interface que representa um Sistema no simulador.</div><div class="ttdef"><b>Definition</b> system.h:19</div></div>
+<div class="ttc" id="aflow_8h_html"><div class="ttname"><a href="flow_8h.html">flow.h</a></div><div class="ttdoc">Arquivo contendo a interface Flow.</div></div>
+<div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div><div class="ttdoc">Arquivo contendo a interface System.</div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="model_8h.html">model.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
 </body>
 </html>

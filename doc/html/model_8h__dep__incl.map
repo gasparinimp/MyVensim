@@ -1,9 +1,13 @@
 <map id="src/model.h" name="src/model.h">
-<area shape="rect" id="Node000001" title="Declaração da classe Model, coordenadora do modelo de simulação." alt="" coords="166,5,255,31"/>
-<area shape="rect" id="Node000002" href="$model_8cpp.html" title="Implementação da classe Model." alt="" coords="5,86,109,112"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,41,82,88,79,84,172,36"/>
-<area shape="rect" id="Node000003" href="$funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador MyVensim." alt="" coords="133,79,288,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,45,213,80,208,77,208,48"/>
-<area shape="rect" id="Node000004" href="$test_2funcional_2main_8cpp.html" title=" " alt="" coords="312,86,468,112"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,35,365,86,360,86,251,40"/>
+<area shape="rect" id="Node000001" title="Arquivo contendo a interface Model." alt="" coords="297,5,395,31"/>
+<area shape="rect" id="Node000002" href="$modelImpl_8h.html" title="Arquivo contendo a implementação concreta da interface Model." alt="" coords="196,79,323,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="323,41,275,81,272,76,320,37"/>
+<area shape="rect" id="Node000006" href="$test_2funcional_2main_8cpp.html" title=" " alt="" coords="347,79,521,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="372,37,421,76,418,81,369,41"/>
+<area shape="rect" id="Node000003" href="$modelImpl_8cpp.html" title=" " alt="" coords="5,159,148,185"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,112,104,162,102,157,219,107"/>
+<area shape="rect" id="Node000004" href="$funcional__tests_8cpp.html" title=" " alt="" coords="172,152,347,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="262,118,262,152,257,152,257,118"/>
+<area shape="rect" id="Node000005" href="$unit__Model_8cpp.html" title=" " alt="" coords="371,159,550,185"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="302,106,432,157,430,162,300,111"/>
 </map>

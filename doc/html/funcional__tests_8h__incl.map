@@ -1,11 +1,21 @@
 <map id="test/funcional/funcional_tests.h" name="test/funcional/funcional_tests.h">
-<area shape="rect" id="Node000001" title="Subclasses concretas de Flow e assinaturas dos testes funcionais." alt="" coords="22,5,177,46"/>
-<area shape="rect" id="Node000002" href="$flow_8h.html" title="Declaração da classe abstrata Flow (taxa de transferência entre Systems)." alt="" coords="5,94,106,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,49,72,81,67,79,90,44"/>
-<area shape="rect" id="Node000004" href="$system_8h.html" title="Declaração da classe System (estoque/compartimento do simulador)." alt="" coords="92,168,168,193"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="106,44,121,93,130,153,125,152,116,95,105,49"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="66,241,120,267"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,118,89,226,83,227,56,122"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="69,118,109,156,104,158,68,123"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="126,192,108,229,104,226,122,195"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="216,5,391,45"/>
+<area shape="rect" id="Node000002" href="$exponentialFlow_8h.html" title="Arquivo contendo a classe ExponentialFlow." alt="" coords="5,93,193,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,48,143,91,141,86,254,43"/>
+<area shape="rect" id="Node000007" href="$logisticalFlow_8h.html" title="Arquivo contendo a classe LogisticalFlow." alt="" coords="218,93,389,119"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="306,46,306,79,301,79,301,46"/>
+<area shape="rect" id="Node000008" href="$complexFlow_8h.html" title="Arquivo contendo a classe ComplexFlow para sistemas complexos." alt="" coords="413,93,580,119"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="351,43,457,86,455,91,349,48"/>
+<area shape="rect" id="Node000003" href="$flowImpl_8h.html" title="Arquivo contendo a implementação concreta da interface Flow." alt="" coords="258,167,349,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,116,258,160,257,165,131,121"/>
+<area shape="rect" id="Node000004" href="$flow_8h.html" title="Arquivo contendo a interface Flow." alt="" coords="235,240,295,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="299,194,280,229,275,227,295,191"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="235,387,294,412"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="310,191,319,218,327,256,329,298,320,340,308,361,292,379,288,375,304,358,316,338,323,298,321,256,314,220,305,193"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="251,268,230,288,214,314,212,331,217,347,240,376,236,379,212,349,207,331,209,312,226,285,247,264"/>
+<area shape="rect" id="Node000006" href="$system_8h.html" title="Arquivo contendo a interface System." alt="" coords="223,313,306,339"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="267,266,267,300,262,300,262,266"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="267,339,267,373,262,373,262,339"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="306,119,306,153,301,153,301,119"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="467,121,348,164,347,159,465,116"/>
 </map>

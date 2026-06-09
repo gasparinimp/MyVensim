@@ -1,10 +1,19 @@
 var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
-    [ "flow.cpp", "flow_8cpp.html", null ],
+    [ "complexFlow.cpp", "complexFlow_8cpp.html", null ],
+    [ "complexFlow.h", "complexFlow_8h.html", "complexFlow_8h" ],
+    [ "exponentialFlow.cpp", "exponentialFlow_8cpp.html", null ],
+    [ "exponentialFlow.h", "exponentialFlow_8h.html", "exponentialFlow_8h" ],
     [ "flow.h", "flow_8h.html", "flow_8h" ],
+    [ "flowImpl.cpp", "flowImpl_8cpp.html", null ],
+    [ "flowImpl.h", "flowImpl_8h.html", "flowImpl_8h" ],
+    [ "logisticalFlow.cpp", "logisticalFlow_8cpp.html", null ],
+    [ "logisticalFlow.h", "logisticalFlow_8h.html", "logisticalFlow_8h" ],
     [ "main.cpp", "src_2main_8cpp.html", null ],
-    [ "model.cpp", "model_8cpp.html", null ],
     [ "model.h", "model_8h.html", "model_8h" ],
-    [ "system.cpp", "system_8cpp.html", null ],
-    [ "system.h", "system_8h.html", "system_8h" ]
+    [ "modelImpl.cpp", "modelImpl_8cpp.html", null ],
+    [ "modelImpl.h", "modelImpl_8h.html", "modelImpl_8h" ],
+    [ "system.h", "system_8h.html", "system_8h" ],
+    [ "systemImpl.cpp", "systemImpl_8cpp.html", null ],
+    [ "systemImpl.h", "systemImpl_8h.html", "systemImpl_8h" ]
 ];

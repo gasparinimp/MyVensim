@@ -13,99 +13,106 @@ public:
     }
 };
 
-void unit_Flow_constructor(void) {
+void UnitFlow::unit_Flow_constructor(void) {
     // Teste do construtor vazio
-    Flow* f1 = new FlowMock();
-    assert(f1->getName() == "");
-    assert(f1->getSource() == nullptr);
-    assert(f1->getTarget() == nullptr);
-    delete f1;
-
-    // Teste do construtor com nome
-    Flow* f2 = new FlowMock("Fluxo A");
-    assert(f2->getName() == "Fluxo A");
-    delete f2;
+    FlowMock f1;
+    assert(f1.name == "");
+    assert(f1.source == nullptr);
+    assert(f1.target == nullptr);
 }
 
-void unit_Flow_destructor(void) {
-    Flow* f1 = new FlowMock("F1");
+void UnitFlow::unit_Flow_ParameterizedConstructor() {
+    //teste construtor parametrizado
+    FlowMock f2("Test Flow");
+    assert(f2.name == "Test Flow");
+    assert(f2.source == nullptr);
+    assert(f2.target == nullptr);
+}
+
+void UnitFlow::unit_Flow_CopyConstructor(){
+    FlowMock f2("Test Flow");
+    //teste construtor de cópia
+    SystemImpl s1("Source", 10.0);
+    SystemImpl s2("Target", 20.0);
+    f2.setSource(&s1);
+    f2.setTarget(&s2);
+    FlowMock f3(f2);
+    assert(f3.name == "Test Flow");
+    assert(f3.source == &s1);
+    assert(f3.target == &s2);
+}
+
+void UnitFlow::unit_Flow_Operator(){
+    FlowMock f2("Test Flow");
+    SystemImpl s1("Source", 10.0);
+    SystemImpl s2("Target", 20.0);
+    f2.setSource(&s1);
+    f2.setTarget(&s2);
+
+    //teste operador de atribuição
+    FlowMock f4;
+    f4 = f2;
+    assert(f4.name == "Test Flow");
+    assert(f4.source == &s1);
+    assert(f4.target == &s2);
+}
+
+void UnitFlow::unit_Flow_destructor(void) {
+    FlowMock* f1 = new FlowMock("F1");
     delete f1;
 }
 
-void unit_Flow_getName(void) {
-    Flow* f1 = new FlowMock("Fluxo B");
-    assert(f1->getName() == "Fluxo B");
-    delete f1;
+void UnitFlow::unit_Flow_getName(void) {
+    FlowMock f1("Fluxo B");
+    assert(f1.name == "Fluxo B");
 }
 
-void unit_Flow_setName(void) {
-    Flow* f1 = new FlowMock();
-    f1->setName("Novo Fluxo");
-    assert(f1->getName() == "Novo Fluxo");
-    delete f1;
+void UnitFlow::unit_Flow_setName(void) {
+    FlowMock f1;
+    f1.setName("Novo Fluxo");
+    assert(f1.name == "Novo Fluxo");
 }
 
-void unit_Flow_getSource(void) {
-    System* s1 = new SystemImpl("Origem", 100);
-    Flow* f1 = new FlowMock("F1");
-    
-    f1->setSource(s1);
-    assert(f1->getSource() == s1);
-    
-    delete f1;
-    delete s1;
+void UnitFlow::unit_Flow_getSource(void) {
+    FlowMock f1;
+    SystemImpl s("Sistema", 50.0);
+    f1.source = &s;
+    assert(f1.getSource() == &s);
 }
 
-void unit_Flow_setSource(void) {
-    System* s1 = new SystemImpl("Origem", 100);
-    Flow* f1 = new FlowMock("F1");
-    
-    f1->setSource(s1);
-    assert(f1->getSource()->getName() == "Origem");
-    
-    delete f1;
-    delete s1;
+void UnitFlow::unit_Flow_setSource(void) {
+    FlowMock f1;
+    SystemImpl s("Sistema", 50.0);
+    f1.setSource(&s);
+    assert(f1.source == &s);
 }
 
-void unit_Flow_getTarget(void) {
-    System* s2 = new SystemImpl("Destino", 50);
-    Flow* f1 = new FlowMock("F1");
-    
-    f1->setTarget(s2);
-    assert(f1->getTarget() == s2);
-    
-    delete f1;
-    delete s2;
+void UnitFlow::unit_Flow_getTarget(void) {
+    FlowMock f1;
+    SystemImpl s("Sistema", 50.0);
+    f1.target = &s;
+    assert(f1.getTarget() == &s);
 }
 
-void unit_Flow_setTarget(void) {
-    System* s2 = new SystemImpl("Destino", 50);
-    Flow* f1 = new FlowMock("F1");
-    
-    f1->setTarget(s2);
-    assert(f1->getTarget()->getName() == "Destino");
-    
-    delete f1;
-    delete s2;
-}
-
-void unit_Flow_execute(void) {
-    Flow* f1 = new FlowMock();
-    // Verifica se o mock está retornando o valor fixo corretamente
-    assert(f1->execute() == 10.0);
-    delete f1;
+void UnitFlow::unit_Flow_setTarget(void) {
+    FlowMock f1;
+    SystemImpl s("Sistema", 50.0);
+    f1.setTarget(&s);
+    assert(f1.target == &s);
 }
 
 void run_unit_tests_Flow(void) {
-    unit_Flow_constructor();
-    unit_Flow_destructor();
-    unit_Flow_getName();
-    unit_Flow_setName();
-    unit_Flow_getSource();
-    unit_Flow_setSource();
-    unit_Flow_getTarget();
-    unit_Flow_setTarget();
-    unit_Flow_execute();
+    UnitFlow::unit_Flow_constructor();
+    UnitFlow::unit_Flow_destructor();
+    UnitFlow::unit_Flow_ParameterizedConstructor();
+    UnitFlow::unit_Flow_CopyConstructor();
+    UnitFlow::unit_Flow_Operator();
+    UnitFlow::unit_Flow_getName();
+    UnitFlow::unit_Flow_setName();
+    UnitFlow::unit_Flow_getSource();
+    UnitFlow::unit_Flow_setSource();
+    UnitFlow::unit_Flow_getTarget();
+    UnitFlow::unit_Flow_setTarget();
     
     std::cout << "OK -> Todos os testes unitarios de Flow passaram!" << std::endl;
 }
