@@ -42,14 +42,13 @@ void ModelImpl::setName(std::string n) {
 }
 
 //Metodo para adicionar sistema ao vetor de sistemas
-System* ModelImpl::criaSistema(std::string nome, double valorInicial) {
-    System* s = new SystemImpl(nome, valorInicial);
+
+void ModelImpl::add(System *s){
     systems.push_back(s);
-    return s;
 }
 
 //Metodo para adicionar fluxos do vetor de fluxos
-void ModelImpl::add(Flow* f) {
+void ModelImpl::add(Flow *f){
     flows.push_back(f);
 }
 

@@ -1,10 +1,21 @@
 var hierarchy =
 [
-    [ "Flow", "class_flow.html", [
-      [ "ExponencialFlow", "class_exponencial_flow.html", null ],
-      [ "FlowComplex", "class_flow_complex.html", null ],
-      [ "LogisticaFlow", "class_logistica_flow.html", null ]
+    [ "Flow", "classFlow.html", [
+      [ "FlowImpl", "classFlowImpl.html", [
+        [ "ComplexFlow", "classComplexFlow.html", null ],
+        [ "ExponentialFlow", "classExponentialFlow.html", null ],
+        [ "FlowMock", "classFlowMock.html", null ],
+        [ "FlowMockModel", "classFlowMockModel.html", null ],
+        [ "LogisticalFlow", "classLogisticalFlow.html", null ]
+      ] ]
     ] ],
-    [ "Model", "class_model.html", null ],
-    [ "System", "class_system.html", null ]
+    [ "Model", "classModel.html", [
+      [ "ModelImpl", "classModelImpl.html", null ]
+    ] ],
+    [ "System", "classSystem.html", [
+      [ "SystemImpl", "classSystemImpl.html", null ]
+    ] ],
+    [ "UnitFlow", "classUnitFlow.html", null ],
+    [ "UnitModel", "classUnitModel.html", null ],
+    [ "UnitSystem", "classUnitSystem.html", null ]
 ];

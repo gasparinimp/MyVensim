@@ -1,0 +1,7 @@
+<map id="LogisticalFlow" name="LogisticalFlow">
+<area shape="rect" id="Node000001" title="Classe que implementa um fluxo com equação Logística." alt="" coords="5,632,148,757"/>
+<area shape="rect" id="Node000002" href="$classFlowImpl.html" title="Classe concreta que implementa a interface Flow." alt="" coords="22,259,131,584"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,598,79,632,74,632,74,598"/>
+<area shape="rect" id="Node000003" href="$classFlow.html" title="Interface que representa um Fluxo de transferência no simulador." alt="" coords="25,5,129,211"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,224,79,258,74,258,74,224"/>
+</map>

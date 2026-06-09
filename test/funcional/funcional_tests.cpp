@@ -4,6 +4,7 @@
 #include <cassert>
 #include "funcional_tests.h"
 #include "../../src/modelImpl.h"
+#include "../../src/systemImpl.h"
 #include "../../src/system.h"
 
 //Metodo do teste funcional do exponencial
@@ -13,11 +14,17 @@ void exponentialFuncionalTest() { //Funcao para realizar os testes exponenciais
     //Crio o modelo
     Model* mod = new ModelImpl("Modelo Exponencial");
     //Crio os sistemas
-    System* pop1 = mod->criaSistema("pop1", 100.0);
-    System* pop2 = mod->criaSistema("pop2", 0.0);
+    System* pop1 = new SystemImpl("pop1", 100.0);
+    System* pop2 = new SystemImpl("pop2", 0.0);
 
     //Crio o fluxo
-    Flow* exp = mod->criaFluxo<ExponentialFlow>("Fluxo Exponencial", pop1, pop2);
+    ExponentialFlow *f = new ExponentialFlow("exponencial");
+    f->setSource(pop1);
+    f->setTarget(pop2);
+
+    mod->add(pop1);
+    mod->add(pop2);
+    mod->add(f);
 
     //Executo a simulação
     mod->run(0, 100);
@@ -33,7 +40,7 @@ void exponentialFuncionalTest() { //Funcao para realizar os testes exponenciais
     delete mod;
     delete pop1;
     delete pop2;
-    delete exp;
+    delete f;
 }
 
 //Metodo do teste funcional do logistico
@@ -42,10 +49,17 @@ void logisticalFuncionalTest() { //Funcao para realizar os testes logisticos
 
     //Crio o modelo e os sistemas
     Model* mod = new ModelImpl("Modelo Logistico");
-    System* p1 = mod->criaSistema("p1", 100.0);
-    System* p2 = mod->criaSistema("p2", 10.0);
+    System* p1 = new SystemImpl("p1", 100.0);
+    System* p2 = new SystemImpl("p2", 10.0);
     //Crio o fluxo
-    Flow* log = mod->criaFluxo<LogisticalFlow>("Fluxo Logistico", p1, p2);
+    LogisticalFlow *log = new LogisticalFlow("logistical");
+
+    log->setSource(p1);
+    log->setTarget(p2);
+
+    mod->add(p1);
+    mod->add(p2);
+    mod->add(log);
 
     //Executo a simulacao
     mod->run(0, 100);
@@ -70,21 +84,44 @@ void complexFuncionalTest() { //Funcao para realizar testes complexos
     Model* m = new ModelImpl("Complex Model Q");
 
     //Criação dos 5 sistemas soltos na memória
-    System* q1 = m->criaSistema("Q1", 100.0);
-    System* q2 = m->criaSistema("Q2", 0.0);
-    System* q3 = m->criaSistema("Q3", 100.0);
-    System* q4 = m->criaSistema("Q4", 0.0);
-    System* q5 = m->criaSistema("Q5", 0.0);
+    System* q1 = new SystemImpl("Q1", 100.0);
+    System* q2 = new SystemImpl("Q2", 0.0);
+    System* q3 = new SystemImpl("Q3", 100.0);
+    System* q4 = new SystemImpl("Q4", 0.0);
+    System* q5 = new SystemImpl("Q5", 0.0);
 
     //Criação e vinculação das 6 engrenagens de fluxos complexos
-    Flow* f = m->criaFluxo<ComplexFlow>("f", q1, q2);
-    Flow* g = m->criaFluxo<ComplexFlow>("g", q1, q3);
-    Flow* r = m->criaFluxo<ComplexFlow>("r", q2, q5);
-    Flow* t = m->criaFluxo<ComplexFlow>("t", q2, q3);
-    Flow* u = m->criaFluxo<ComplexFlow>("u", q3, q4);
-    Flow* v = m->criaFluxo<ComplexFlow>("v", q4, q1);
+    ComplexFlow *f = new ComplexFlow("f");
+    f->setSource(q1);
+    f->setTarget(q2);
+    ComplexFlow *g = new ComplexFlow("g");
+    g->setSource(q1);
+    g->setTarget(q3);
+    ComplexFlow *r = new ComplexFlow("r");
+    r->setSource(q2);
+    r->setTarget(q5);
+    ComplexFlow *t = new ComplexFlow("t");
+    t->setSource(q2);
+    t->setTarget(q3);
+    ComplexFlow *u = new ComplexFlow("u");
+    u->setSource(q3);
+    u->setTarget(q4);
+    ComplexFlow *v = new ComplexFlow("v");
+    v->setSource(q4);
+    v->setTarget(q1);
 
     //Executando a simulação por 100 iterações
+    m->add(q1);
+    m->add(q2);
+    m->add(q3);
+    m->add(q4);
+    m->add(q5);
+    m->add(f);
+    m->add(g);
+    m->add(r);
+    m->add(t);
+    m->add(u);
+    m->add(v);
     m->run(0, 100);
           
     //Validação de alta precisao (tive que colocar a funcao round4 para que o codigo pare de falhar quando muda a ultima casa decimal) 

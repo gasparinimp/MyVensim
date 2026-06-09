@@ -5,10 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MyVensim: src/model.h File Reference</title>
+<title>Myvensim: src/model.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -27,9 +30,8 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MyVensim
+   <div id="projectname">Myvensim
    </div>
-   <div id="projectbrief">Sprint 3 - Bernardo F. e Maria P.</div>
   </td>
  </tr>
  </tbody>
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
-  initMenu('',false);
+  initMenu('',true);
   init_search();
 });
 </script>
@@ -75,6 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('model_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -96,23 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">model.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Declaração da classe <a class="el" href="class_model.html" title="Coordena Systems e Flows e executa a simulação dinâmica.">Model</a>, coordenadora do modelo de simulação.  
+<p>Arquivo contendo a interface <a class="el" href="classModel.html" title="Interface que representa o Modelo de simulação.">Model</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="flow_8h_source.html">flow.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -120,18 +129,16 @@ Include dependency graph for model.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="model_8h__incl.png" border="0" usemap="#asrc_2model_8h" loading="lazy" alt=""/></div>
 <map name="asrc_2model_8h" id="asrc_2model_8h">
-<area shape="rect" title="Declaração da classe Model, coordenadora do modelo de simulação." alt="" coords="39,5,128,31"/>
-<area shape="rect" title=" " alt="" coords="85,226,138,252"/>
-<area shape="poly" title=" " alt="" coords="57,34,33,53,11,80,8,92,11,104,26,136,45,166,89,214,84,216,41,169,21,139,6,106,3,92,6,78,29,49,60,29"/>
-<area shape="rect" title=" " alt="" coords="21,79,79,105"/>
-<area shape="poly" title=" " alt="" coords="77,34,65,66,60,64,79,29"/>
-<area shape="rect" href="system_8h.html" title="Declaração da classe System (estoque/compartimento do simulador)." alt="" coords="74,153,149,178"/>
-<area shape="poly" title=" " alt="" coords="87,29,109,137,103,137,84,33"/>
-<area shape="rect" href="flow_8h.html" title="Declaração da classe abstrata Flow (taxa de transferência entre Systems)." alt="" coords="154,79,208,105"/>
-<area shape="poly" title=" " alt="" coords="100,29,155,69,150,71,100,34"/>
-<area shape="poly" title=" " alt="" coords="113,177,114,212,109,209,110,181"/>
-<area shape="poly" title=" " alt="" coords="181,103,177,140,163,180,136,217,133,213,158,177,171,139,178,107"/>
-<area shape="poly" title=" " alt="" coords="171,103,135,143,132,140,167,107"/>
+<area shape="rect" title="Arquivo contendo a interface Model." alt="" coords="5,5,104,31"/>
+<area shape="rect" title=" " alt="" coords="40,225,99,251"/>
+<area shape="poly" title=" " alt="" coords="50,32,35,58,21,95,13,136,13,157,18,176,30,197,46,214,42,218,26,200,14,178,8,157,7,136,15,93,30,56,45,29"/>
+<area shape="rect" href="system_8h.html" title="Arquivo contendo a interface System." alt="" coords="28,152,111,177"/>
+<area shape="poly" title=" " alt="" coords="59,31,69,138,64,139,53,31"/>
+<area shape="rect" href="flow_8h.html" title="Arquivo contendo a interface Flow." alt="" coords="93,79,153,104"/>
+<area shape="poly" title=" " alt="" coords="68,29,104,67,100,70,64,33"/>
+<area shape="poly" title=" " alt="" coords="72,178,72,212,67,212,67,178"/>
+<area shape="poly" title=" " alt="" coords="128,104,131,138,130,158,125,178,113,200,97,218,93,214,109,197,120,176,125,157,126,138,123,104"/>
+<area shape="poly" title=" " alt="" coords="116,106,88,143,84,140,112,103"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -139,13 +146,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="model_8h__dep__incl.png" border="0" usemap="#asrc_2model_8hdep" loading="lazy" alt=""/></div>
 <map name="asrc_2model_8hdep" id="asrc_2model_8hdep">
-<area shape="rect" title="Declaração da classe Model, coordenadora do modelo de simulação." alt="" coords="166,5,255,31"/>
-<area shape="rect" href="model_8cpp.html" title="Implementação da classe Model." alt="" coords="5,86,109,112"/>
-<area shape="poly" title=" " alt="" coords="175,41,82,88,79,84,172,36"/>
-<area shape="rect" href="funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador MyVensim." alt="" coords="133,79,288,120"/>
-<area shape="poly" title=" " alt="" coords="212,45,213,80,208,77,208,48"/>
-<area shape="rect" href="test_2funcional_2main_8cpp.html" title=" " alt="" coords="312,86,468,112"/>
-<area shape="poly" title=" " alt="" coords="252,35,365,86,360,86,251,40"/>
+<area shape="rect" title="Arquivo contendo a interface Model." alt="" coords="297,5,395,31"/>
+<area shape="rect" href="modelImpl_8h.html" title="Arquivo contendo a implementação concreta da interface Model." alt="" coords="196,79,323,104"/>
+<area shape="poly" title=" " alt="" coords="323,41,275,81,272,76,320,37"/>
+<area shape="rect" href="test_2funcional_2main_8cpp.html" title=" " alt="" coords="347,79,521,104"/>
+<area shape="poly" title=" " alt="" coords="372,37,421,76,418,81,369,41"/>
+<area shape="rect" href="modelImpl_8cpp.html" title=" " alt="" coords="5,159,148,185"/>
+<area shape="poly" title=" " alt="" coords="221,112,104,162,102,157,219,107"/>
+<area shape="rect" href="funcional__tests_8cpp.html" title=" " alt="" coords="172,152,347,192"/>
+<area shape="poly" title=" " alt="" coords="262,118,262,152,257,152,257,118"/>
+<area shape="rect" href="unit__Model_8cpp.html" title=" " alt="" coords="371,159,550,185"/>
+<area shape="poly" title=" " alt="" coords="302,106,432,157,430,162,300,111"/>
 </map>
 </div>
 </div>
@@ -153,18 +164,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:Model" id="r_Model"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_model.html">Model</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordena Systems e Flows e executa a simulação dinâmica.  <a href="class_model.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Model" id="r_Model"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classModel.html">Model</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface que representa o Modelo de simulação.  <a href="classModel.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaração da classe <a class="el" href="class_model.html" title="Coordena Systems e Flows e executa a simulação dinâmica.">Model</a>, coordenadora do modelo de simulação. </p>
-
-<p class="definition">Definition in file <a class="el" href="model_8h_source.html">model.h</a>.</p>
+<div class="textblock"><p>Arquivo contendo a interface <a class="el" href="classModel.html" title="Interface que representa o Modelo de simulação.">Model</a>. </p>
+<ul>
+<li>Define o contrato para o Modelo, que atua como o orquestrador principal, armazenando e gerenciando todos os Sistemas e Fluxos da simulação. </li>
+</ul>
 </div></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="model_8h.html">model.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
 </body>
 </html>
