@@ -1,6 +1,5 @@
 #include "funcional_tests.h"
-#include "../../src/modelImpl.h"
-#include "../../src/systemImpl.h"
+#include "../../src/model.h"
 #include "../../src/exponentialFlow.h"
 #include "../../src/logisticalFlow.h"
 #include "../../src/complexFlow.h"
@@ -26,7 +25,7 @@ void exponentialFuncionalTest() {
 
     std::cout << "Teste Exponencial Passou!" << std::endl;
 
-    Model::deleteModel("Exponencial Model");
+    Model::deleteModel("Modelo Exponencial");
 }
 
 void logisticalFuncionalTest() { 
@@ -45,7 +44,7 @@ void logisticalFuncionalTest() {
 
     std::cout << "Teste Logistico Passou!" << std::endl;
 
-    Model::deleteModel("Logistical Model");
+    Model::deleteModel("Modelo Logistico");
 }
 
 void complexFuncionalTest() { 
@@ -75,5 +74,5 @@ void complexFuncionalTest() {
 
     std::cout << "Teste Complexo Passou!" << std::endl;
 
-    delete mod;
+    Model::deleteModel("Modelo Complexo");
 }

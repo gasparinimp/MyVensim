@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['unitflow_0',['UnitFlow',['../classFlowImpl.html#a721d5d04f522e83ced8e0b615c21fcda',1,'FlowImpl']]],
-  ['unitmodel_1',['UnitModel',['../classFlowImpl.html#acfe6145ac71b7c6b9065c61d09de0131',1,'FlowImpl::UnitModel()'],['../classModelImpl.html#acfe6145ac71b7c6b9065c61d09de0131',1,'ModelImpl::UnitModel()'],['../classSystemImpl.html#acfe6145ac71b7c6b9065c61d09de0131',1,'SystemImpl::UnitModel']]],
-  ['unitsystem_2',['UnitSystem',['../classSystemImpl.html#a6682d04f47a9097422c08f54782ffaab',1,'SystemImpl']]]
+  ['model_0',['Model',['../class_model_impl.html#a2bf2a0e9b454c55aa5dcb5aa4698697b',1,'ModelImpl']]],
+  ['modelimpl_1',['ModelImpl',['../class_system_impl.html#afb81d2077780e342b8fd3654cabc4c19',1,'SystemImpl']]]
 ];

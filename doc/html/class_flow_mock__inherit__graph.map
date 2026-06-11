@@ -1,0 +1,7 @@
+<map id="FlowMock" name="FlowMock">
+<area shape="rect" id="Node000001" title=" " alt="" coords="9,641,94,768"/>
+<area shape="rect" id="Node000002" href="$class_flow_impl.html" title="Classe concreta que implementa a interface Flow." alt="" coords="5,262,98,593"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,605,54,642,49,641,51,610"/>
+<area shape="rect" id="Node000003" href="$class_flow.html" title="Interface que representa um Fluxo de transferência no simulador." alt="" coords="6,5,97,214"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="52,226,54,262,49,262,52,232"/>
+</map>

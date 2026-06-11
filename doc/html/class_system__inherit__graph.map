@@ -1,0 +1,5 @@
+<map id="System" name="System">
+<area shape="rect" id="Node000001" title="Interface que representa um Sistema no simulador." alt="" coords="18,5,103,153"/>
+<area shape="rect" id="Node000002" href="$class_system_impl.html" title="Classe concreta que implementa a interface System." alt="" coords="5,201,115,450"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,165,63,202,58,201,60,171"/>
+</map>

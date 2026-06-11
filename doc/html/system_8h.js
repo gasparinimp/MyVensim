@@ -1,4 +1,4 @@
 var system_8h =
 [
-    [ "System", "classSystem.html", "classSystem" ]
+    [ "System", "class_system.html", "class_system" ]
 ];

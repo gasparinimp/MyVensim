@@ -1,4 +1,4 @@
 var model_8h =
 [
-    [ "Model", "classModel.html", "classModel" ]
+    [ "Model", "class_model.html", "class_model" ]
 ];

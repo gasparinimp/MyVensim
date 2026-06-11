@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['execute_0',['execute',['../classComplexFlow.html#ab7b3ebfbd410a0f20a9b7bac37fb7a32',1,'ComplexFlow::execute()'],['../classExponentialFlow.html#ae451be9e0da09332dc509ca9919e9062',1,'ExponentialFlow::execute()'],['../classFlow.html#a59a51b935f1e72373f6a94aa3ccaf981',1,'Flow::execute()'],['../classFlowImpl.html#a534e8dac303d208568065ef9cbba5e40',1,'FlowImpl::execute()'],['../classLogisticalFlow.html#a64656e918fc50a68c762362be4dcd469',1,'LogisticalFlow::execute()'],['../classFlowMock.html#a39c78d6f4117de82330961abb71fb40e',1,'FlowMock::execute()'],['../classFlowMockModel.html#afeeed1f0190fa283cb01cd878ee95a62',1,'FlowMockModel::execute()']]],
-  ['exponentialflow_1',['ExponentialFlow',['../classExponentialFlow.html#a1f981db78e6635fd9837648960d8dc8d',1,'ExponentialFlow::ExponentialFlow()'],['../classExponentialFlow.html#a811318788132120f1e40b175dfef49d5',1,'ExponentialFlow::ExponentialFlow(std::string name)']]],
-  ['exponentialfuncionaltest_2',['exponentialFuncionalTest',['../funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27',1,'exponentialFuncionalTest():&#160;funcional_tests.cpp'],['../funcional__tests_8h.html#a2c448ffaffdff4b03c825a01dffa6f27',1,'exponentialFuncionalTest():&#160;funcional_tests.cpp']]]
+  ['deleteflow_0',['deleteFlow',['../class_model.html#a6861382c7bc53f745ed3f8fd83ea0bba',1,'Model::deleteFlow()'],['../class_model_impl.html#ad26cf817b11de5a9d40bf826c004744e',1,'ModelImpl::deleteFlow()']]],
+  ['deletemodel_1',['deleteModel',['../class_model.html#aceca7cbc17c9a465845b4173ff670570',1,'Model']]],
+  ['deletesystem_2',['deleteSystem',['../class_model.html#a4500fe8eb178caffac2ba97e44d024bc',1,'Model::deleteSystem()'],['../class_model_impl.html#ae9c10f86b57bd026d683f62031237e4b',1,'ModelImpl::deleteSystem()']]]
 ];

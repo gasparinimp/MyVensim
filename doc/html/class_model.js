@@ -1,16 +1,13 @@
 var class_model =
 [
-    [ "Model", "class_model.html#ae3b375de5f6df4faf74a95d64748e048", null ],
-    [ "Model", "class_model.html#aaf8e95755a9f516418b3c64926b0025c", null ],
-    [ "Model", "class_model.html#abfac43ac5b57077d0456b29b2f0b1045", null ],
-    [ "~Model", "class_model.html#ad6ebd2062a0b823db841a0b88baac4c0", null ],
-    [ "add", "class_model.html#a237ff1636694a6e26ff280c8d122540e", null ],
-    [ "add", "class_model.html#a054350312f72e04ef46fe5b14f987735", null ],
-    [ "getName", "class_model.html#ad98a14258e1e21e529b8df8ac930dc3e", null ],
-    [ "operator=", "class_model.html#a5cb799b0ae3e2d490d0c4e71c77a82da", null ],
-    [ "run", "class_model.html#aca6100aaf372b1b7ed4f3d77efe22a1d", null ],
-    [ "setName", "class_model.html#a833b855481cf748352c92db5e0192337", null ],
-    [ "flows", "class_model.html#a508721af4b8ed362217dff0c6732d8dc", null ],
-    [ "name", "class_model.html#a90fe59cc0709dd732cf5f180064db6fe", null ],
-    [ "systems", "class_model.html#a706374e5cb9ad9949996cfbd9538cead", null ]
+    [ "~Model", "class_model.html#af032d8433c87a0a3a431faf6563a1f03", null ],
+    [ "add", "class_model.html#ad248b54040ab38124af621cbc4c7c2e6", null ],
+    [ "add", "class_model.html#a1c57f13b17e1fd598fa7ebe1fa55a7df", null ],
+    [ "createFlow", "class_model.html#abbede8db85ad924b3299a0eabae2af0e", null ],
+    [ "createSystem", "class_model.html#afb83fc80a9aa5fb9ade329a726d65277", null ],
+    [ "deleteFlow", "class_model.html#a6861382c7bc53f745ed3f8fd83ea0bba", null ],
+    [ "deleteSystem", "class_model.html#a4500fe8eb178caffac2ba97e44d024bc", null ],
+    [ "getName", "class_model.html#a17e89ca8d15af46d074423a47d3c6802", null ],
+    [ "run", "class_model.html#a8fced9263616fdd102fa0cf54a51462e", null ],
+    [ "setName", "class_model.html#ab01f68499cf9c680d64d07c7160b4cf7", null ]
 ];

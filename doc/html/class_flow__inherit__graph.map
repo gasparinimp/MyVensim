@@ -1,9 +1,13 @@
 <map id="Flow" name="Flow">
-<area shape="rect" id="Node000001" title="Classe abstrata que representa um fluxo entre dois Systems." alt="" coords="176,5,225,31"/>
-<area shape="rect" id="Node000002" href="$class_exponencial_flow.html" title="Fluxo exponencial: transfere 1% do valor de source por passo." alt="" coords="5,79,126,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,39,90,81,87,76,161,38"/>
-<area shape="rect" id="Node000003" href="$class_flow_complex.html" title="Fluxo exponencial usado no modelo complexo do Sistema Q." alt="" coords="150,79,251,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,45,202,80,198,77,198,48"/>
-<area shape="rect" id="Node000004" href="$class_logistica_flow.html" title="Fluxo logístico com capacidade de suporte K=70 (equação de Verhulst)." alt="" coords="275,79,376,105"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="235,36,307,78,301,78,234,41"/>
+<area shape="rect" id="Node000001" title="Interface que representa um Fluxo de transferência no simulador." alt="" coords="238,5,330,214"/>
+<area shape="rect" id="Node000002" href="$class_flow_impl.html" title="Classe concreta que implementa a interface Flow." alt="" coords="238,262,330,593"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,226,287,263,281,262,283,232"/>
+<area shape="rect" id="Node000003" href="$class_complex_flow.html" title="Classe que implementa um fluxo genérico para o Teste Complexo." alt="" coords="5,641,125,768"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,500,117,643,113,639,226,497"/>
+<area shape="rect" id="Node000004" href="$class_exponential_flow.html" title="Classe que implementa um fluxo com equação Exponencial." alt="" coords="149,641,285,768"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="242,605,235,643,230,640,239,609"/>
+<area shape="rect" id="Node000005" href="$class_flow_mock.html" title=" " alt="" coords="310,641,394,768"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="330,605,339,642,334,640,327,610"/>
+<area shape="rect" id="Node000006" href="$class_logistical_flow.html" title="Classe que implementa um fluxo com equação Logística." alt="" coords="418,641,542,768"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="340,504,438,641,433,641,338,508"/>
 </map>
