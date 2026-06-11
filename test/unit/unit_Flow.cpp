@@ -23,27 +23,27 @@ void UnitFlow::unit_Flow_constructor(void) {
 
 void UnitFlow::unit_Flow_ParameterizedConstructor() {
     //teste construtor parametrizado
-    FlowMock f2("Test Flow");
-    assert(f2.name == "Test Flow");
+    FlowMock f2("Teste");
+    assert(f2.name == "Teste");
     assert(f2.source == nullptr);
     assert(f2.target == nullptr);
 }
 
 void UnitFlow::unit_Flow_CopyConstructor(){
-    FlowMock f2("Test Flow");
+    FlowMock f2("Teste");
     //teste construtor de cópia
     SystemImpl s1("Source", 10.0);
     SystemImpl s2("Target", 20.0);
     f2.setSource(&s1);
     f2.setTarget(&s2);
     FlowMock f3(f2);
-    assert(f3.name == "Test Flow");
+    assert(f3.name == "Teste");
     assert(f3.source == &s1);
     assert(f3.target == &s2);
 }
 
 void UnitFlow::unit_Flow_Operator(){
-    FlowMock f2("Test Flow");
+    FlowMock f2("Teste");
     SystemImpl s1("Source", 10.0);
     SystemImpl s2("Target", 20.0);
     f2.setSource(&s1);
@@ -52,7 +52,7 @@ void UnitFlow::unit_Flow_Operator(){
     //teste operador de atribuição
     FlowMock f4;
     f4 = f2;
-    assert(f4.name == "Test Flow");
+    assert(f4.name == "Teste");
     assert(f4.source == &s1);
     assert(f4.target == &s2);
 }
@@ -64,7 +64,7 @@ void UnitFlow::unit_Flow_destructor(void) {
 
 void UnitFlow::unit_Flow_getName(void) {
     FlowMock f1("Fluxo B");
-    assert(f1.name == "Fluxo B");
+    assert(f1.getName() == "Fluxo B");
 }
 
 void UnitFlow::unit_Flow_setName(void) {

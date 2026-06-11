@@ -18,7 +18,7 @@ class SystemImpl : public System {
 protected:
     std::string name; /*!< Nome do sistema */
     double value;     /*!< Valor acumulado no sistema */
-public:
+
     /**
      * @brief Construtor padrão. Inicializa com valores vazios.
      */
@@ -30,12 +30,6 @@ public:
      * @param value Valor inicial do sistema.
      */
     SystemImpl(const std::string& name, double value); 
-
-    /**
-     * @brief Destrutor virtual de SystemImpl.
-     */
-    virtual ~SystemImpl();      
-
     /**
      * @brief Construtor de cópia.
      * @param other Referência para o objeto a ser copiado.
@@ -47,7 +41,13 @@ public:
      * @param other Referência para o objeto base da atribuição.
      * @return Referência para o próprio objeto após a atribuição.
      */
-    SystemImpl& operator=(const SystemImpl& other);         
+    SystemImpl& operator=(const SystemImpl& other);  
+public:
+
+    /**
+     * @brief Destrutor virtual de SystemImpl.
+     */
+    virtual ~SystemImpl();             
 
     std::string getName() const override;
     double getValue() const override;
@@ -56,6 +56,8 @@ public:
     
     friend class UnitSystem;
     friend class UnitModel;
+    friend class ModelImpl;
+    friend class UnitFlow;    
 };
 
 #endif
