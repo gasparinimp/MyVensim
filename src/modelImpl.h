@@ -22,6 +22,7 @@ protected:
     std::string name;                 /*!< Nome do modelo */
     std::vector<System*> systems;     /*!< Vetor contendo os ponteiros para os Sistemas */
     std::vector<Flow*> flows;         /*!< Vetor contendo os ponteiros para os Fluxos */
+    bool ownsResources;               /*!< Indica se o modelo deve liberar sistemas e fluxos */
 
     /**
      * @brief Construtor padrão. Inicializa um modelo vazio.
@@ -46,6 +47,11 @@ protected:
      * @return Referência para o próprio objeto.
      */
     ModelImpl& operator=(const ModelImpl& mod);
+
+    /**
+     * @brief Libera os sistemas e fluxos sob posse do modelo.
+     */
+    void clearResources();
 
 public:
 

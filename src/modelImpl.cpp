@@ -4,21 +4,32 @@
 std::vector<Model*> ModelImpl::models;
 
 //Construtor vazio
-ModelImpl::ModelImpl() : name("") {}
+ModelImpl::ModelImpl() : name(""), ownsResources(true) {}
 
 //Construtor com nome
-ModelImpl::ModelImpl(std::string name) : name(name) {}
+ModelImpl::ModelImpl(std::string name) : name(name), ownsResources(true) {}
 
 // Construtor de quando um modelo vai copiar o outro
 ModelImpl::ModelImpl(const ModelImpl& mod) {
     this->name = mod.name;
     this->systems = mod.systems;
     this->flows = mod.flows;
+    this->ownsResources = false;
 }
 
 
 // Destrutor
 ModelImpl::~ModelImpl() {
+    clearResources();
+}
+
+void ModelImpl::clearResources() {
+    if (!ownsResources) {
+        systems.clear();
+        flows.clear();
+        return;
+    }
+
     for (std::vector<System*>::iterator it = systems.begin(); it != systems.end(); ++it) {
         delete *it; 
     }
@@ -34,9 +45,12 @@ ModelImpl& ModelImpl::operator=(const ModelImpl& mod) {
     if (this == &mod) {
         return *this;
     }
+    clearResources();
+
     this->name = mod.name;
     this->systems = mod.systems;
     this->flows = mod.flows;
+    this->ownsResources = false;
     return *this;
 }
 
@@ -116,7 +130,9 @@ bool ModelImpl::deleteSystem(System* s) {
     for (auto it = systems.begin(); it != systems.end(); ++it) {
         if (*it == s) {
             systems.erase(it);
-            delete s;
+            if (ownsResources) {
+                delete s;
+            }
             return true;
         }
     }
@@ -127,7 +143,9 @@ bool ModelImpl::deleteFlow(Flow* f) {
     for (auto it = flows.begin(); it != flows.end(); ++it) {
         if (*it == f) {
             flows.erase(it);
-            delete f;
+            if (ownsResources) {
+                delete f;
+            }
             return true;
         }
     }
