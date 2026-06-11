@@ -2,28 +2,22 @@
 #include "../../src/modelImpl.h"
 #include "../../src/systemImpl.h"
 #include "../../src/flowImpl.h"
+#include "../../src/exponentialFlow.h"
 #include <assert.h>
 #include <iostream>
 #include <cmath>
 
-class FlowMockModel : public FlowImpl {
-public:
-    using FlowImpl::FlowImpl;
-    double execute() const override {
-        return 10.0;
-    }
-};
 
 void UnitModel::unit_Model_constructor(void) {
-    ModelImpl m1;
-    assert(m1.name == "");
-    assert(m1.systems.empty());
-    assert(m1.flows.empty());
+    ModelImpl m;
+    assert(m.name == "");
+    assert(m.systems.empty());
+    assert(m.flows.empty());
 }
 
 void UnitModel::unit_Model_ParameterizedConstructor() {
-    ModelImpl m2("M2");
-    assert(m2.name == "M2");
+    ModelImpl m("M2");
+    assert(m.name == "M2");
 }
 
 void UnitModel::unit_Model_destructor(void) {
@@ -33,27 +27,27 @@ void UnitModel::unit_Model_destructor(void) {
 }
 
 void UnitModel::unit_Model_CopyConstructor() {
-    ModelImpl m1("Modelo");
+    ModelImpl m("Modelo");
     SystemImpl* s1 = new SystemImpl("Sistema", 50.0);
-    FlowMockModel* f1 = new FlowMockModel("Flow");
-    m1.add(s1);
-    m1.add(f1);
+    ExponentialFlow* f1 = new ExponentialFlow("Flow");
+    m.add(s1);
+    m.add(f1);
     
-    ModelImpl m2(m1);
-    assert(m2.name == "Modelo");
-    assert(m2.systems.size() == 1);
-    assert(m2.flows.size() == 1);
-    assert(m2.systems[0] == s1);
-    assert(m2.flows[0] == f1);
+    ModelImpl m1(m);
+    assert(m1.name == "Modelo");
+    assert(m1.systems.size() == 1);
+    assert(m1.flows.size() == 1);
+    assert(m1.systems[0] == s1);
+    assert(m1.flows[0] == f1);
 
-    m2.systems.clear();
-    m2.flows.clear();
+    m1.systems.clear();
+    m1.flows.clear();
 }
 
 void UnitModel::unit_Model_Operator() {
     ModelImpl m1("Modelo");
     SystemImpl* s1 = new SystemImpl("Sistema", 50.0);
-    FlowMockModel* f1 = new FlowMockModel("Flow");
+    ExponentialFlow* f1 = new ExponentialFlow("Flow");
     m1.add(s1);
     m1.add(f1);
 
@@ -80,42 +74,105 @@ void UnitModel::unit_Model_setName(void) {
     assert(m1.name == "M2");
 }
 
-void UnitModel::unit_Model_criaSistema(void) {
-    ModelImpl m1;
-    SystemImpl* s1 = new SystemImpl("SisA", 100.0);
-    
-    m1.add(s1);
-    // Verifica se a fábrica construiu corretamente
-    assert(m1.systems.size() == 1);
-    assert(m1.systems[0] == s1);
+void UnitModel::unit_Model_addSystem() {
+    ModelImpl m;
+    SystemImpl* s = new SystemImpl("Sistema", 50.0); 
+    m.add(s);
+    assert(m.systems.size() == 1);
+    assert(m.systems[0] == s);
 }
 
-void UnitModel::unit_Model_criaFluxo(void) {
-    ModelImpl m1;
-    FlowMockModel* f1 = new FlowMockModel("Flow");
-    m1.add(f1);
-    assert(m1.flows.size() == 1);
-    assert(m1.flows[0] == f1);
+void UnitModel::unit_Model_addFlow() {
+    ModelImpl m;
+    ExponentialFlow* f = new ExponentialFlow("Flow"); 
+    m.add(f);
+    assert(m.flows.size() == 1);
+    assert(m.flows[0] == f);
 }
 
-void UnitModel::unit_Model_run(void) {
-    ModelImpl m1;
-    SystemImpl s1("Origem", 100.0);
-    SystemImpl s2("Destino", 0.0);
-    FlowMockModel* f1 = new FlowMockModel("Flow"); 
-    f1->setSource(&s1);
-    f1->setTarget(&s2);
-
-    m1.add(&s1);
-    m1.add(&s2);
-    m1.add(f1);
-
-    m1.run(0,1);
+void UnitModel::unit_Model_createModel() {
+    size_t pastSize = ModelImpl::models.size();
+    Model* m = Model::createModel("Factory Model");
     
-    // Origem deve perder 10 (100 - 10 = 90)
-    assert(std::fabs(s1.getValue() - 90.0) < 0.0001);
-    // Destino deve ganhar 10 (0 + 10 = 10)
-    assert(std::fabs(s2.getValue() - 10.0) < 0.0001);
+    assert(m->getName() == "Factory Model");
+    assert(ModelImpl::models.size() == pastSize + 1); 
+    
+    Model::deleteModel("Factory Model"); 
+}
+
+void UnitModel::unit_Model_createSystem() {
+    ModelImpl m("Teste");
+    System* s = m.createSystem("Sistema", 50.0);
+    
+    assert(s->getName() == "Sistema");
+    assert(s->getValue() == 50.0);
+    assert(m.systems.size() == 1);
+    assert(m.systems[0] == s); 
+}
+
+void UnitModel::unit_Model_createFlow() {
+    ModelImpl m("Teste");
+    SystemImpl s1("s1", 10);
+    SystemImpl s2("s2", 20);
+    
+    Flow* f = m.createFlow<ExponentialFlow>("FlowExp", &s1, &s2);
+    
+    assert(f->getName() == "FlowExp");
+    assert(f->getSource() == &s1);
+    assert(f->getTarget() == &s2);
+    assert(m.flows.size() == 1);
+    assert(m.flows[0] == f); 
+}
+
+
+void UnitModel::unit_Model_deleteModel() {
+    Model* m = Model::createModel("Modelo");
+    size_t pastSize = ModelImpl::models.size();
+    
+    bool deletado = Model::deleteModel("Modelo");
+    
+    assert(deletado == true);
+    assert(ModelImpl::models.size() == pastSize - 1);
+    delete m; 
+}
+
+void UnitModel::unit_Model_deleteSystem() {
+    ModelImpl m("Teste");
+    System* s = m.createSystem("Sistema", 50.0);
+    
+    bool deletado = m.deleteSystem(s);
+    
+    assert(deletado == true);
+    assert(m.systems.empty()); 
+}
+
+void UnitModel::unit_Model_deleteFlow() {
+    ModelImpl m("Teste");
+    Flow* f = m.createFlow<ExponentialFlow>("FlowExp", nullptr, nullptr);
+    
+    bool deletado = m.deleteFlow(f);
+    
+    assert(deletado == true);
+    assert(m.flows.empty()); 
+}
+
+void UnitModel::unit_Model_run() {
+    ModelImpl m("Teste");
+    SystemImpl* s1 = new SystemImpl("Source", 100.0);
+    SystemImpl* s2 = new SystemImpl("Target", 0.0);
+    ExponentialFlow* f = new ExponentialFlow("Flow");
+
+    f->source = s1;
+    f->target = s2;
+    
+    m.add(s1);
+    m.add(s2);
+    m.add(f);
+
+    m.run(0, 1); 
+
+    assert(s1->value == 99.0);
+    assert(s2->value == 1.0);
 }
 
 
@@ -127,8 +184,14 @@ void run_unit_tests_Model(void) {
     UnitModel::unit_Model_Operator();
     UnitModel::unit_Model_getName();
     UnitModel::unit_Model_setName();
-    UnitModel::unit_Model_criaSistema();
-    UnitModel::unit_Model_criaFluxo();
+    UnitModel::unit_Model_addSystem();
+    UnitModel::unit_Model_addFlow();
+    UnitModel::unit_Model_createModel();
+    UnitModel::unit_Model_createSystem();
+    UnitModel::unit_Model_createFlow();
+    UnitModel::unit_Model_deleteModel();
+    UnitModel::unit_Model_deleteSystem();
+    UnitModel::unit_Model_deleteFlow();
     UnitModel::unit_Model_run();
     
     std::cout << "OK -> Todos os testes unitarios de Model passaram!" << std::endl;

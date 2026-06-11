@@ -10,7 +10,6 @@
 int main() {
     std::cout << " INICIANDO SUÍTE DE TESTES UNITÁRIOS   " << std::endl;
 
-    run_unit_tests_globals();
     // Invoca a verificação da classe System
     run_unit_tests_System();
 

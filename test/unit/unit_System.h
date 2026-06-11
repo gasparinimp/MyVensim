@@ -13,7 +13,6 @@ public:
     static void unit_System_setName(void);
     static void unit_System_getValue(void);
     static void unit_System_setValue(void);
-
 };
 
 // Assinatura da funcao que vai rodar todos os testes do System
