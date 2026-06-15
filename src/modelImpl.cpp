@@ -1,35 +1,22 @@
 #include "modelImpl.h"
 #include "systemImpl.h"
-
 std::vector<Model*> ModelImpl::models;
-
 //Construtor vazio
-ModelImpl::ModelImpl() : name(""), ownsResources(true) {}
+ModelImpl::ModelImpl() : name("") {}
 
 //Construtor com nome
-ModelImpl::ModelImpl(std::string name) : name(name), ownsResources(true) {}
+ModelImpl::ModelImpl(std::string name) : name(name) {}
 
 // Construtor de quando um modelo vai copiar o outro
 ModelImpl::ModelImpl(const ModelImpl& mod) {
     this->name = mod.name;
     this->systems = mod.systems;
     this->flows = mod.flows;
-    this->ownsResources = false;
 }
 
 
 // Destrutor
 ModelImpl::~ModelImpl() {
-    clearResources();
-}
-
-void ModelImpl::clearResources() {
-    if (!ownsResources) {
-        systems.clear();
-        flows.clear();
-        return;
-    }
-
     for (std::vector<System*>::iterator it = systems.begin(); it != systems.end(); ++it) {
         delete *it; 
     }
@@ -45,12 +32,9 @@ ModelImpl& ModelImpl::operator=(const ModelImpl& mod) {
     if (this == &mod) {
         return *this;
     }
-    clearResources();
-
     this->name = mod.name;
     this->systems = mod.systems;
     this->flows = mod.flows;
-    this->ownsResources = false;
     return *this;
 }
 
@@ -114,40 +98,16 @@ System* ModelImpl::createSystem(std::string name, double value) {
     return s;
 }
 
-bool Model::deleteModel(std::string name) {
-    for (auto it = ModelImpl::models.begin(); it != ModelImpl::models.end(); ++it) {
-        if ((*it)->getName() == name) {
-            Model* m = *it;
-            ModelImpl::models.erase(it);
-            delete m; 
-            return true;
-        }
+void ModelImpl::deleteSystem(System* s) {
+    auto it = std::find(systems.begin(), systems.end(), s);
+    if (it != systems.end()) {
+        systems.erase(it); //remove  o sistema do vetor.
     }
-    return false;
 }
 
-bool ModelImpl::deleteSystem(System* s) {
-    for (auto it = systems.begin(); it != systems.end(); ++it) {
-        if (*it == s) {
-            systems.erase(it);
-            if (ownsResources) {
-                delete s;
-            }
-            return true;
-        }
+void ModelImpl::deleteFlow(Flow* f) {
+    auto it = std::find(flows.begin(), flows.end(), f);
+    if (it != flows.end()) {
+        flows.erase(it);
     }
-    return false;
-}
-
-bool ModelImpl::deleteFlow(Flow* f) {
-    for (auto it = flows.begin(); it != flows.end(); ++it) {
-        if (*it == f) {
-            flows.erase(it);
-            if (ownsResources) {
-                delete f;
-            }
-            return true;
-        }
-    }
-    return false;
 }

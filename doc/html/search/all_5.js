@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['logisticalflow_0',['LogisticalFlow',['../classLogisticalFlow.html',1,'LogisticalFlow'],['../classLogisticalFlow.html#a3fd4357cffc1717ace3a8466665b6440',1,'LogisticalFlow::LogisticalFlow()'],['../classLogisticalFlow.html#a2db3608a411318aad1a899175d4b045a',1,'LogisticalFlow::LogisticalFlow(std::string name)']]],
-  ['logisticalflow_2ecpp_1',['logisticalFlow.cpp',['../logisticalFlow_8cpp.html',1,'']]],
-  ['logisticalflow_2eh_2',['logisticalFlow.h',['../logisticalFlow_8h.html',1,'']]],
-  ['logisticalfuncionaltest_3',['logisticalFuncionalTest',['../funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29',1,'logisticalFuncionalTest():&#160;funcional_tests.cpp'],['../funcional__tests_8h.html#a60914db64bde71b56d69320797266c29',1,'logisticalFuncionalTest():&#160;funcional_tests.cpp']]]
+  ['getname_0',['getName',['../classFlow.html#a2d0340d844ab2d275222938234e44169',1,'Flow::getName()'],['../classFlowImpl.html#aa6e5ff35bd2f7cc2b8eb8a6fa20ce464',1,'FlowImpl::getName()'],['../classModel.html#a17e89ca8d15af46d074423a47d3c6802',1,'Model::getName()'],['../classModelImpl.html#a6d6ef8f72413650749d9ca9850226a6b',1,'ModelImpl::getName()'],['../classSystem.html#a3bc2509274e6c346e07b0bf1151378c5',1,'System::getName()'],['../classSystemImpl.html#ad3843b49bbde11738f395c5fbeae4633',1,'SystemImpl::getName()'],['../classSystemMock.html#a79330ca9309e2275e2a1968111a12a54',1,'SystemMock::getName()']]],
+  ['getsource_1',['getSource',['../classFlow.html#abf0f3dbb285fe82e5ba6449de06b97c8',1,'Flow::getSource()'],['../classFlowImpl.html#a06c8ffdcfd36b04ddad091d2c043f5d0',1,'FlowImpl::getSource()']]],
+  ['gettarget_2',['getTarget',['../classFlow.html#afb9b8d93ea0fc81868b8e02dd382a787',1,'Flow::getTarget()'],['../classFlowImpl.html#adb35e3574470e91207c631fda3cdc9bd',1,'FlowImpl::getTarget()']]],
+  ['getvalue_3',['getValue',['../classSystem.html#a41b673faa6c199eb8e4f204639fab4f2',1,'System::getValue()'],['../classSystemImpl.html#abd3ff91586d4474c0a747dc5dd6e0268',1,'SystemImpl::getValue()'],['../classSystemMock.html#a79e03cb3508b1eddd402b40cda25eccb',1,'SystemMock::getValue()']]]
 ];

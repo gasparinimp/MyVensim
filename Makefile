@@ -1,19 +1,18 @@
-#Pega todos os arquivos .cpp da pasta src/ automaticamente
-SRC_FILES = $(wildcard src/*.cpp)
+all: biblioteca testes
 
-all:
+biblioteca:
 	mkdir -p bin
-	g++ -Wall -std=c++17 -fPIC -shared $(SRC_FILES) -o bin/libmyvensim.so
-	
-	g++ -Wall -std=c++17 test/funcional/*.cpp -Lbin -lmyvensim -Wl,-rpath,bin -o bin/funcional_tests
-	
-	g++ -Wall -std=c++17 test/unit/*.cpp -Lbin -lmyvensim -Wl,-rpath,bin -o bin/unit_tests
+	g++ -fPIC -shared -DBUILD_DLL src/*.cpp -I./src -o bin/libmodel.so
 
-run_funcional: all
-	./bin/funcional_tests
+testes:
+	g++ test/funcional/*.cpp -I./src -L./bin -lmodel -o bin/funcional_tests
+	g++ test/unit/*.cpp -I./src -L./bin -lmodel -o bin/unit_tests
 
-run_unit: all
-	./bin/unit_tests
+run_funcional:
+	LD_LIBRARY_PATH=./bin ./bin/funcional_tests
+
+run_unit:
+	LD_LIBRARY_PATH=./bin ./bin/unit_tests
 
 clean:
-	rm -rf bin
+	rm -rf bin/

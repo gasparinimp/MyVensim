@@ -125,7 +125,7 @@ Collaboration diagram for UnitModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classUnitModel__coll__graph.png" border="0" usemap="#aUnitModel_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aUnitModel_coll__map" id="aUnitModel_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,231,265"/>
+<area shape="rect" title=" " alt="" coords="5,5,231,345"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -138,11 +138,65 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae98202b907e80db1855501da64824ffc" id="r_ae98202b907e80db1855501da64824ffc"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae98202b907e80db1855501da64824ffc">unit_Model_destructor</a> (void)</td></tr>
 <tr class="memitem:acc2959b4fab67e320e023d4b6dd56b5a" id="r_acc2959b4fab67e320e023d4b6dd56b5a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acc2959b4fab67e320e023d4b6dd56b5a">unit_Model_getName</a> (void)</td></tr>
 <tr class="memitem:a14726babe445dbe6b27db4e9cc403e4b" id="r_a14726babe445dbe6b27db4e9cc403e4b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a14726babe445dbe6b27db4e9cc403e4b">unit_Model_setName</a> (void)</td></tr>
-<tr class="memitem:acc9207349044ac8ea1fb09009c0a2b4a" id="r_acc9207349044ac8ea1fb09009c0a2b4a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acc9207349044ac8ea1fb09009c0a2b4a">unit_Model_criaSistema</a> (void)</td></tr>
-<tr class="memitem:a8fdc1fef09be8c9985ae23066e3e7103" id="r_a8fdc1fef09be8c9985ae23066e3e7103"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8fdc1fef09be8c9985ae23066e3e7103">unit_Model_criaFluxo</a> (void)</td></tr>
-<tr class="memitem:a717c898eaaf5b1b4e6edfecaf9741be8" id="r_a717c898eaaf5b1b4e6edfecaf9741be8"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a717c898eaaf5b1b4e6edfecaf9741be8">unit_Model_run</a> (void)</td></tr>
+<tr class="memitem:a748dda2cf04f2e6e4633f715c569e13c" id="r_a748dda2cf04f2e6e4633f715c569e13c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a748dda2cf04f2e6e4633f715c569e13c">unit_Model_addSystem</a> ()</td></tr>
+<tr class="memitem:a92967fb33a9c93a29a8640c1e6637b52" id="r_a92967fb33a9c93a29a8640c1e6637b52"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a92967fb33a9c93a29a8640c1e6637b52">unit_Model_addFlow</a> ()</td></tr>
+<tr class="memitem:a03beb0581fa562da30b8fa83dc914e5d" id="r_a03beb0581fa562da30b8fa83dc914e5d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a03beb0581fa562da30b8fa83dc914e5d">unit_Model_createSystem</a> ()</td></tr>
+<tr class="memitem:a1f48027a435041d090940aacafc963a5" id="r_a1f48027a435041d090940aacafc963a5"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1f48027a435041d090940aacafc963a5">unit_Model_createFlow</a> ()</td></tr>
+<tr class="memitem:ae070952227fdbfd02b556fe09c93f0ec" id="r_ae070952227fdbfd02b556fe09c93f0ec"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae070952227fdbfd02b556fe09c93f0ec">unit_Model_deleteSystem</a> ()</td></tr>
+<tr class="memitem:a12e0f800fb6c49fa4ec679993730c401" id="r_a12e0f800fb6c49fa4ec679993730c401"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a12e0f800fb6c49fa4ec679993730c401">unit_Model_deleteFlow</a> ()</td></tr>
+<tr class="memitem:a5f2ecbbf1d9adf857c7b25824ee9fb63" id="r_a5f2ecbbf1d9adf857c7b25824ee9fb63"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5f2ecbbf1d9adf857c7b25824ee9fb63">unit_Model_run</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a92967fb33a9c93a29a8640c1e6637b52" name="a92967fb33a9c93a29a8640c1e6637b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92967fb33a9c93a29a8640c1e6637b52">&#9670;&#160;</a></span>unit_Model_addFlow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitModel::unit_Model_addFlow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a748dda2cf04f2e6e4633f715c569e13c" name="a748dda2cf04f2e6e4633f715c569e13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748dda2cf04f2e6e4633f715c569e13c">&#9670;&#160;</a></span>unit_Model_addSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitModel::unit_Model_addSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a38d6cfe6d036ac68ff3022b7d70d6824" name="a38d6cfe6d036ac68ff3022b7d70d6824"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38d6cfe6d036ac68ff3022b7d70d6824">&#9670;&#160;</a></span>unit_Model_constructor()</h2>
 
@@ -193,8 +247,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8fdc1fef09be8c9985ae23066e3e7103" name="a8fdc1fef09be8c9985ae23066e3e7103"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fdc1fef09be8c9985ae23066e3e7103">&#9670;&#160;</a></span>unit_Model_criaFluxo()</h2>
+<a id="a1f48027a435041d090940aacafc963a5" name="a1f48027a435041d090940aacafc963a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f48027a435041d090940aacafc963a5">&#9670;&#160;</a></span>unit_Model_createFlow()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,9 +257,9 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void UnitModel::unit_Model_criaFluxo </td>
+          <td class="memname">void UnitModel::unit_Model_createFlow </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -218,8 +272,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acc9207349044ac8ea1fb09009c0a2b4a" name="acc9207349044ac8ea1fb09009c0a2b4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc9207349044ac8ea1fb09009c0a2b4a">&#9670;&#160;</a></span>unit_Model_criaSistema()</h2>
+<a id="a03beb0581fa562da30b8fa83dc914e5d" name="a03beb0581fa562da30b8fa83dc914e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03beb0581fa562da30b8fa83dc914e5d">&#9670;&#160;</a></span>unit_Model_createSystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,9 +282,59 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void UnitModel::unit_Model_criaSistema </td>
+          <td class="memname">void UnitModel::unit_Model_createSystem </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12e0f800fb6c49fa4ec679993730c401" name="a12e0f800fb6c49fa4ec679993730c401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e0f800fb6c49fa4ec679993730c401">&#9670;&#160;</a></span>unit_Model_deleteFlow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitModel::unit_Model_deleteFlow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae070952227fdbfd02b556fe09c93f0ec" name="ae070952227fdbfd02b556fe09c93f0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae070952227fdbfd02b556fe09c93f0ec">&#9670;&#160;</a></span>unit_Model_deleteSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitModel::unit_Model_deleteSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -343,8 +447,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a717c898eaaf5b1b4e6edfecaf9741be8" name="a717c898eaaf5b1b4e6edfecaf9741be8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a717c898eaaf5b1b4e6edfecaf9741be8">&#9670;&#160;</a></span>unit_Model_run()</h2>
+<a id="a5f2ecbbf1d9adf857c7b25824ee9fb63" name="a5f2ecbbf1d9adf857c7b25824ee9fb63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2ecbbf1d9adf857c7b25824ee9fb63">&#9670;&#160;</a></span>unit_Model_run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +459,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void UnitModel::unit_Model_run </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

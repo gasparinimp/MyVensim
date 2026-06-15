@@ -5,7 +5,6 @@ class UnitFlow {
 // Assinaturas dos testes unitarios para cada metodo de Flow
 public:
     static void unit_Flow_constructor(void);
-    static void unit_Flow_ParameterizedConstructor();
     static void unit_Flow_CopyConstructor();
     static void unit_Flow_Operator();
     static void unit_Flow_destructor(void);

@@ -1,10 +1,12 @@
 #ifndef FUNCIONAL_TESTS_H
 #define FUNCIONAL_TESTS_H
 
-// Incluindo as nossas novas classes separadas
-#include "../../src/exponentialFlow.h"
-#include "../../src/logisticalFlow.h"
-#include "../../src/complexFlow.h"
+#include "../../src/model.h"
+#include "../../src/system.h"
+#include "../../src/flow.h"
+#include <assert.h>
+#include <iostream>
+#include <cmath>
 
 // Assinatura das funcoes de teste
 void exponentialFuncionalTest();

@@ -4,7 +4,8 @@
 FlowImpl::FlowImpl() : name(""), source(nullptr), target(nullptr) {}
 
 // Construtor apenas com o nome
-FlowImpl::FlowImpl(std::string name) : name(name), source(nullptr), target(nullptr) {}
+FlowImpl::FlowImpl(std::string name, System* source, System* target): name(name), 
+    source(source), target(target){}
 
 // Construtor de quando um fluxo vai copiar o outro
 FlowImpl::FlowImpl(const FlowImpl &fl) {

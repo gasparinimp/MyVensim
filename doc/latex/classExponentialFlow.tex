@@ -32,27 +32,15 @@ Collaboration diagram for Exponential\+Flow:\+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{classExponentialFlow_a1f981db78e6635fd9837648960d8dc8d}{Exponential\+Flow}} ()
-\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classExponentialFlow_a811318788132120f1e40b175dfef49d5}{Exponential\+Flow}} (std::\+string name)
-\begin{DoxyCompactList}\small\item\em Construtor parametrizado que recebe o nome do fluxo. \end{DoxyCompactList}\item 
 virtual \doxymbox{\hyperlink{classExponentialFlow_a47f85f24c8a74a00b025541e3ed950eb}{\texorpdfstring{$\sim$}{\string~}\+Exponential\+Flow}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor virtual. \end{DoxyCompactList}\item 
-double \doxymbox{\hyperlink{classExponentialFlow_ae451be9e0da09332dc509ca9919e9062}{execute}} () const override
+double \doxymbox{\hyperlink{classExponentialFlow_aafb074830c5c18138913cb10da3b8782}{execute}} () override
 \begin{DoxyCompactList}\small\item\em Executa a equação exponencial. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}}}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{classFlowImpl_aa835ccb3c368c683aa95d660175a298b}{Flow\+Impl}} ()
-\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa o fluxo vazio. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classFlowImpl_a34b906caaf8a339eb02915472a50cca2}{Flow\+Impl}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
-\begin{DoxyCompactList}\small\item\em Construtor de cópia. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classFlowImpl_a1a3855f88e93d7c682af82fcfd61b12f}{Flow\+Impl}} (std::\+string name)
-\begin{DoxyCompactList}\small\item\em Construtor parametrizado. \end{DoxyCompactList}\item 
 virtual \doxymbox{\hyperlink{classFlowImpl_a2d91539593b336aee4a19048f8a82e8c}{\texorpdfstring{$\sim$}{\string~}\+Flow\+Impl}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor virtual de \doxylink{classFlowImpl}{Flow\+Impl}. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \& \doxymbox{\hyperlink{classFlowImpl_a323251bc0282f0f6e395add4b69d74fa}{operator=}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
-\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de atribuição. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classFlowImpl_a47bbb64941fde986da1198b4af443c16}{set\+Source}} (\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}s) override
 \begin{DoxyCompactList}\small\item\em Define o sistema de origem do fluxo. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classFlowImpl_a48a3c5a8425ce7deb3ae041f46f07368}{set\+Target}} (\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}t) override
@@ -70,6 +58,29 @@ void \doxymbox{\hyperlink{classFlowImpl_a2d9d3b7f69c3ba97650a71b8c98baf68}{set\+
 \item 
 virtual \doxymbox{\hyperlink{classFlow_a325d284a50ca3274b126b21f5c39b9af}{\texorpdfstring{$\sim$}{\string~}\+Flow}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor virtual da interface \doxylink{classFlow}{Flow}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classExponentialFlow_a1f981db78e6635fd9837648960d8dc8d}{Exponential\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classExponentialFlow_a0243d42e46c8a4a9f831b6623d31d4a3}{Exponential\+Flow}} (std::\+string name, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em This is the parameterized constructor for the \doxylink{classExponentialFlow}{Exponential\+Flow} Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classFlowImpl_aa835ccb3c368c683aa95d660175a298b}{Flow\+Impl}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa o fluxo vazio. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classFlowImpl_a34b906caaf8a339eb02915472a50cca2}{Flow\+Impl}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
+\begin{DoxyCompactList}\small\item\em Construtor de cópia. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classFlowImpl_a905eaf7cf9a799e4c1a19e79dc7c4fab}{Flow\+Impl}} (std::\+string name, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \& \doxymbox{\hyperlink{classFlowImpl_a323251bc0282f0f6e395add4b69d74fa}{operator=}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de atribuição. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classExponentialFlow_a2bf2a0e9b454c55aa5dcb5aa4698697b}{Model}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}}}
 \begin{DoxyCompactItemize}
@@ -97,23 +108,35 @@ Classe que implementa um fluxo com equação Exponencial.
 \index{ExponentialFlow@{ExponentialFlow}!ExponentialFlow@{ExponentialFlow}}
 \doxysubsubsection{\texorpdfstring{ExponentialFlow()}{ExponentialFlow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{classExponentialFlow_a1f981db78e6635fd9837648960d8dc8d} 
-Exponential\+Flow::\+\+Exponential\+Flow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+Exponential\+Flow::\+\+Exponential\+Flow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 Construtor padrão. 
 
-\Hypertarget{classExponentialFlow_a811318788132120f1e40b175dfef49d5}\index{ExponentialFlow@{ExponentialFlow}!ExponentialFlow@{ExponentialFlow}}
+\Hypertarget{classExponentialFlow_a0243d42e46c8a4a9f831b6623d31d4a3}\index{ExponentialFlow@{ExponentialFlow}!ExponentialFlow@{ExponentialFlow}}
 \index{ExponentialFlow@{ExponentialFlow}!ExponentialFlow@{ExponentialFlow}}
 \doxysubsubsection{\texorpdfstring{ExponentialFlow()}{ExponentialFlow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{classExponentialFlow_a811318788132120f1e40b175dfef49d5} 
-Exponential\+Flow::\+\+Exponential\+Flow (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classExponentialFlow_a0243d42e46c8a4a9f831b6623d31d4a3} 
+Exponential\+Flow::\+\+Exponential\+Flow (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{, }\item[{\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}}]{source}{, }\item[{\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Construtor parametrizado que recebe o nome do fluxo. 
+This is the parameterized constructor for the \doxylink{classExponentialFlow}{Exponential\+Flow} Class. 
 
-\Hypertarget{classExponentialFlow_a47f85f24c8a74a00b025541e3ed950eb}\index{ExponentialFlow@{ExponentialFlow}!````~ExponentialFlow@{\texorpdfstring{$\sim$}{\string~}ExponentialFlow}}
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the \doxylink{classExponentialFlow}{Exponential\+Flow}. \\
+\hline
+{\em source} & a pointer to the source \doxylink{classSystem}{System}. \\
+\hline
+{\em target} & a pointer to the target \doxylink{classSystem}{System}. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{classExponentialFlow_a47f85f24c8a74a00b025541e3ed950eb}\index{ExponentialFlow@{ExponentialFlow}!````~ExponentialFlow@{\texorpdfstring{$\sim$}{\string~}ExponentialFlow}}
 \index{````~ExponentialFlow@{\texorpdfstring{$\sim$}{\string~}ExponentialFlow}!ExponentialFlow@{ExponentialFlow}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ExponentialFlow()}{\string~ExponentialFlow()}}
 {\footnotesize\ttfamily \label{classExponentialFlow_a47f85f24c8a74a00b025541e3ed950eb} 
@@ -128,11 +151,11 @@ Destrutor virtual.
 \label{classExponentialFlow_doc-func-members}
 \Hypertarget{classExponentialFlow_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classExponentialFlow_ae451be9e0da09332dc509ca9919e9062}\index{ExponentialFlow@{ExponentialFlow}!execute@{execute}}
+\Hypertarget{classExponentialFlow_aafb074830c5c18138913cb10da3b8782}\index{ExponentialFlow@{ExponentialFlow}!execute@{execute}}
 \index{execute@{execute}!ExponentialFlow@{ExponentialFlow}}
 \doxysubsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily \label{classExponentialFlow_ae451be9e0da09332dc509ca9919e9062} 
-double Exponential\+Flow::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classExponentialFlow_aafb074830c5c18138913cb10da3b8782} 
+double Exponential\+Flow::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -143,11 +166,22 @@ Retorna 0.\+01 \texorpdfstring{$\ast$}{*} valor\+\_\+da\+\_\+origem.
 \end{DoxyReturn}
 
 
-Implements \doxymbox{\hyperlink{classFlowImpl_a534e8dac303d208568065ef9cbba5e40}{Flow\+Impl}}.
+Implements \doxymbox{\hyperlink{classFlowImpl_a88d14f759988f1dcf393b83a93aea1f1}{Flow\+Impl}}.
+
+
+
+\label{classExponentialFlow_doc-related-members}
+\Hypertarget{classExponentialFlow_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classExponentialFlow_a2bf2a0e9b454c55aa5dcb5aa4698697b}\index{ExponentialFlow@{ExponentialFlow}!Model@{Model}}
+\index{Model@{Model}!ExponentialFlow@{ExponentialFlow}}
+\doxysubsubsection{\texorpdfstring{Model}{Model}}
+{\footnotesize\ttfamily \label{classExponentialFlow_a2bf2a0e9b454c55aa5dcb5aa4698697b} 
+friend class \doxymbox{\hyperlink{classModel}{Model}}\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-src/\+\doxymbox{\hyperlink{exponentialFlow_8h}{exponential\+Flow.\+h}}\item 
-src/\+\doxymbox{\hyperlink{exponentialFlow_8cpp}{exponential\+Flow.\+cpp}}\end{DoxyCompactItemize}
+test/\+funcional/\+\doxymbox{\hyperlink{exponentialFlow_8h}{exponential\+Flow.\+h}}\item 
+test/\+funcional/\+\doxymbox{\hyperlink{exponentialFlow_8cpp}{exponential\+Flow.\+cpp}}\end{DoxyCompactItemize}

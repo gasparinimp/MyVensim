@@ -23,27 +23,24 @@ Collaboration diagram for Flow\+Mock:\+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \doxymbox{\hyperlink{classFlowMock_a39c78d6f4117de82330961abb71fb40e}{execute}} () const override
-\begin{DoxyCompactList}\small\item\em Método virtual puro mantido para as classes filhas sobreescreverem. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{classFlowMock_a9b6c567a527c0be2fe2474693848b00a}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Método virtual puro que executa a equação matemática do fluxo. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classFlowMock_aa835ccb3c368c683aa95d660175a298b}{Flow\+Impl}} ()
 \begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa o fluxo vazio. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classFlowMock_a34b906caaf8a339eb02915472a50cca2}{Flow\+Impl}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
 \begin{DoxyCompactList}\small\item\em Construtor de cópia. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classFlowMock_a1a3855f88e93d7c682af82fcfd61b12f}{Flow\+Impl}} (std::\+string name)
+\doxymbox{\hyperlink{classFlowMock_a905eaf7cf9a799e4c1a19e79dc7c4fab}{Flow\+Impl}} (std::\+string name, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}target)
 \begin{DoxyCompactList}\small\item\em Construtor parametrizado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classFlow}{Flow}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classFlow_a325d284a50ca3274b126b21f5c39b9af}{\texorpdfstring{$\sim$}{\string~}\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da interface \doxylink{classFlow}{Flow}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}}}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{classFlowImpl_aa835ccb3c368c683aa95d660175a298b}{Flow\+Impl}} ()
-\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa o fluxo vazio. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classFlowImpl_a34b906caaf8a339eb02915472a50cca2}{Flow\+Impl}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
-\begin{DoxyCompactList}\small\item\em Construtor de cópia. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classFlowImpl_a1a3855f88e93d7c682af82fcfd61b12f}{Flow\+Impl}} (std::\+string name)
-\begin{DoxyCompactList}\small\item\em Construtor parametrizado. \end{DoxyCompactList}\item 
 virtual \doxymbox{\hyperlink{classFlowImpl_a2d91539593b336aee4a19048f8a82e8c}{\texorpdfstring{$\sim$}{\string~}\+Flow\+Impl}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor virtual de \doxylink{classFlowImpl}{Flow\+Impl}. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \& \doxymbox{\hyperlink{classFlowImpl_a323251bc0282f0f6e395add4b69d74fa}{operator=}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
-\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de atribuição. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classFlowImpl_a47bbb64941fde986da1198b4af443c16}{set\+Source}} (\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}s) override
 \begin{DoxyCompactList}\small\item\em Define o sistema de origem do fluxo. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classFlowImpl_a48a3c5a8425ce7deb3ae041f46f07368}{set\+Target}} (\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}t) override
@@ -56,12 +53,18 @@ std::\+string \doxymbox{\hyperlink{classFlowImpl_aa6e5ff35bd2f7cc2b8eb8a6fa20ce4
 \begin{DoxyCompactList}\small\item\em Obtém o nome do fluxo. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classFlowImpl_a2d9d3b7f69c3ba97650a71b8c98baf68}{set\+Name}} (std::\+string name) override
 \begin{DoxyCompactList}\small\item\em Define um novo nome para o fluxo. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classFlow}{Flow}}}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual \doxymbox{\hyperlink{classFlow_a325d284a50ca3274b126b21f5c39b9af}{\texorpdfstring{$\sim$}{\string~}\+Flow}} ()
-\begin{DoxyCompactList}\small\item\em Destrutor virtual da interface \doxylink{classFlow}{Flow}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
+\doxymbox{\hyperlink{classFlowImpl_aa835ccb3c368c683aa95d660175a298b}{Flow\+Impl}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa o fluxo vazio. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classFlowImpl_a34b906caaf8a339eb02915472a50cca2}{Flow\+Impl}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
+\begin{DoxyCompactList}\small\item\em Construtor de cópia. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classFlowImpl_a905eaf7cf9a799e4c1a19e79dc7c4fab}{Flow\+Impl}} (std::\+string name, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \& \doxymbox{\hyperlink{classFlowImpl_a323251bc0282f0f6e395add4b69d74fa}{operator=}} (const \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}} \&fl)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de atribuição. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{classFlowImpl}{Flow\+Impl}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,22 +79,22 @@ std::\+string \doxymbox{\hyperlink{classFlowImpl_afcc3f687245c4a6fa3d26ac386c822
 \label{classFlowMock_doc-func-members}
 \Hypertarget{classFlowMock_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classFlowMock_a39c78d6f4117de82330961abb71fb40e}\index{FlowMock@{FlowMock}!execute@{execute}}
+\Hypertarget{classFlowMock_a9b6c567a527c0be2fe2474693848b00a}\index{FlowMock@{FlowMock}!execute@{execute}}
 \index{execute@{execute}!FlowMock@{FlowMock}}
 \doxysubsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily \label{classFlowMock_a39c78d6f4117de82330961abb71fb40e} 
-double Flow\+Mock::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classFlowMock_a9b6c567a527c0be2fe2474693848b00a} 
+double Flow\+Mock::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Método virtual puro mantido para as classes filhas sobreescreverem. 
+Método virtual puro que executa a equação matemática do fluxo. 
 
 \begin{DoxyReturn}{Returns}
-double Valor calculado pela equação do fluxo. 
+double correspondente ao valor calculado a ser transferido. 
 \end{DoxyReturn}
 
 
-Implements \doxymbox{\hyperlink{classFlowImpl_a534e8dac303d208568065ef9cbba5e40}{Flow\+Impl}}.
+Implements \doxymbox{\hyperlink{classFlow_a619be0b590c78202127bc6ac7fb04029}{Flow}}.
 
 \Hypertarget{classFlowMock_aa835ccb3c368c683aa95d660175a298b}\index{FlowMock@{FlowMock}!FlowImpl@{FlowImpl}}
 \index{FlowImpl@{FlowImpl}!FlowMock@{FlowMock}}
@@ -118,11 +121,11 @@ Construtor de cópia.
 {\em fl} & Referência para o objeto \doxylink{classFlowImpl}{Flow\+Impl} a ser copiado. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classFlowMock_a1a3855f88e93d7c682af82fcfd61b12f}\index{FlowMock@{FlowMock}!FlowImpl@{FlowImpl}}
+\Hypertarget{classFlowMock_a905eaf7cf9a799e4c1a19e79dc7c4fab}\index{FlowMock@{FlowMock}!FlowImpl@{FlowImpl}}
 \index{FlowImpl@{FlowImpl}!FlowMock@{FlowMock}}
 \doxysubsubsection{\texorpdfstring{FlowImpl()}{FlowImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \label{classFlowMock_a1a3855f88e93d7c682af82fcfd61b12f} 
-\doxymbox{\hyperlink{classFlowImpl_aa835ccb3c368c683aa95d660175a298b}{Flow\+Impl::\+\+Flow\+Impl}} (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classFlowMock_a905eaf7cf9a799e4c1a19e79dc7c4fab} 
+\doxymbox{\hyperlink{classFlowImpl_aa835ccb3c368c683aa95d660175a298b}{Flow\+Impl::\+\+Flow\+Impl}} (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{, }\item[{\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}}]{source}{, }\item[{\doxymbox{\hyperlink{classSystem}{System}} \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})}
 
 
 

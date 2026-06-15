@@ -1,11 +1,7 @@
-<map id="src/logisticalFlow.h" name="src/logisticalFlow.h">
-<area shape="rect" id="Node000001" title="Arquivo contendo a classe LogisticalFlow." alt="" coords="109,5,255,31"/>
-<area shape="rect" id="Node000002" href="$logisticalFlow_8cpp.html" title=" " alt="" coords="5,86,167,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,41,102,88,99,84,156,37"/>
-<area shape="rect" id="Node000003" href="$funcional__tests_8h.html" title=" " alt="" coords="191,79,365,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,37,257,76,253,81,205,41"/>
-<area shape="rect" id="Node000004" href="$funcional__tests_8cpp.html" title=" " alt="" coords="91,167,265,207"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,130,202,168,198,164,244,126"/>
-<area shape="rect" id="Node000005" href="$test_2funcional_2main_8cpp.html" title=" " alt="" coords="289,174,464,199"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="312,126,365,172,361,176,309,130"/>
+<map id="test/funcional/logisticalFlow.h" name="test/funcional/logisticalFlow.h">
+<area shape="rect" id="Node000001" title="Arquivo contendo a classe LogisticalFlow." alt="" coords="104,5,279,45"/>
+<area shape="rect" id="Node000002" href="$funcional__tests_8cpp.html" title=" " alt="" coords="5,93,180,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,56,116,95,113,91,158,52"/>
+<area shape="rect" id="Node000003" href="$logisticalFlow_8cpp.html" title=" " alt="" coords="204,93,379,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,52,271,91,267,95,222,56"/>
 </map>

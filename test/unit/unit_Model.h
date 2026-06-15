@@ -14,10 +14,8 @@ public:
     static void unit_Model_setName(void);
     static void unit_Model_addSystem();
     static void unit_Model_addFlow();
-    static void unit_Model_createModel();
     static void unit_Model_createSystem();
     static void unit_Model_createFlow();
-    static void unit_Model_deleteModel();
     static void unit_Model_deleteSystem();
     static void unit_Model_deleteFlow();
     static void unit_Model_run();

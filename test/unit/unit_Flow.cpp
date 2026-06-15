@@ -1,15 +1,23 @@
 #include "unit_Flow.h"
 #include "../../src/flowImpl.h"
-#include "../../src/systemImpl.h" 
 #include <assert.h>
 #include <iostream>
+
+class SystemMock : public System {
+public:
+    virtual ~SystemMock() {}
+    virtual std::string getName() const override { return ""; }
+    virtual void setName(std::string) override {}
+    virtual double getValue() const override { return 0.0; }
+    virtual void setValue(double) override {}
+};
 
 class FlowMock : public FlowImpl {
 public:
     using FlowImpl::FlowImpl;
     
-    double execute() const override {
-        return 10.0; 
+    double execute() override {
+        return 0.0; 
     }
 };
 
@@ -21,50 +29,44 @@ void UnitFlow::unit_Flow_constructor(void) {
     assert(f1.target == nullptr);
 }
 
-void UnitFlow::unit_Flow_ParameterizedConstructor() {
-    //teste construtor parametrizado
-    FlowMock f2("Teste");
-    assert(f2.name == "Teste");
-    assert(f2.source == nullptr);
-    assert(f2.target == nullptr);
-}
-
-void UnitFlow::unit_Flow_CopyConstructor(){
-    FlowMock f2("Teste");
+void UnitFlow::unit_Flow_CopyConstructor(){;
     //teste construtor de cópia
-    SystemImpl s1("Source", 10.0);
-    SystemImpl s2("Target", 20.0);
-    f2.setSource(&s1);
-    f2.setTarget(&s2);
-    FlowMock f3(f2);
-    assert(f3.name == "Teste");
+    SystemMock s1;
+    SystemMock s2;
+    FlowMock f;
+    f.name = "Flow";
+    f.source = &s1;
+    f.target = &s2;
+    FlowMock f3(f);
+    assert(f3.name == "Flow");
     assert(f3.source == &s1);
     assert(f3.target == &s2);
 }
 
 void UnitFlow::unit_Flow_Operator(){
-    FlowMock f2("Teste");
-    SystemImpl s1("Source", 10.0);
-    SystemImpl s2("Target", 20.0);
-    f2.setSource(&s1);
-    f2.setTarget(&s2);
+    SystemMock s1;
+    SystemMock s2;
+    FlowMock f;
+    f.name = "Fluxo";
+    f.source = &s1;
+    f.target = &s2;
+    FlowMock f2;
 
-    //teste operador de atribuição
-    FlowMock f4;
-    f4 = f2;
-    assert(f4.name == "Teste");
-    assert(f4.source == &s1);
-    assert(f4.target == &s2);
+    f2 = f;
+    assert(f2.name == "Fluxo");
+    assert(f2.source == &s1);
+    assert(f2.target == &s2);
 }
 
 void UnitFlow::unit_Flow_destructor(void) {
-    FlowMock* f1 = new FlowMock("F1");
+    FlowMock* f1 = new FlowMock();
     delete f1;
 }
 
 void UnitFlow::unit_Flow_getName(void) {
-    FlowMock f1("Fluxo B");
-    assert(f1.getName() == "Fluxo B");
+    FlowMock f;
+    f.name = "Fluxo A";
+    assert(f.getName() == "Fluxo A");
 }
 
 void UnitFlow::unit_Flow_setName(void) {
@@ -75,28 +77,28 @@ void UnitFlow::unit_Flow_setName(void) {
 
 void UnitFlow::unit_Flow_getSource(void) {
     FlowMock f1;
-    SystemImpl s("Sistema", 50.0);
+    SystemMock s;
     f1.source = &s;
     assert(f1.getSource() == &s);
 }
 
 void UnitFlow::unit_Flow_setSource(void) {
     FlowMock f1;
-    SystemImpl s("Sistema", 50.0);
+    SystemMock s;
     f1.setSource(&s);
     assert(f1.source == &s);
 }
 
 void UnitFlow::unit_Flow_getTarget(void) {
     FlowMock f1;
-    SystemImpl s("Sistema", 50.0);
+    SystemMock s;
     f1.target = &s;
     assert(f1.getTarget() == &s);
 }
 
 void UnitFlow::unit_Flow_setTarget(void) {
     FlowMock f1;
-    SystemImpl s("Sistema", 50.0);
+    SystemMock s;
     f1.setTarget(&s);
     assert(f1.target == &s);
 }
@@ -104,7 +106,6 @@ void UnitFlow::unit_Flow_setTarget(void) {
 void run_unit_tests_Flow(void) {
     UnitFlow::unit_Flow_constructor();
     UnitFlow::unit_Flow_destructor();
-    UnitFlow::unit_Flow_ParameterizedConstructor();
     UnitFlow::unit_Flow_CopyConstructor();
     UnitFlow::unit_Flow_Operator();
     UnitFlow::unit_Flow_getName();

@@ -6,7 +6,7 @@
 #ifndef EXPONENTIALFLOW_H
 #define EXPONENTIALFLOW_H
 
-#include "flowImpl.h"
+#include  "../../src/flowImpl.h"
 
 /**
  * @class ExponentialFlow
@@ -15,13 +15,18 @@
  * armazenado no sistema de origem.
  */
 class ExponentialFlow : public FlowImpl {
-public:
+protected:
     /** @brief Construtor padrão */
     ExponentialFlow();
     
-    /** @brief Construtor parametrizado que recebe o nome do fluxo */
-    ExponentialFlow(std::string name);
-    
+    /*!
+     * @brief This is the parameterized constructor for the ExponentialFlow Class.
+     * * @param name the name of the ExponentialFlow.
+     * @param source a pointer to the source System.
+     * @param target a pointer to the target System.
+     */
+    ExponentialFlow(std::string name, System* source, System* target);
+public:
     /** @brief Destrutor virtual */
     virtual ~ExponentialFlow();
     
@@ -29,7 +34,8 @@ public:
      * @brief Executa a equação exponencial.
      * @return Retorna 0.01 * valor_da_origem.
      */
-    double execute() const override; 
+    double execute() override; 
+    friend class Model;
 };
 
 #endif

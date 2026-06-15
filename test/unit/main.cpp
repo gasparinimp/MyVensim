@@ -1,14 +1,10 @@
-#ifndef MAIN_UNIT_TESTS
-#define MAIN_UNIT_TESTS
-
-#include "unit_tests.h"
 #include "unit_System.h"
 #include "unit_Flow.h"
 #include "unit_Model.h"
 #include <iostream>
 
 int main() {
-    std::cout << " INICIANDO SUÍTE DE TESTES UNITÁRIOS   " << std::endl;
+    std::cout << " INICIANDO DE TESTES UNITÁRIOS   " << std::endl;
 
     // Invoca a verificação da classe System
     run_unit_tests_System();
@@ -23,5 +19,3 @@ int main() {
 
     return 0;
 }
-
-#endif

@@ -6,7 +6,7 @@
 #ifndef LOGISTICALFLOW_H
 #define LOGISTICALFLOW_H
 
-#include "flowImpl.h"
+#include "../../src/flowImpl.h"
 
 /**
  * @class LogisticalFlow
@@ -15,13 +15,18 @@
  * capacidade de saturação sustentada.
  */
 class LogisticalFlow : public FlowImpl {
-public:
+protected:
     /** @brief Construtor padrão */
     LogisticalFlow();
     
-    /** @brief Construtor parametrizado com nome */
-    LogisticalFlow(std::string name);
-    
+    /*!
+     * @brief This is the parameterized constructor for the LogisticFlow Class.
+     * * @param name the name of the LogisticFlow.
+     * @param source pointer to the source System.
+     * @param target pointer to the target System.
+     */
+    LogisticalFlow(std::string name, System* source, System* target);
+public:
     /** @brief Destrutor virtual */
     virtual ~LogisticalFlow();
     
@@ -29,7 +34,8 @@ public:
      * @brief Executa a equação logística.
      * @return Retorna 0.01 * valor_destino * (1.0 - (valor_destino / 70.0)).
      */
-    double execute() const override;
+    double execute() override;
+    friend class Model;
 };
 
 #endif

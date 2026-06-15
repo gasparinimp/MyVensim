@@ -1,5 +1,5 @@
 <map id="ModelImpl" name="ModelImpl">
-<area shape="rect" id="Node000001" title="Classe concreta que implementa a interface Model." alt="" coords="5,219,124,504"/>
-<area shape="rect" id="Node000002" href="$classModel.html" title="Interface que representa o Modelo de simulação." alt="" coords="15,5,114,171"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,184,67,218,62,218,62,184"/>
+<area shape="rect" id="Node000001" title="Classe concreta que implementa a interface Model." alt="" coords="5,319,135,684"/>
+<area shape="rect" id="Node000002" href="$classModel.html" title="Interface que representa o Modelo de simulação." alt="" coords="5,5,135,271"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,285,73,319,67,319,67,285"/>
 </map>

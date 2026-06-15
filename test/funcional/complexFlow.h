@@ -6,7 +6,7 @@
 #ifndef COMPLEXFLOW_H
 #define COMPLEXFLOW_H
 
-#include "flowImpl.h"
+#include "../../src/flowImpl.h"
 
 /**
  * @class ComplexFlow
@@ -15,21 +15,28 @@
  * (0.01) do valor do sistema de origem. Usado para malhas de sistemas.
  */
 class ComplexFlow : public FlowImpl {
-public:
+protected:
     /** @brief Construtor padrão */
     ComplexFlow();
     
-    /** @brief Construtor parametrizado com nome */
-    ComplexFlow(std::string name);
-    
+    /*!
+     * @brief This is the parameterized constructor for the ComplexFlow Class.
+     * @param name the name of the ComplexFlow.
+     * @param source a pointer to the source System.
+     * @param target a pointer to the target System.
+     */
+    ComplexFlow(std::string name, System* source, System* target);
+public:
     /** @brief Destrutor virtual */
     virtual ~ComplexFlow();
-    
+
     /**
      * @brief Executa a equação do fluxo complexo.
      * @return Retorna 0.01 * valor_da_origem.
      */
-    double execute() const override;
+    virtual double execute() override;
+    
+    friend class Model;
 };
 
 #endif

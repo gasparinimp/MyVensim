@@ -7,6 +7,7 @@
 #define FLOW_IMPL_H
 
 #include "flow.h"
+#include "system.h"
 #include <string>
 
 /**
@@ -36,7 +37,7 @@ protected:
      * @brief Construtor parametrizado.
      * @param name Nome do fluxo.
      */
-    FlowImpl(std::string name);
+    FlowImpl(std::string name, System* source, System* target);
 
         /**
      * @brief Sobrecarga do operador de atribuição.
@@ -62,10 +63,10 @@ public:
      * @brief Método virtual puro mantido para as classes filhas sobreescreverem.
      * @return double Valor calculado pela equação do fluxo.
      */
-    virtual double execute() const override = 0;
+    virtual double execute() = 0;
     
     friend class UnitFlow;
-    friend class UnitModel;
+    friend class Model;
 };
 
 #endif

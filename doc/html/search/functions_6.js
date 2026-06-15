@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../test_2funcional_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../test_2unit_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
-  ['modelimpl_1',['ModelImpl',['../classModelImpl.html#a081505846c37ce9928f2176d77db4bc8',1,'ModelImpl::ModelImpl()'],['../classModelImpl.html#a9d64c1d4710e51d348c3efa7a3953757',1,'ModelImpl::ModelImpl(std::string name)'],['../classModelImpl.html#aebabc55ab626035b06fc8c9bbe3397c4',1,'ModelImpl::ModelImpl(const ModelImpl &amp;mod)']]]
+  ['logisticalflow_0',['LogisticalFlow',['../classLogisticalFlow.html#a3fd4357cffc1717ace3a8466665b6440',1,'LogisticalFlow::LogisticalFlow()'],['../classLogisticalFlow.html#af1b76e91eb5c1d32cbb14f5fbb7fac01',1,'LogisticalFlow::LogisticalFlow(std::string name, System *source, System *target)']]],
+  ['logisticalfuncionaltest_1',['logisticalFuncionalTest',['../funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29',1,'logisticalFuncionalTest():&#160;funcional_tests.cpp'],['../funcional__tests_8h.html#a60914db64bde71b56d69320797266c29',1,'logisticalFuncionalTest():&#160;funcional_tests.cpp']]]
 ];

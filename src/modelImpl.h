@@ -7,8 +7,11 @@
 #define MODEL_IMPL_H
 
 #include "model.h"
+#include "system.h"
+#include "flow.h"
 #include <vector>
 #include <string>
+#include <algorithm>
 
 /**
  * @class ModelImpl
@@ -18,11 +21,10 @@
  */
 class ModelImpl : public Model {
 protected:
-    static std::vector<Model*> models;
     std::string name;                 /*!< Nome do modelo */
     std::vector<System*> systems;     /*!< Vetor contendo os ponteiros para os Sistemas */
     std::vector<Flow*> flows;         /*!< Vetor contendo os ponteiros para os Fluxos */
-    bool ownsResources;               /*!< Indica se o modelo deve liberar sistemas e fluxos */
+    static std::vector<Model*> models; 
 
     /**
      * @brief Construtor padrão. Inicializa um modelo vazio.
@@ -48,11 +50,6 @@ protected:
      */
     ModelImpl& operator=(const ModelImpl& mod);
 
-    /**
-     * @brief Libera os sistemas e fluxos sob posse do modelo.
-     */
-    void clearResources();
-
 public:
 
     /**
@@ -68,8 +65,8 @@ public:
     std::string getName() const override;
     void setName(std::string name) override;
     System* createSystem(std::string name, double value) override;
-    bool deleteSystem(System* s) override;
-    bool deleteFlow(Flow* f) override;
+    void deleteSystem(System* s) override;
+    void deleteFlow(Flow* f) override;
     
     friend class Model;
     friend class UnitModel;

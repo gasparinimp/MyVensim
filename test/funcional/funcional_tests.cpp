@@ -1,12 +1,8 @@
 #include "funcional_tests.h"
-#include "../../src/modelImpl.h"
-#include "../../src/systemImpl.h"
-#include "../../src/exponentialFlow.h"
-#include "../../src/logisticalFlow.h"
-#include "../../src/complexFlow.h"
-#include <assert.h>
-#include <iostream>
-#include <cmath>
+
+#include "exponentialFlow.h"
+#include "logisticalFlow.h"
+#include "complexFlow.h"
 
 void exponentialFuncionalTest() { 
     std::cout << "Executando Teste Exponencial..." << std::endl;
@@ -17,7 +13,7 @@ void exponentialFuncionalTest() {
     System* pop2 = mod->createSystem("pop2", 0.0);
 
     // Fábrica de fluxo
-    mod->createFlow<ExponentialFlow>("exponencial", pop1, pop2);
+    Flow* f1 = mod->createFlow<ExponentialFlow>("exponencial", pop1, pop2);
 
     mod->run(0, 100);
 
@@ -25,8 +21,7 @@ void exponentialFuncionalTest() {
     assert(std::fabs(pop2->getValue() - 63.3968) < 0.0001); 
 
     std::cout << "Teste Exponencial Passou!" << std::endl;
-
-    Model::deleteModel("Exponencial Model");
+    delete mod;
 }
 
 void logisticalFuncionalTest() { 
@@ -36,7 +31,7 @@ void logisticalFuncionalTest() {
     System* p1 = mod->createSystem("p1", 100.0);
     System* p2 = mod->createSystem("p2", 10.0);
 
-    mod->createFlow<LogisticalFlow>("Fluxo Logistico", p1, p2);
+    Flow* f1 = mod->createFlow<LogisticalFlow>("logistica", p1, p2);
 
     mod->run(0, 100);
 
@@ -44,8 +39,7 @@ void logisticalFuncionalTest() {
     assert(std::fabs(p2->getValue() - 21.7833) < 0.0001);
 
     std::cout << "Teste Logistico Passou!" << std::endl;
-
-    Model::deleteModel("Logistical Model");
+    delete mod;
 }
 
 void complexFuncionalTest() { 
@@ -58,12 +52,12 @@ void complexFuncionalTest() {
     System* q4 = mod->createSystem("q4", 0.0);
     System* q5 = mod->createSystem("q5", 0.0);
 
-    mod->createFlow<ComplexFlow>("f", q1, q2);
-    mod->createFlow<ComplexFlow>("g", q1, q3);
-    mod->createFlow<ComplexFlow>("t", q2, q3);
-    mod->createFlow<ComplexFlow>("r", q2, q5);
-    mod->createFlow<ComplexFlow>("u", q3, q4);
-    mod->createFlow<ComplexFlow>("v", q4, q1);
+    Flow* f = mod->createFlow<ComplexFlow>("f", q1, q2);  
+    Flow* g = mod->createFlow<ComplexFlow>("g", q1, q3);
+    Flow* r = mod->createFlow<ComplexFlow>("r", q2, q5);  
+    Flow* t = mod->createFlow<ComplexFlow>("t", q2, q3);
+    Flow* u = mod->createFlow<ComplexFlow>("u", q3, q4);  
+    Flow* v = mod->createFlow<ComplexFlow>("v", q4, q1);
 
     mod->run(0, 100);
 

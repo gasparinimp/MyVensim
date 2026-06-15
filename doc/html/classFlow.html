@@ -128,19 +128,18 @@ Inheritance diagram for Flow:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFlow__inherit__graph.png" border="0" usemap="#aFlow_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aFlow_inherit__map" id="aFlow_inherit__map">
-<area shape="rect" title="Interface que representa um Fluxo de transferência no simulador." alt="" coords="347,5,451,211"/>
-<area shape="rect" href="classFlowImpl.html" title="Classe concreta que implementa a interface Flow." alt="" coords="344,259,453,584"/>
-<area shape="poly" title=" " alt="" coords="401,224,401,258,396,258,396,224"/>
-<area shape="rect" href="classComplexFlow.html" title="Classe que implementa um fluxo genérico para o Teste Complexo." alt="" coords="5,632,144,757"/>
-<area shape="poly" title=" " alt="" coords="335,479,146,637,142,633,332,475"/>
-<area shape="rect" href="classExponentialFlow.html" title="Classe que implementa um fluxo com equação Exponencial." alt="" coords="168,632,325,757"/>
-<area shape="poly" title=" " alt="" coords="339,534,283,633,279,631,335,531"/>
-<area shape="rect" href="classFlowMock.html" title=" " alt="" coords="349,632,448,757"/>
-<area shape="poly" title=" " alt="" coords="401,598,401,632,396,632,396,598"/>
-<area shape="rect" href="classFlowMockModel.html" title=" " alt="" coords="472,632,592,757"/>
-<area shape="poly" title=" " alt="" coords="462,545,504,630,499,633,457,547"/>
-<area shape="rect" href="classLogisticalFlow.html" title="Classe que implementa um fluxo com equação Logística." alt="" coords="617,632,759,757"/>
-<area shape="poly" title=" " alt="" coords="465,481,624,630,620,634,461,485"/>
+<area shape="rect" title="Interface que representa um Fluxo de transferência no simulador." alt="" coords="73,5,177,211"/>
+<area shape="rect" href="classFlowMock.html" title=" " alt="" coords="5,632,104,757"/>
+<area shape="poly" title=" " alt="" coords="114,225,65,632,59,631,109,224"/>
+<area shape="rect" href="classFlowImpl.html" title="Classe concreta que implementa a interface Flow." alt="" coords="143,259,252,584"/>
+<area shape="poly" title=" " alt="" coords="155,223,162,258,157,259,149,225"/>
+<area shape="poly" title=" " alt="" coords="139,540,90,633,85,630,134,537"/>
+<area shape="rect" href="classComplexFlow.html" title="Classe que implementa um fluxo genérico para o Teste Complexo." alt="" coords="128,632,267,757"/>
+<area shape="poly" title=" " alt="" coords="200,598,200,632,195,632,195,598"/>
+<area shape="rect" href="classExponentialFlow.html" title="Classe que implementa um fluxo com equação Exponencial." alt="" coords="291,632,448,757"/>
+<area shape="poly" title=" " alt="" coords="262,519,332,630,328,633,257,522"/>
+<area shape="rect" href="classLogisticalFlow.html" title="Classe que implementa um fluxo com equação Logística." alt="" coords="473,632,615,757"/>
+<area shape="poly" title=" " alt="" coords="265,472,474,635,471,640,261,476"/>
 </map>
 </div>
 <div class="dynheader">
@@ -168,8 +167,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2d0340d844ab2d275222938234e44169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o nome do fluxo.  <br /></td></tr>
 <tr class="memitem:af83353015d9841e35c972625f450efe5" id="r_af83353015d9841e35c972625f450efe5"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af83353015d9841e35c972625f450efe5">setName</a> (std::string name)=0</td></tr>
 <tr class="memdesc:af83353015d9841e35c972625f450efe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define um novo nome para o fluxo.  <br /></td></tr>
-<tr class="memitem:a59a51b935f1e72373f6a94aa3ccaf981" id="r_a59a51b935f1e72373f6a94aa3ccaf981"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a59a51b935f1e72373f6a94aa3ccaf981">execute</a> () const =0</td></tr>
-<tr class="memdesc:a59a51b935f1e72373f6a94aa3ccaf981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método virtual puro que executa a equação matemática do fluxo.  <br /></td></tr>
+<tr class="memitem:a619be0b590c78202127bc6ac7fb04029" id="r_a619be0b590c78202127bc6ac7fb04029"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a619be0b590c78202127bc6ac7fb04029">execute</a> ()=0</td></tr>
+<tr class="memdesc:a619be0b590c78202127bc6ac7fb04029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método virtual puro que executa a equação matemática do fluxo.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface que representa um Fluxo de transferência no simulador. </p>
@@ -202,8 +201,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a59a51b935f1e72373f6a94aa3ccaf981" name="a59a51b935f1e72373f6a94aa3ccaf981"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59a51b935f1e72373f6a94aa3ccaf981">&#9670;&#160;</a></span>execute()</h2>
+<a id="a619be0b590c78202127bc6ac7fb04029" name="a619be0b590c78202127bc6ac7fb04029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a619be0b590c78202127bc6ac7fb04029">&#9670;&#160;</a></span>execute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +214,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual double Flow::execute </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -228,7 +227,7 @@ Public Member Functions</h2></td></tr>
 <p>Método virtual puro que executa a equação matemática do fluxo. </p>
 <dl class="section return"><dt>Returns</dt><dd>double correspondente ao valor calculado a ser transferido. </dd></dl>
 
-<p>Implemented in <a class="el" href="classComplexFlow.html#ab7b3ebfbd410a0f20a9b7bac37fb7a32">ComplexFlow</a>, <a class="el" href="classExponentialFlow.html#ae451be9e0da09332dc509ca9919e9062">ExponentialFlow</a>, <a class="el" href="classFlowImpl.html#a534e8dac303d208568065ef9cbba5e40">FlowImpl</a>, <a class="el" href="classFlowMock.html#a39c78d6f4117de82330961abb71fb40e">FlowMock</a>, <a class="el" href="classFlowMockModel.html#afeeed1f0190fa283cb01cd878ee95a62">FlowMockModel</a>, and <a class="el" href="classLogisticalFlow.html#a64656e918fc50a68c762362be4dcd469">LogisticalFlow</a>.</p>
+<p>Implemented in <a class="el" href="classComplexFlow.html#a744cb3029e9335038f3f8c1da6daea4d">ComplexFlow</a>, <a class="el" href="classExponentialFlow.html#aafb074830c5c18138913cb10da3b8782">ExponentialFlow</a>, <a class="el" href="classFlowImpl.html#a88d14f759988f1dcf393b83a93aea1f1">FlowImpl</a>, <a class="el" href="classFlowMock.html#a9b6c567a527c0be2fe2474693848b00a">FlowMock</a>, and <a class="el" href="classLogisticalFlow.html#ace31969e5f4979cc6048aa2a7c795e69">LogisticalFlow</a>.</p>
 
 </div>
 </div>

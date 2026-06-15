@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('flow_8h_source
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define FLOW_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span><a class="code hl_class" href="classSystem.html">System</a>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classFlow.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classFlow.html">Flow</a> {</div>
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('flow_8h_source
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classFlow.html#af83353015d9841e35c972625f450efe5">   59</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFlow.html#af83353015d9841e35c972625f450efe5">setName</a>(std::string name) = 0;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classFlow.html#a59a51b935f1e72373f6a94aa3ccaf981">   65</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classFlow.html#a59a51b935f1e72373f6a94aa3ccaf981">execute</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classFlow.html#a619be0b590c78202127bc6ac7fb04029">   65</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classFlow.html#a619be0b590c78202127bc6ac7fb04029">execute</a>() = 0;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
@@ -152,13 +152,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('flow_8h_source
 <div class="ttc" id="aclassFlow_html_a2d0340d844ab2d275222938234e44169"><div class="ttname"><a href="classFlow.html#a2d0340d844ab2d275222938234e44169">Flow::getName</a></div><div class="ttdeci">virtual std::string getName() const =0</div><div class="ttdoc">Obtém o nome do fluxo.</div></div>
 <div class="ttc" id="aclassFlow_html_a325d284a50ca3274b126b21f5c39b9af"><div class="ttname"><a href="classFlow.html#a325d284a50ca3274b126b21f5c39b9af">Flow::~Flow</a></div><div class="ttdeci">virtual ~Flow()</div><div class="ttdoc">Destrutor virtual da interface Flow.</div><div class="ttdef"><b>Definition</b> flow.h:23</div></div>
 <div class="ttc" id="aclassFlow_html_a4d756236982858350e7bf80a465926a7"><div class="ttname"><a href="classFlow.html#a4d756236982858350e7bf80a465926a7">Flow::setSource</a></div><div class="ttdeci">virtual void setSource(System *s)=0</div><div class="ttdoc">Define o sistema de origem do fluxo.</div></div>
-<div class="ttc" id="aclassFlow_html_a59a51b935f1e72373f6a94aa3ccaf981"><div class="ttname"><a href="classFlow.html#a59a51b935f1e72373f6a94aa3ccaf981">Flow::execute</a></div><div class="ttdeci">virtual double execute() const =0</div><div class="ttdoc">Método virtual puro que executa a equação matemática do fluxo.</div></div>
+<div class="ttc" id="aclassFlow_html_a619be0b590c78202127bc6ac7fb04029"><div class="ttname"><a href="classFlow.html#a619be0b590c78202127bc6ac7fb04029">Flow::execute</a></div><div class="ttdeci">virtual double execute()=0</div><div class="ttdoc">Método virtual puro que executa a equação matemática do fluxo.</div></div>
 <div class="ttc" id="aclassFlow_html_abacc363985e28905dcc10c9fab7c4328"><div class="ttname"><a href="classFlow.html#abacc363985e28905dcc10c9fab7c4328">Flow::setTarget</a></div><div class="ttdeci">virtual void setTarget(System *t)=0</div><div class="ttdoc">Define o sistema de destino do fluxo.</div></div>
 <div class="ttc" id="aclassFlow_html_abf0f3dbb285fe82e5ba6449de06b97c8"><div class="ttname"><a href="classFlow.html#abf0f3dbb285fe82e5ba6449de06b97c8">Flow::getSource</a></div><div class="ttdeci">virtual System * getSource() const =0</div><div class="ttdoc">Obtém o sistema de origem atual.</div></div>
 <div class="ttc" id="aclassFlow_html_af83353015d9841e35c972625f450efe5"><div class="ttname"><a href="classFlow.html#af83353015d9841e35c972625f450efe5">Flow::setName</a></div><div class="ttdeci">virtual void setName(std::string name)=0</div><div class="ttdoc">Define um novo nome para o fluxo.</div></div>
 <div class="ttc" id="aclassFlow_html_afb9b8d93ea0fc81868b8e02dd382a787"><div class="ttname"><a href="classFlow.html#afb9b8d93ea0fc81868b8e02dd382a787">Flow::getTarget</a></div><div class="ttdeci">virtual System * getTarget() const =0</div><div class="ttdoc">Obtém o sistema de destino atual.</div></div>
 <div class="ttc" id="aclassSystem_html"><div class="ttname"><a href="classSystem.html">System</a></div><div class="ttdoc">Interface que representa um Sistema no simulador.</div><div class="ttdef"><b>Definition</b> system.h:19</div></div>
-<div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div><div class="ttdoc">Arquivo contendo a interface System.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

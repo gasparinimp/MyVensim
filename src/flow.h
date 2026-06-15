@@ -9,7 +9,7 @@
 #define FLOW_H
 
 #include <string>
-#include "system.h"
+class System;
 
 /**
  * @class Flow
@@ -62,7 +62,7 @@ public:
      * @brief Método virtual puro que executa a equação matemática do fluxo.
      * @return double correspondente ao valor calculado a ser transferido.
      */
-    virtual double execute() const = 0;
+    virtual double execute() = 0;
 };
 
 #endif

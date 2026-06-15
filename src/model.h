@@ -9,8 +9,8 @@
 #define MODEL_H
 
 #include <string>
-#include "system.h"
-#include "flow.h"
+class Flow;
+class System;
 
 /**
  * @class Model
@@ -37,21 +37,16 @@ public:
 
     // A Fábrica do próprio Modelo (Estática)
     static Model* createModel(std::string name);
-    static bool deleteModel(std::string name);
-
     virtual System* createSystem(std::string name, double value) = 0;
-    virtual bool deleteSystem(System* s) = 0;
-    virtual bool deleteFlow(Flow* f) = 0;
+    virtual void deleteSystem(System* s) = 0;
+    virtual void deleteFlow(Flow* f) = 0;
 
     //Fabrica de fluxoes
-    template <typename T_FLOW>
-    Flow* createFlow(std::string name, System* source, System* target) {
-        Flow* f = new T_FLOW(name); 
-        f->setSource(source);
-        f->setTarget(target);
-        
-        this->add(f); 
-        return f;
+    template <typename T>
+    Flow* createFlow(std::string name = "", System* source = nullptr, System* target = nullptr) { 
+        Flow* flow = new T(name, source, target);
+        this->add(flow);
+        return flow;
     }
 
     /**

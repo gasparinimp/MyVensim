@@ -1,11 +1,11 @@
 var hierarchy =
 [
     [ "Flow", "classFlow.html", [
+      [ "FlowMock", "classFlowMock.html", null ],
       [ "FlowImpl", "classFlowImpl.html", [
         [ "ComplexFlow", "classComplexFlow.html", null ],
         [ "ExponentialFlow", "classExponentialFlow.html", null ],
         [ "FlowMock", "classFlowMock.html", null ],
-        [ "FlowMockModel", "classFlowMockModel.html", null ],
         [ "LogisticalFlow", "classLogisticalFlow.html", null ]
       ] ]
     ] ],
@@ -13,7 +13,9 @@ var hierarchy =
       [ "ModelImpl", "classModelImpl.html", null ]
     ] ],
     [ "System", "classSystem.html", [
-      [ "SystemImpl", "classSystemImpl.html", null ]
+      [ "SystemMock", "classSystemMock.html", null ],
+      [ "SystemImpl", "classSystemImpl.html", null ],
+      [ "SystemMock", "classSystemMock.html", null ]
     ] ],
     [ "UnitFlow", "classUnitFlow.html", null ],
     [ "UnitModel", "classUnitModel.html", null ],

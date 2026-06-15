@@ -1,17 +1,15 @@
-#ifndef MAIN_FUNCIONAL_TESTS
-#define MAIN_FUNCIONAL_TESTS
-
 #include "funcional_tests.h"
-#include "../../src/model.h"
-#include "../../src/system.h"
-#include "../../src/flow.h"
 
 int main() {
     //Chamada os testes
+    std::cout <<"INICIANDO TESTES FUNCIONAIS" << std::endl;
+    printf("\n");
     exponentialFuncionalTest();
+    printf("\n");
     logisticalFuncionalTest();
+    printf("\n");
     complexFuncionalTest();
+    printf("\n");
+    std::cout <<"TODOS OS TESTES PASSARAM!!" << std::endl;
     return 0;
 }
-
-#endif
