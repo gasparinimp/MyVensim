@@ -1,7 +1,0 @@
-<map id="ComplexFlow" name="ComplexFlow">
-<area shape="rect" id="Node000001" title="Classe que implementa um fluxo genérico para o Teste Complexo." alt="" coords="5,632,144,757"/>
-<area shape="rect" id="Node000002" href="$classFlowImpl.html" title="Classe concreta que implementa a interface Flow." alt="" coords="20,259,129,584"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,598,77,632,72,632,72,598"/>
-<area shape="rect" id="Node000003" href="$classFlow.html" title="Interface que representa um Fluxo de transferência no simulador." alt="" coords="23,5,127,211"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,224,77,258,72,258,72,224"/>
-</map>

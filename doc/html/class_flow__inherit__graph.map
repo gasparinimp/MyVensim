@@ -1,9 +1,0 @@
-<map id="Flow" name="Flow">
-<area shape="rect" id="Node000001" title="Classe abstrata que representa um fluxo entre dois Systems." alt="" coords="176,5,225,31"/>
-<area shape="rect" id="Node000002" href="$class_exponencial_flow.html" title="Fluxo exponencial: transfere 1% do valor de source por passo." alt="" coords="5,79,126,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,39,90,81,87,76,161,38"/>
-<area shape="rect" id="Node000003" href="$class_flow_complex.html" title="Fluxo exponencial usado no modelo complexo do Sistema Q." alt="" coords="150,79,251,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,45,202,80,198,77,198,48"/>
-<area shape="rect" id="Node000004" href="$class_logistica_flow.html" title="Fluxo logístico com capacidade de suporte K=70 (equação de Verhulst)." alt="" coords="275,79,376,105"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="235,36,307,78,301,78,234,41"/>
-</map>

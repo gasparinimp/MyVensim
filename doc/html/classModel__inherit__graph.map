@@ -1,5 +1,0 @@
-<map id="Model" name="Model">
-<area shape="rect" id="Node000001" title="Interface que representa o Modelo de simulação." alt="" coords="5,5,135,271"/>
-<area shape="rect" id="Node000002" href="$classModelImpl.html" title="Classe concreta que implementa a interface Model." alt="" coords="5,319,135,684"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,285,73,319,67,319,67,285"/>
-</map>
