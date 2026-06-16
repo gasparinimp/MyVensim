@@ -59,48 +59,51 @@ public:
 }
 void UnitModel::unit_Model_constructor(void) {
     ModelImpl m;
-    assert(m.name == "");
-    assert(m.systems.empty());
-    assert(m.flows.empty());
+    assert(m.getName() == "");
+    assert(m.pImpl->systems.empty());
+    assert(m.pImpl->flows.empty());
+    assert(m.pImpl->getRefCount() == 1);
 }
 
 void UnitModel::unit_Model_ParameterizedConstructor() {
     ModelImpl m("M2");
-    assert(m.name == "M2");
+    assert(m.getName() == "M2");
 }
 
 void UnitModel::unit_Model_destructor(void) {
     ModelImpl* m1 = new ModelImpl();
     System* s1 = new SystemMock();
-    m1->systems.push_back(s1);
+    m1->add(s1);
+    delete m1;
 }
 
 void UnitModel::unit_Model_CopyConstructor() {
     ModelImpl m;
-    m.name = "Modelo";
+    m.setName("Modelo");
     System* s = new SystemMock("S1", 0.0);
 
-    m.systems.push_back(s);
+    m.add(s);
 
     // Invoca o construtor de cópia
     ModelImpl m1(m);
-    assert(m1.name == "Modelo");
-    assert(m1.systems.size() == 1); 
-    assert(m1.systems[0] == s);
-
-    //liberar memoria
-    m.systems.clear();
+    assert(m1.getName() == "Modelo");
+    assert(m1.pImpl->systems.size() == 1); 
+    assert(m1.pImpl->systems[0] == s);
+    assert(m.pImpl == m1.pImpl);
+    assert(m.pImpl->getRefCount() == 2);
 }
 
 void UnitModel::unit_Model_Operator() {
     ModelImpl m;
-    m.name = "Modelo";
+    m.setName("Modelo");
     
     ModelImpl m1;
-    m1.name = "Modelo 2";
+    m1.setName("Modelo 2");
 
     m1 = m;
-    assert(m1.name == "Modelo");
+    assert(m1.getName() == "Modelo");
+    assert(m.pImpl == m1.pImpl);
+    assert(m.pImpl->getRefCount() == 2);
 }
 
 void UnitModel::unit_Model_getName(void) {
@@ -111,23 +114,23 @@ void UnitModel::unit_Model_getName(void) {
 void UnitModel::unit_Model_setName(void) {
     ModelImpl m1;
     m1.setName("M2");
-    assert(m1.name == "M2");
+    assert(m1.getName() == "M2");
 }
 
 void UnitModel::unit_Model_addSystem() {
     ModelImpl m;
     System* s = new SystemMock("Sistema", 50.0); 
     m.add(s);
-    assert(m.systems.size() == 1);
-    assert(m.systems[0] == s);
+    assert(m.pImpl->systems.size() == 1);
+    assert(m.pImpl->systems[0] == s);
 }
 
 void UnitModel::unit_Model_addFlow() {
     ModelImpl m;
     Flow* f = new FlowMock("Flow", nullptr, nullptr); 
     m.add(f);
-    assert(m.flows.size() == 1);
-    assert(m.flows[0] == f);
+    assert(m.pImpl->flows.size() == 1);
+    assert(m.pImpl->flows[0] == f);
 }
 
 void UnitModel::unit_Model_createSystem() {
@@ -136,9 +139,10 @@ void UnitModel::unit_Model_createSystem() {
     
     assert(s->getName() == "Sistema");
     assert(s->getValue() == 50.0);
-    assert(m.systems.size() == 1);
-    assert(m.systems[0] == s); 
+    assert(m.pImpl->systems.size() == 1);
+    assert(m.pImpl->systems[0] == s); 
     m.deleteSystem(s);
+    delete s;
 }
 
 void UnitModel::unit_Model_createFlow() {
@@ -146,29 +150,31 @@ void UnitModel::unit_Model_createFlow() {
     Flow* f = new FlowMock("F1", nullptr, nullptr);
 
     m.add(f);
-    assert(m.flows.size() == 1);
-    assert(m.flows[0] == f);
+    assert(m.pImpl->flows.size() == 1);
+    assert(m.pImpl->flows[0] == f);
 }
 
 void UnitModel::unit_Model_deleteSystem() {
     ModelImpl m("Teste");
     System* s = new SystemMock("Sistema", 50.0);
     
-    m.systems.push_back(s);
+    m.add(s);
 
     m.deleteSystem(s);
     
-    assert(m.systems.empty());
+    assert(m.pImpl->systems.empty());
+    delete s;
 }
 
 void UnitModel::unit_Model_deleteFlow() {
     ModelImpl mod;
     Flow* f = new FlowMock("F1", nullptr, nullptr);
     
-    mod.flows.push_back(f);
+    mod.add(f);
 
     mod.deleteFlow(f);
-    assert(mod.flows.empty()); 
+    assert(mod.pImpl->flows.empty()); 
+    delete f;
 }
 
 void UnitModel::unit_Model_run() {

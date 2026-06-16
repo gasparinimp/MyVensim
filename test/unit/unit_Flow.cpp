@@ -24,9 +24,10 @@ public:
 void UnitFlow::unit_Flow_constructor(void) {
     // Teste do construtor vazio
     FlowMock f1;
-    assert(f1.name == "");
-    assert(f1.source == nullptr);
-    assert(f1.target == nullptr);
+    assert(f1.getName() == "");
+    assert(f1.getSource() == nullptr);
+    assert(f1.getTarget() == nullptr);
+    assert(f1.pImpl->getRefCount() == 1);
 }
 
 void UnitFlow::unit_Flow_CopyConstructor(){;
@@ -34,28 +35,32 @@ void UnitFlow::unit_Flow_CopyConstructor(){;
     SystemMock s1;
     SystemMock s2;
     FlowMock f;
-    f.name = "Flow";
-    f.source = &s1;
-    f.target = &s2;
+    f.setName("Flow");
+    f.setSource(&s1);
+    f.setTarget(&s2);
     FlowMock f3(f);
-    assert(f3.name == "Flow");
-    assert(f3.source == &s1);
-    assert(f3.target == &s2);
+    assert(f3.getName() == "Flow");
+    assert(f3.getSource() == &s1);
+    assert(f3.getTarget() == &s2);
+    assert(f.pImpl == f3.pImpl);
+    assert(f.pImpl->getRefCount() == 2);
 }
 
 void UnitFlow::unit_Flow_Operator(){
     SystemMock s1;
     SystemMock s2;
     FlowMock f;
-    f.name = "Fluxo";
-    f.source = &s1;
-    f.target = &s2;
+    f.setName("Fluxo");
+    f.setSource(&s1);
+    f.setTarget(&s2);
     FlowMock f2;
 
     f2 = f;
-    assert(f2.name == "Fluxo");
-    assert(f2.source == &s1);
-    assert(f2.target == &s2);
+    assert(f2.getName() == "Fluxo");
+    assert(f2.getSource() == &s1);
+    assert(f2.getTarget() == &s2);
+    assert(f.pImpl == f2.pImpl);
+    assert(f.pImpl->getRefCount() == 2);
 }
 
 void UnitFlow::unit_Flow_destructor(void) {
@@ -65,20 +70,20 @@ void UnitFlow::unit_Flow_destructor(void) {
 
 void UnitFlow::unit_Flow_getName(void) {
     FlowMock f;
-    f.name = "Fluxo A";
+    f.setName("Fluxo A");
     assert(f.getName() == "Fluxo A");
 }
 
 void UnitFlow::unit_Flow_setName(void) {
     FlowMock f1;
     f1.setName("Novo Fluxo");
-    assert(f1.name == "Novo Fluxo");
+    assert(f1.getName() == "Novo Fluxo");
 }
 
 void UnitFlow::unit_Flow_getSource(void) {
     FlowMock f1;
     SystemMock s;
-    f1.source = &s;
+    f1.setSource(&s);
     assert(f1.getSource() == &s);
 }
 
@@ -86,13 +91,13 @@ void UnitFlow::unit_Flow_setSource(void) {
     FlowMock f1;
     SystemMock s;
     f1.setSource(&s);
-    assert(f1.source == &s);
+    assert(f1.getSource() == &s);
 }
 
 void UnitFlow::unit_Flow_getTarget(void) {
     FlowMock f1;
     SystemMock s;
-    f1.target = &s;
+    f1.setTarget(&s);
     assert(f1.getTarget() == &s);
 }
 
@@ -100,7 +105,7 @@ void UnitFlow::unit_Flow_setTarget(void) {
     FlowMock f1;
     SystemMock s;
     f1.setTarget(&s);
-    assert(f1.target == &s);
+    assert(f1.getTarget() == &s);
 }
 
 void run_unit_tests_Flow(void) {

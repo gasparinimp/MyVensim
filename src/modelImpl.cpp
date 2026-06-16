@@ -2,21 +2,14 @@
 #include "systemImpl.h"
 std::vector<Model*> ModelImpl::models;
 //Construtor vazio
-ModelImpl::ModelImpl() : name("") {}
+ModelBody::ModelBody() : name("") {}
 
 //Construtor com nome
-ModelImpl::ModelImpl(std::string name) : name(name) {}
-
-// Construtor de quando um modelo vai copiar o outro
-ModelImpl::ModelImpl(const ModelImpl& mod) {
-    this->name = mod.name;
-    this->systems = mod.systems;
-    this->flows = mod.flows;
-}
+ModelBody::ModelBody(std::string name) : name(name) {}
 
 
 // Destrutor
-ModelImpl::~ModelImpl() {
+ModelBody::~ModelBody() {
     for (std::vector<System*>::iterator it = systems.begin(); it != systems.end(); ++it) {
         delete *it; 
     }
@@ -27,39 +20,28 @@ ModelImpl::~ModelImpl() {
     flows.clear();
 }
 
-//Sobre carga do operador
-ModelImpl& ModelImpl::operator=(const ModelImpl& mod) {
-    if (this == &mod) {
-        return *this;
-    }
-    this->name = mod.name;
-    this->systems = mod.systems;
-    this->flows = mod.flows;
-    return *this;
-}
-
 // Get e set de nome
-std::string ModelImpl::getName() const { 
+std::string ModelBody::getName() const { 
     return name; 
 }
 
-void ModelImpl::setName(std::string n) { 
+void ModelBody::setName(std::string n) { 
     name = n; 
 }
 
 //Metodo para adicionar sistema ao vetor de sistemas
 
-void ModelImpl::add(System *s){
+void ModelBody::add(System *s){
     systems.push_back(s);
 }
 
 //Metodo para adicionar fluxos do vetor de fluxos
-void ModelImpl::add(Flow *f){
+void ModelBody::add(Flow *f){
     flows.push_back(f);
 }
 
 //Função run assincrona
-void ModelImpl::run(int t_initial, int t_end) {
+void ModelBody::run(int t_initial, int t_end) {
     //Enquanto o tempo nao acabar
     for (int tempo = t_initial; tempo < t_end; ++tempo) {
         //Crio um vetor de resultados
@@ -85,29 +67,77 @@ void ModelImpl::run(int t_initial, int t_end) {
     }
 }
 
-Model* Model::createModel(std::string name) {
-    Model* m = new ModelImpl(name);
-    ModelImpl::models.push_back(m);
-    return m;
-}
-
 // A FÁBRICA DE SISTEMAS
-System* ModelImpl::createSystem(std::string name, double value) {
+System* ModelBody::createSystem(std::string name, double value) {
     System* s = new SystemImpl(name, value);
     this->add(s);
     return s;
 }
 
-void ModelImpl::deleteSystem(System* s) {
+void ModelBody::deleteSystem(System* s) {
     auto it = std::find(systems.begin(), systems.end(), s);
     if (it != systems.end()) {
         systems.erase(it); //remove  o sistema do vetor.
     }
 }
 
-void ModelImpl::deleteFlow(Flow* f) {
+void ModelBody::deleteFlow(Flow* f) {
     auto it = std::find(flows.begin(), flows.end(), f);
     if (it != flows.end()) {
         flows.erase(it);
     }
+}
+
+ModelImpl::ModelImpl() : Handle<ModelBody>(new ModelBody()) {}
+
+ModelImpl::ModelImpl(std::string name) : Handle<ModelBody>(new ModelBody(name)) {}
+
+// Construtor de quando um modelo vai copiar o outro
+ModelImpl::ModelImpl(const ModelImpl& mod) : Handle<ModelBody>(mod) {}
+
+// Destrutor
+ModelImpl::~ModelImpl() {}
+
+//Sobre carga do operador
+ModelImpl& ModelImpl::operator=(const ModelImpl& mod) {
+    Handle<ModelBody>::operator=(mod);
+    return *this;
+}
+
+std::string ModelImpl::getName() const { 
+    return pImpl->getName(); 
+}
+
+void ModelImpl::setName(std::string n) { 
+    pImpl->setName(n); 
+}
+
+void ModelImpl::add(System *s){
+    pImpl->add(s);
+}
+
+void ModelImpl::add(Flow *f){
+    pImpl->add(f);
+}
+
+void ModelImpl::run(int t_initial, int t_end) {
+    pImpl->run(t_initial, t_end);
+}
+
+Model* Model::createModel(std::string name) {
+    Model* m = new ModelImpl(name);
+    ModelImpl::models.push_back(m);
+    return m;
+}
+
+System* ModelImpl::createSystem(std::string name, double value) {
+    return pImpl->createSystem(name, value);
+}
+
+void ModelImpl::deleteSystem(System* s) {
+    pImpl->deleteSystem(s);
+}
+
+void ModelImpl::deleteFlow(Flow* f) {
+    pImpl->deleteFlow(f);
 }

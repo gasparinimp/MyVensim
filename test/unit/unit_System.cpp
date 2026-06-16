@@ -7,29 +7,37 @@
 void UnitSystem::unit_System_constructor(void) {
     // Teste do construtor vazio
     SystemImpl s1;
-    assert(s1.name == "");
-    assert(s1.value == 0.0);
+    assert(s1.getName() == "");
+    assert(s1.getValue() == 0.0);
+    assert(s1.pImpl->getRefCount() == 1);
 }
 
 void UnitSystem::unit_System_ParameterizedConstructor() {
     SystemImpl s1("Sistema", 50.0);
-    assert(s1.name == "Sistema");
-    assert(s1.value == 50.0);
+    assert(s1.getName() == "Sistema");
+    assert(s1.getValue() == 50.0);
 }
 
 void UnitSystem::unit_System_CopyConstructor() {
     SystemImpl s1("Sistema", 50.0);
     SystemImpl s2(s1);
-    assert(s2.name == "Sistema");
-    assert(s2.value == 50.0);
+    assert(s2.getName() == "Sistema");
+    assert(s2.getValue() == 50.0);
+    assert(s1.pImpl == s2.pImpl);
+    assert(s1.pImpl->getRefCount() == 2);
+
+    s1.setName("Sistema Alterado");
+    assert(s2.getName() == "Sistema Alterado");
 }
 
 void UnitSystem::unit_System_Operator() {
     SystemImpl s1("Sistema", 50.0);
     SystemImpl s2;
     s2 = s1;
-    assert(s2.name == "Sistema");
-    assert(s2.value == 50.0);
+    assert(s2.getName() == "Sistema");
+    assert(s2.getValue() == 50.0);
+    assert(s1.pImpl == s2.pImpl);
+    assert(s1.pImpl->getRefCount() == 2);
 }
 
 //teste do destrutor
@@ -47,7 +55,7 @@ void UnitSystem::unit_System_getName(void) {
 void UnitSystem::unit_System_setName(void) {
     SystemImpl s1;
     s1.setName("Novo Nome");
-    assert(s1.name == "Novo Nome");
+    assert(s1.getName() == "Novo Nome");
 }
 
 //teste do get e set value
@@ -59,7 +67,26 @@ void UnitSystem::unit_System_getValue(void) {
 void UnitSystem::unit_System_setValue(void) {
     SystemImpl s1;
     s1.setValue(20.0);
-    assert(s1.value == 20.0);
+    assert(s1.getValue() == 20.0);
+}
+
+void UnitSystem::unit_System_HandleBody(void) {
+    SystemImpl s3("tiago", 7.0);
+    SystemImpl s4("antonio", 8.0);
+
+    assert(s3.pImpl != s4.pImpl);
+
+    s3 = s4;
+
+    assert(s3.pImpl == s4.pImpl);
+    assert(s3.pImpl->getRefCount() == 2);
+    assert(s3.getName() == "antonio");
+    assert(s3.getValue() == 8.0);
+
+    s3 = s3;
+
+    assert(s3.pImpl == s4.pImpl);
+    assert(s3.pImpl->getRefCount() == 2);
 }
 
 //roda todos os testes do system
@@ -73,5 +100,6 @@ void run_unit_tests_System(void) {
     UnitSystem::unit_System_setName();
     UnitSystem::unit_System_getValue();
     UnitSystem::unit_System_setValue();
+    UnitSystem::unit_System_HandleBody();
     std::cout << "OK -> Todos os testes unitarios de System passaram!" << std::endl;
 }
